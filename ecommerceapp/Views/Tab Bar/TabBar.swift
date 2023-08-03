@@ -11,8 +11,12 @@ struct TabBar: View {
     
     @State var selected = 0
     
+    
+    
     var body: some View {
+        
         ZStack {
+            
             TabView(selection: $selected) {
                 CategoryScreen()
                     .tabItem {
@@ -36,10 +40,20 @@ struct TabBar: View {
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
     }
+    
+    func refresh(){
+        self.selected = 0
+    }
+
 }
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
     }
+    
+    
 }
+
+
+

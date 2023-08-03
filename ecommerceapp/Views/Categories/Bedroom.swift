@@ -45,7 +45,7 @@ struct Bedroom: View {
 
 struct ItemCell: View {
     
-    let furn: Furnitures
+    @State var furn: Furnitures
     
     var body: some View {
         
@@ -53,15 +53,21 @@ struct ItemCell: View {
             Rectangle()
                 .foregroundColor(.white)
                 .cornerRadius(5)
-                .shadow(color: Color.init("dddddd"), radius: 2, x: 0.8, y: 0.8)
-            
             HStack() {
                 VStack(alignment: .leading) {
-                    Image(furn.imageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 120)
-                        .cornerRadius(5)
+                    Button(action: {
+                        
+                        //furniture must be added to database for adding to bag
+                        
+                    }) {
+                        Image(furn.imageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 120)
+                            .cornerRadius(5)
+                    }
+                    .cornerRadius(20)
+                    
                     Text(furn.name)
                         .font(.headline)
                         .lineLimit(2)
@@ -80,14 +86,17 @@ struct ItemCell: View {
                             .bold()
                             .padding(.init(top: 0,leading: 0, bottom: 10,trailing: 0))
                         Spacer()
-                        Button(action: {}) {
+                        Button(action: {
+                            
+                            self.furn.isFavorite.toggle()
+                            
+                        }) {
                             Image(systemName: furn.isFavorite == true ? "heart.fill" : "heart")
                                 .foregroundColor(furn.isFavorite == true ? .red :.gray)
                                 .frame(width: 40, height: 40)
                                 .background(Color.white)
                         }
                         .cornerRadius(20)
-                        .shadow(color: Color.init("dddddd"), radius: 2, x: 0.8, y: 0.8)
                     }
                 }.padding(.init(top: 15, leading: 3, bottom: 5, trailing: 3 ))
                 Spacer()

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		97C99CC12A79A4A500270B48 /* Furnitures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C99CC02A79A4A500270B48 /* Furnitures.swift */; };
 		97C99CC42A79A64700270B48 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C99CC32A79A64700270B48 /* RatingView.swift */; };
+		97C99CC62A7A4C5000270B48 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C99CC52A7A4C5000270B48 /* Person.swift */; };
 		97D0A18E2A78E398005CE66E /* ecommerceappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D0A18D2A78E398005CE66E /* ecommerceappApp.swift */; };
 		97D0A1902A78E398005CE66E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D0A18F2A78E398005CE66E /* ContentView.swift */; };
 		97D0A1922A78E39B005CE66E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97D0A1912A78E39B005CE66E /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		97C99CC02A79A4A500270B48 /* Furnitures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Furnitures.swift; sourceTree = "<group>"; };
 		97C99CC32A79A64700270B48 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		97C99CC52A7A4C5000270B48 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		97D0A18A2A78E398005CE66E /* ecommerceapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ecommerceapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D0A18D2A78E398005CE66E /* ecommerceappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecommerceappApp.swift; sourceTree = "<group>"; };
 		97D0A18F2A78E398005CE66E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,10 +55,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		979F17962A7BDA6200DD85ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		97C99CBF2A79A49200270B48 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				97C99CC02A79A4A500270B48 /* Furnitures.swift */,
+				97C99CC52A7A4C5000270B48 /* Person.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -74,6 +84,7 @@
 			children = (
 				97D0A18C2A78E398005CE66E /* ecommerceapp */,
 				97D0A18B2A78E398005CE66E /* Products */,
+				979F17962A7BDA6200DD85ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,6 +208,7 @@
 				97D0A1862A78E398005CE66E /* Sources */,
 				97D0A1872A78E398005CE66E /* Frameworks */,
 				97D0A1882A78E398005CE66E /* Resources */,
+				979F179B2A7BDABF00DD85ED /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -234,7 +246,7 @@
 			);
 			mainGroup = 97D0A1812A78E398005CE66E;
 			packageReferences = (
-				97D0A1A62A78F04B005CE66E /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				979F179C2A7BDC1E00DD85ED /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 97D0A18B2A78E398005CE66E /* Products */;
 			projectDirPath = "";
@@ -259,6 +271,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		979F179B2A7BDABF00DD85ED /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		97D0A1862A78E398005CE66E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -268,6 +301,7 @@
 				97D0A1B32A791DC5005CE66E /* BasketScreen.swift in Sources */,
 				97D0A1B72A791E06005CE66E /* ProfileScreen.swift in Sources */,
 				97C99CC42A79A64700270B48 /* RatingView.swift in Sources */,
+				97C99CC62A7A4C5000270B48 /* Person.swift in Sources */,
 				97D0A1A52A78EB94005CE66E /* CategoryScreen.swift in Sources */,
 				97D0A1902A78E398005CE66E /* ContentView.swift in Sources */,
 				97C99CC12A79A4A500270B48 /* Furnitures.swift in Sources */,
@@ -476,12 +510,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		97D0A1A62A78F04B005CE66E /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+		979F179C2A7BDC1E00DD85ED /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.52.4;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

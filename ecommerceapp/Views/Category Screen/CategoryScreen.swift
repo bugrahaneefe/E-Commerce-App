@@ -27,13 +27,13 @@ struct CategoryScreen: View {
                 VStack(spacing: 10) {
                     
                     CategoryItemView(destination: Bedroom(), imageName: "bedroom")
-                    CategoryItemView(destination: CategoryScreen(), imageName: "livingroom")
-                    CategoryItemView(destination: CategoryScreen(), imageName: "dining")
+                    CategoryItemView(destination: Bedroom(), imageName: "livingroom")
+                    CategoryItemView(destination: Bedroom(), imageName: "dining")
                 }.padding()
                 
             })
             
-        }
+        }.navigationBarBackButtonHidden(true)
     }
     
     func NavigationBarEdit(title: String) -> some View{

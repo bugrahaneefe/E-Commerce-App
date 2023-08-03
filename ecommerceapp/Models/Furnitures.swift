@@ -13,17 +13,19 @@ struct Furnitures: Identifiable {
     let imageName: String
     let price: Int
     let rating: Int
-    let isFavorite: Bool
+    var isFavorite: Bool
+    var stepperValue: Int
+
 }
 
 extension Furnitures {
     
     static func all() -> [Furnitures] {
         return [
-            Furnitures(name: "Wooden Bedside Table",imageName: "woodtable",price: 2399, rating: 4, isFavorite: false),
-            Furnitures(name: "Wood Chair",imageName:"woodchair",price: 1500, rating: 5, isFavorite: true),
-            Furnitures(name: "Wood Mini-Table",imageName:"minitable",price: 500, rating: 3, isFavorite: false),
-            Furnitures(name: "TV Table",imageName: "tvtable",price: 4000, rating: 4, isFavorite: false),
+            Furnitures(name: "Wooden Bedside Table",imageName: "woodtable",price: 2399, rating: 4, isFavorite: false, stepperValue: 0),
+            Furnitures(name: "Wood Chair",imageName:"woodchair",price: 1500, rating: 5, isFavorite: true, stepperValue: 0),
+            Furnitures(name: "Wood Mini-Table",imageName:"minitable",price: 500, rating: 3, isFavorite: false, stepperValue: 0),
+            Furnitures(name: "TV Table",imageName: "tvtable",price: 4000, rating: 4, isFavorite: false, stepperValue: 0),
         ]
     }
 }
