@@ -16,9 +16,8 @@ struct Person: Identifiable {
 }
 
 extension Person {
-    
     static func all() -> Person {
         return
-            Person(name: "Buğrahan Efe",phone: "+90 555 756 2067",email: "befe19", birth: "01.01.2001")
+            Person(name: "Buğrahan Efe", phone: "+90 555 756 2067", email: "befe19", birth: "01.01.2001")
     }
 }

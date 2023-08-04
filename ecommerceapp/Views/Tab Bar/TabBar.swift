@@ -8,15 +8,9 @@
 import SwiftUI
 
 struct TabBar: View {
-    
     @State var selected = 0
-    
-    
-    
     var body: some View {
-        
         ZStack {
-            
             TabView(selection: $selected) {
                 CategoryScreen()
                     .tabItem {
@@ -36,24 +30,14 @@ struct TabBar: View {
                     }.tag(3)
             }
         }.accentColor(Color.init(UIColor(red: 254/255, green: 228/255, blue: 64/255, alpha: 1)))
-        .navigationBarTitle("", displayMode: .inline)
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
     }
-    
-    func refresh(){
-        self.selected = 0
-    }
-
 }
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
     }
-    
-    
 }
-
-
-
