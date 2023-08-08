@@ -8,69 +8,26 @@
 import SwiftUI
 
 struct ProfileScreen: View {
-    let person = Person.all()
-    @State private var nameInput: String = ""
-    @State private var phoneInput: String = ""
-    @State private var emailInput: String = ""
-    @State private var birthInput: String = ""
-
     var body: some View {
         VStack {
-            navigationBarEdit(title: "My Details")
-            Image("avatar")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            NavigationBarEditWSave(title: "detail".locally(), size: 20, height: 35)
+            ImageView(imagename: Constants.images[4])
                 .frame(width: 80, height: 80, alignment: .center)
                 .clipShape(Circle())
             VStack(alignment: .leading) {
-                Button(action: {
-                    // Change photo button action
-                }) {
-                    Text("Change Photo").foregroundColor(.black)
-                }
+                ButtonWText(text: "c.photo".locally(),
+                            backgroundColor: .white,
+                            cornerRadius: 0,
+                            fontName: Constants.fontNames[0],
+                            fontSize: 15)
             }.padding(.horizontal, 5)
             Spacer()
             ScrollView(.vertical, showsIndicators: false, content: {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("  Full Name :")
-                    TextField(person.name, text: $nameInput)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                    Text("  Phone :")
-                    TextField(person.phone, text: $phoneInput)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                    Text("  E-mail :")
-                    TextField(person.email, text: $emailInput)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                    Text("  Date of Birth :")
-                    TextField(person.birth, text: $birthInput)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
+                    ProfileItemView()
                 }.padding()
             })
         }.navigationBarBackButtonHidden(true)
-    }
-    
-    func navigationBarEdit(title: String) -> some View {
-        return HStack {
-            Spacer()
-            Button(action: {
-            }) {
-                Text("Save")
-            }
-            .frame(height: 30)
-            .foregroundColor(.black)
-        }
-        .padding(.horizontal, 15)
-        .frame(width: UIScreen.main.bounds.width, height: 35)
-        .overlay(
-            Text("My Details")
-                .font(.custom("Poppins-Medium", size: 20))
-                .foregroundColor(.black)
-                .padding(.horizontal, 10)
-            , alignment: .center)
     }
 }
 

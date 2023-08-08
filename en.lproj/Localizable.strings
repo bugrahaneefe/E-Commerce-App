@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  ecommerceapp
+
+  Created by Buğrahan Efe on 8.08.2023.
+  
+*/
+
+"detail" = "My Details";
+
+"basket" = "Basket";
+
+"c.photo" = "Change Photo";
+
+"empty.bag" = "You bag is empty";
+
+"empty.bag.start.shop" = "You do not have any item in your basket. Let's make you start shopping!";
+
+"str.shop" = "Start Shopping";
+
+"broom" = "Bedroom";
+
+"lroom" = "Living Room";
+
+"droom" = "Dining Room";
+
+"main.title" = "MOBO";
+
+"save" = "Save";
+
+"full.name" = "  Full Name :";
+
+"phone" = "  Phone :";
+
+"mail" = "  E-mail :";
+
+"birth.date" = "  Date of Birth :";
+
+"move.to.bag" = "Move to Bag";
+
+"total.amount" = "Total Amount";
+
+"total.dollar" = "Total: $";
+
+"fav" = "Favorites";

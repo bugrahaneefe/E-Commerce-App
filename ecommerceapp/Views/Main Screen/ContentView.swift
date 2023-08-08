@@ -12,9 +12,7 @@ struct ContentView: View {
         NavigationView {
             VStack(spacing: 0) {
                 NavigationLink(destination: TabBar(), label: {
-                    Image("mobomain")
-                        .aspectRatio(contentMode: .fit)
-                        .ignoresSafeArea()
+                    ImageMainView(imagename: Constants.images[0])
                 })
             }.padding()
         }
