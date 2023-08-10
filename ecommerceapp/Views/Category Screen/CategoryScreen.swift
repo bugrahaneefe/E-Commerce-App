@@ -17,11 +17,20 @@ struct CategoryScreen: View {
                         ScrollView(.vertical, showsIndicators: false, content: {
                             VStack(spacing: 10) {
                                 CategoryItemView(destination: getCategoryInScreen(categoryType: .bedroom),
-                                                 imageName: Constants.categoryImages[1])
+                                                 imageName: Constants
+                                    .CategoryImagesNames
+                                    .bedroom
+                                    .rawValue)
                                 CategoryItemView(destination: getCategoryInScreen(categoryType: .livingroom),
-                                                 imageName: Constants.categoryImages[2])
+                                                 imageName: Constants
+                                    .CategoryImagesNames
+                                    .livingroom
+                                    .rawValue)
                                 CategoryItemView(destination: getCategoryInScreen(categoryType: .dining),
-                                                 imageName: Constants.categoryImages[3])
+                                                 imageName: Constants
+                                    .CategoryImagesNames
+                                    .dining
+                                    .rawValue)
                             }.padding()
                         })
                     }.navigationBarBackButtonHidden(true)

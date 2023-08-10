@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NavigationBarEdit: View {
-    @Environment(\.frameWidthValue) var frameWidthValue
+    @Environment(\.screenFrame) var screenFrame
     let title: String
     let size: Double
     let height: Double
@@ -16,18 +16,17 @@ struct NavigationBarEdit: View {
         HStack {
             Text("")
         }
-        .frame(width: frameWidthValue, height: height)
+        .frame(width: screenFrame.width, height: screenFrame.height * 0.1)
         .overlay(
-            Text(title).ECPaddedText().poppinsMedium(size: size),
+            Text(title)
+                .paddedText
+                .poppinsMedium(size: size),
             alignment: .center)
-        .background(Color(UIColor(red: 254/255,
-                                  green: 228/255,
-                                  blue: 64/255,
-                                  alpha: 1)))
+        .background(Color(UIColor(named: "ecYellow") ?? .yellow))
     }
 }
 struct NavigationBarEditWSave: View {
-    @Environment(\.frameWidthValue) var frameWidthValue
+    @Environment(\.screenFrame) var screenFrame
     let title: String
     let size: Double
     let height: Double
@@ -37,13 +36,15 @@ struct NavigationBarEditWSave: View {
             ButtonWText(text: "save".locally(),
                         backgroundColor: .white,
                         cornerRadius: 0,
-                        fontName: Constants.fontNames[0],
+                        fontName: Constants.FontNames.poppinsMed.rawValue,
                         fontSize: 10)
                 .frame(height: 30)
         }
         .padding(.horizontal, 15)
-        .frame(width: frameWidthValue, height: height)
-        .overlay(Text(title).ECPaddedText().poppinsMedium(size: size),
+        .frame(width: screenFrame.width, height: screenFrame.height * 0.1)
+        .overlay(Text(title)
+            .paddedText
+            .poppinsMedium(size: size),
                  alignment: .center)
     }
 }

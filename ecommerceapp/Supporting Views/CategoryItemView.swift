@@ -14,7 +14,9 @@ struct CategoryItemView<Destination: View>: View {
         VStack {
             NavigationLink(destination: destination) {
                 Image(imageName)
-                    .ECFitImage()
+                    .fitImage
+                    .cornerRadiusRectangle(10)
+                    .frameCenter()
             }
         }
     }

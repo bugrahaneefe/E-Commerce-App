@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FavoriteScreen: View {
     var body: some View {
-        CategoryItemViewInFavorites(categoryTitle: Constants.categoryTitles[0])
+        CategoryItemViewInFavorites(categoryTitle: Constants.favorite)
     }
 }
 

@@ -6,59 +6,50 @@
   
 */
 
-/* No comment provided by engineer. */
+// MARK: - B
 "basket" = "Basket";
 
-/* No comment provided by engineer. */
 "birth.date" = "  Date of Birth :";
 
-/* No comment provided by engineer. */
 "broom" = "Bedroom";
 
-/* No comment provided by engineer. */
+// MARK: - C
 "c.photo" = "Change Photo";
 
-/* No comment provided by engineer. */
+// MARK: - D
 "detail" = "My Details";
 
-/* No comment provided by engineer. */
 "droom" = "Dining Room";
 
-/* No comment provided by engineer. */
+// MARK: - E
 "empty.bag" = "You bag is empty";
 
-/* No comment provided by engineer. */
 "empty.bag.start.shop" = "You do not have any item in your basket. Let's make you start shopping!";
 
-/* No comment provided by engineer. */
+// MARK: - F
 "fav" = "Favorites";
 
-/* No comment provided by engineer. */
 "full.name" = "  Full Name :";
 
-/* No comment provided by engineer. */
+// MARK: - L
 "lroom" = "Living Room";
 
-/* No comment provided by engineer. */
+// MARK: - M
 "mail" = "  E-mail :";
 
-/* No comment provided by engineer. */
 "main.title" = "MOBO";
 
-/* No comment provided by engineer. */
 "move.to.bag" = "Move to Bag";
 
-/* No comment provided by engineer. */
+// MARK: - P
 "phone" = "  Phone :";
 
-/* No comment provided by engineer. */
+// MARK: - S
 "str.shop" = "Start Shopping";
 
-/* No comment provided by engineer. */
 "save" = "Save";
 
-/* No comment provided by engineer. */
+// MARK: - T
 "total.amount" = "Total Amount";
 
-/* No comment provided by engineer. */
 "total.dollar" = "Total: $";

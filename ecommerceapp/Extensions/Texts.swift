@@ -9,32 +9,32 @@ import Foundation
 import SwiftUI
 
 extension Text {
-    func ECHeadlineText() -> some View {
+    var headlineText: some View {
         self.font(.headline)
             .lineLimit(2)
             .foregroundColor(Color.black)
     }
-    func ECHeadlineBoldText() -> some View {
+    var headlineBoldText: some View {
         self.font(.headline)
             .lineLimit(2)
             .foregroundColor(Color.black)
             .bold()
     }
-    func ECPaddedText() -> some View {
+    var paddedText: some View {
         self.padding(.horizontal, 10)
             .foregroundColor(.black)
     }
-    func ECCenteredText() -> some View {
+    var centeredText: some View {
         self.frame(alignment: .center)
             .bold()
             .foregroundColor(.black)
     }
-    func ECCenteredBoldText() -> some View {
+    var centeredBoldText: some View {
         self.foregroundColor(.black)
             .multilineTextAlignment(.center)
             .padding()
     }
-    func ECFootnoteText() -> some View {
+    var footnoteText: some View {
         self.font(.footnote)
             .foregroundColor(.gray)
     }

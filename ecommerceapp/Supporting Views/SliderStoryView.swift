@@ -12,12 +12,18 @@ struct SliderStoryView: View {
         VStack(alignment: .leading, spacing: 2) {
             ScrollView(.horizontal, showsIndicators: false, content: {
                 HStack(spacing: 5) {
-                    Image(Constants.storyImages[0])
-                        .ECFitImage(width: 88, height: 88)
-                    Image(Constants.storyImages[1])
-                        .ECFitImage(width: 88, height: 88)
-                    Image(Constants.storyImages[2])
-                        .ECFitImage(width: 88, height: 88)
+                    Image(Constants.StoryImagesName.story0.rawValue)
+                        .fitImage
+                        .frameCenter(width: 88, height: 88)
+                        .cornerRadiusRectangle(10)
+                    Image(Constants.StoryImagesName.story1.rawValue)
+                        .fitImage
+                        .frameCenter(width: 88, height: 88)
+                        .cornerRadiusRectangle(10)
+                    Image(Constants.StoryImagesName.story2.rawValue)
+                        .fitImage
+                        .frameCenter(width: 88, height: 88)
+                        .cornerRadiusRectangle(10)
                 }.padding()
             })
         }

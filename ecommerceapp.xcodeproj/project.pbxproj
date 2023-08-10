@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		970AEC892A85647C00B50998 /* CornerRadiusModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970AEC882A85647C00B50998 /* CornerRadiusModifier.swift */; };
+		970AEC8B2A8569BF00B50998 /* FrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970AEC8A2A8569BF00B50998 /* FrameModifier.swift */; };
 		979154DF2A84BBB000A1B056 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979154DE2A84BBB000A1B056 /* Images.swift */; };
 		979154E12A84BBD100A1B056 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979154E02A84BBD100A1B056 /* Strings.swift */; };
 		979154E42A84C29A00A1B056 /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979154E32A84C29A00A1B056 /* Texts.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		970AEC882A85647C00B50998 /* CornerRadiusModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusModifier.swift; sourceTree = "<group>"; };
+		970AEC8A2A8569BF00B50998 /* FrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameModifier.swift; sourceTree = "<group>"; };
 		979154DE2A84BBB000A1B056 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		979154E02A84BBD100A1B056 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		979154E32A84C29A00A1B056 /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				979F17BD2A7FC28700DD85ED /* FontModifier.swift */,
+				970AEC882A85647C00B50998 /* CornerRadiusModifier.swift */,
+				970AEC8A2A8569BF00B50998 /* FrameModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 				979F17C02A7FC9F300DD85ED /* CategoriesInDetail.swift in Sources */,
 				97D0A1A52A78EB94005CE66E /* CategoryScreen.swift in Sources */,
 				979F17B02A7FA8B300DD85ED /* Buttons.swift in Sources */,
+				970AEC8B2A8569BF00B50998 /* FrameModifier.swift in Sources */,
 				979F17B62A7FAC9300DD85ED /* ItemCell.swift in Sources */,
 				979F17B42A7FAB1100DD85ED /* ProfileItemView.swift in Sources */,
 				97D0A1902A78E398005CE66E /* ContentView.swift in Sources */,
@@ -392,6 +399,7 @@
 				97C99CC12A79A4A500270B48 /* Furnitures.swift in Sources */,
 				979154E62A84E4C700A1B056 /* Environments.swift in Sources */,
 				97D0A1BA2A791E1E005CE66E /* FavoriteScreen.swift in Sources */,
+				970AEC892A85647C00B50998 /* CornerRadiusModifier.swift in Sources */,
 				979F17AA2A7FA51D00DD85ED /* NavigationBarEdit.swift in Sources */,
 				979154E12A84BBD100A1B056 /* Strings.swift in Sources */,
 				97D0A18E2A78E398005CE66E /* ECommerceApp.swift in Sources */,

@@ -6,59 +6,50 @@
   
 */
 
-/* No comment provided by engineer. */
+// MARK: - B
 "basket" = "Sepet";
 
-/* No comment provided by engineer. */
 "birth.date" = "  Doğum Tarihi :";
 
-/* No comment provided by engineer. */
 "broom" = "Yatak Odası";
 
-/* No comment provided by engineer. */
+// MARK: - C
 "c.photo" = "Fotoğrafı Değiştir";
 
-/* No comment provided by engineer. */
+// MARK: - D
 "detail" = "Detaylı Görünüm";
 
-/* No comment provided by engineer. */
 "droom" = "Yemek Odası";
 
-/* No comment provided by engineer. */
+// MARK: - E
 "empty.bag" = "Sepet Boş";
 
-/* No comment provided by engineer. */
 "empty.bag.start.shop" = "Sepetiniz boş, hadi alışverişe başlayalım!";
 
-/* No comment provided by engineer. */
+// MARK: - F
 "fav" = "Favoriler";
 
-/* No comment provided by engineer. */
 "full.name" = "  İsim Soyisim :";
 
-/* No comment provided by engineer. */
+// MARK: - L
 "lroom" = "Oturma Odası";
 
-/* No comment provided by engineer. */
+// MARK: - M
 "mail" = "  E-mail :";
 
-/* No comment provided by engineer. */
 "main.title" = "MOBO";
 
-/* No comment provided by engineer. */
 "move.to.bag" = "Sepete Taşı";
 
-/* No comment provided by engineer. */
+// MARK: - P
 "phone" = "  Telefon :";
 
-/* No comment provided by engineer. */
+// MARK: - S
 "str.shop" = "Alışverişe Başla!";
 
-/* No comment provided by engineer. */
 "save" = "Kaydet";
 
-/* No comment provided by engineer. */
+// MARK: - T
 "total.amount" = "Toplam Tutar";
 
-/* No comment provided by engineer. */
 "total.dollar" = "Toplam: $";

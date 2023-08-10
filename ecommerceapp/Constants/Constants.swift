@@ -9,36 +9,34 @@ import Foundation
 import SwiftUI
 
 struct Constants {
-    static let fontNames: [String] = [
-        "Poppins-Medium",
-        "Poppins-MediumItalic"
-    ]
+    enum StoryImagesName: String {
+        case story0
+        case story1
+        case story2
+    }
+    enum FontNames: String {
+        case poppinsMed = "Poppins-Medium"
+        case poppinsMedItalic = "Poppins-MediumItalic"
+    }
+    enum CategoryImagesNames: String {
+        case mobomain
+        case bedroom
+        case livingroom
+        case dining
+    }
+    enum EmojiImagesNames: String {
+        case avatar
+        case surprised
+    }
     static let profileRowInfo: [String] = [
         "full.name".locally(),
         "phone".locally(),
         "mail".locally(),
         "birth.date".locally()
     ]
-    static let storyImages: [String] = [
-        "story0",
-        "story1",
-        "story2"
-    ]
-    static let categoryImages: [String] = [
-        "mobomain",
-        "bedroom",
-        "livingroom",
-        "dining"
-    ]
-    static let emojiImages: [String] = [
-        "avatar",
-        "surprised"
-    ]
-    static let categoryTitles: [String] = [
-        "fav".locally()
-    ]
     static let filter = "filter"
     static let sort = "sort"
+    static let favorite = "fav".locally()
     static let moveToBag = "move.to.bag".locally()
     static let basket = "basket".locally()
     static let totalAmount = "total.amount".locally()

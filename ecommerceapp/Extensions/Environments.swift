@@ -8,13 +8,12 @@
 import Foundation
 import SwiftUI
 
-struct FrameWidth: EnvironmentKey {
-    static var defaultValue: CGFloat = UIScreen.main.bounds.width
+struct ScreenFrameKey: EnvironmentKey {
+    static var defaultValue: CGRect { UIScreen.main.bounds }
 }
 
 extension EnvironmentValues {
-    var frameWidthValue: CGFloat {
-        get { self[FrameWidth.self] }
-        set { self[FrameWidth.self] = newValue }
+    var screenFrame: CGRect {
+        self[ScreenFrameKey.self]
     }
 }

@@ -56,8 +56,8 @@ struct FavoriteButton: View {
         Button(action: {
             self.furn.isFavorite.toggle()
         }) {
-            Image(systemName: furn.isFavorite == true ? "heart.fill" : "heart")
-                .foregroundColor(furn.isFavorite == true ? .red :.gray)
+            Image(systemName: furn.isFavorite ? "heart.fill" : "heart")
+                .foregroundColor(furn.isFavorite ? .red :.gray)
                 .frame(width: 40, height: 40)
                 .background(Color.white)
         }

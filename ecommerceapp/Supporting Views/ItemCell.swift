@@ -19,17 +19,22 @@ struct ItemCell: View {
                     Button(action: {
                         // furniture must be added to database for adding to bag
                     }) {
-                        Image(furn.imageName).ECResizedImage(cornerRadius: 5)
+                        Image(furn.imageName)
+                            .resizedImage
+                            .cornerRadiusRectangle(5)
+                            .frameCenter(width: 90, height: 120)
                     }
                     .cornerRadius(20)
                     Text(furn.name)
                     Spacer()
                     HStack {
                         RatingView(rating: .constant(furn.rating))
-                        Text("(\(furn.rating))").ECFootnoteText()
+                        Text("(\(furn.rating))")
+                            .footnoteText
                     }
                     HStack {
-                        Text("\(furn.price)").ECHeadlineBoldText()
+                        Text("\(furn.price)")
+                            .headlineBoldText
                         Spacer()
                         FavoriteButton(furn: furn)
                     }
