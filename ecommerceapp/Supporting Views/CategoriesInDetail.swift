@@ -51,13 +51,11 @@ struct CategoryItemViewInBasket: View {
     let arrFurn = Furnitures.all()
     @State private var quantities: [Int]
     var totalPrice: Double {
-        var total: Double = 0
-        if arrFurn.count != 0 {
-            for (index, furn) in arrFurn.enumerated() {
-                total += Double(quantities[index]) * Double(furn.price)
+        return zip(arrFurn, quantities)
+            .reduce(0.0) { total, tuple in
+                let (furn, quantity) = tuple
+                return total + Double(quantity) * Double(furn.price)
             }
-        }
-        return total
     }
     init() {
         _quantities = State(initialValue: Array(repeating: 1, count: arrFurn.count))

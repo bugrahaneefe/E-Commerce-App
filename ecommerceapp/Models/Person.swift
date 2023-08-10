@@ -12,12 +12,12 @@ struct Person: Identifiable {
     var name: String
     var phone: String
     var email: String
-    var birth: String
+    var birthDate: String
 }
 
 extension Person {
     static func all() -> Person {
         return
-            Person(name: "Buğrahan Efe", phone: "+90 555 756 2067", email: "befe19", birth: "01.01.2001")
+            Person(name: "Buğrahan Efe", phone: "+90 555 756 2067", email: "befe19", birthDate: "01.01.2001")
     }
 }

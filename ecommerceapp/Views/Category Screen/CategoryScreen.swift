@@ -16,12 +16,12 @@ struct CategoryScreen: View {
                         SliderStoryView()
                         ScrollView(.vertical, showsIndicators: false, content: {
                             VStack(spacing: 10) {
-                                CategoryItemView(destination: getCategoryInScreen(cat: .bedroom),
-                                                 imageName: Constants.images[1])
-                                CategoryItemView(destination: getCategoryInScreen(cat: .livingroom),
-                                                 imageName: Constants.images[2])
-                                CategoryItemView(destination: getCategoryInScreen(cat: .dining),
-                                                 imageName: Constants.images[3])
+                                CategoryItemView(destination: getCategoryInScreen(categoryType: .bedroom),
+                                                 imageName: Constants.categoryImages[1])
+                                CategoryItemView(destination: getCategoryInScreen(categoryType: .livingroom),
+                                                 imageName: Constants.categoryImages[2])
+                                CategoryItemView(destination: getCategoryInScreen(categoryType: .dining),
+                                                 imageName: Constants.categoryImages[3])
                             }.padding()
                         })
                     }.navigationBarBackButtonHidden(true)

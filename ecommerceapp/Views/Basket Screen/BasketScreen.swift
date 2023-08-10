@@ -14,11 +14,9 @@ struct BasketScreen: View {
             VStack {
                 NavigationBarEdit(title: "basket".locally(), size: 20, height: 35)
                 Spacer()
-                ImageCenterView(imagename: Constants.images[5])
-                TextViewBold(textname: "empty.bag".locally(), size: 16)
-                TextViewCentered(
-                    textname: "empty.bag.start.shop".locally(),
-                                 size: 10)
+                Image(Constants.emojiImages[1]).ECCenterImage()
+                Text("empty.bag".locally()).ECCenteredBoldText().poppinsMedium(size: 16)
+                Text("empty.bag.start.shop".locally()).poppinsMedium(size: 10)
                 Spacer()
                 ButtonWText(text: "str.shop".locally(),
                             backgroundColor: .yellow,
@@ -33,11 +31,10 @@ struct BasketScreen: View {
 }
 
 func checkArrayEmpty(array: [Furnitures]) -> Bool {
-    if array.count == 0 {
+    if array.isEmpty {
         return true
-    } else {
-        return false
     }
+    return false
 }
 
 struct BasketScreen_Previews: PreviewProvider {

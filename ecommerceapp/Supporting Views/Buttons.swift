@@ -13,7 +13,7 @@ struct ButtonSystemImage: View {
         Button(action: {
             // button action
         }) {
-            ImageSystemView(imagename: sysname)
+            Image(systemName: sysname)
                 .foregroundColor(.gray)
                 .padding(.top, 5)
         }
@@ -56,7 +56,7 @@ struct FavoriteButton: View {
         Button(action: {
             self.furn.isFavorite.toggle()
         }) {
-            ImageSystemView(imagename: furn.isFavorite == true ? "heart.fill" : "heart")
+            Image(systemName: furn.isFavorite == true ? "heart.fill" : "heart")
                 .foregroundColor(furn.isFavorite == true ? .red :.gray)
                 .frame(width: 40, height: 40)
                 .background(Color.white)
@@ -72,7 +72,7 @@ struct DismissButton: View {
             presentationMode.wrappedValue.dismiss() // Go back to the previous page
         }) {
             HStack {
-                ImageSystemView(imagename: "arrow.left")
+                Image(systemName: "arrow.left")
             }
         }
     }

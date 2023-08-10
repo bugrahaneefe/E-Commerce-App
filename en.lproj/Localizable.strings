@@ -6,40 +6,59 @@
   
 */
 
-"detail" = "My Details";
-
+/* No comment provided by engineer. */
 "basket" = "Basket";
 
-"c.photo" = "Change Photo";
-
-"empty.bag" = "You bag is empty";
-
-"empty.bag.start.shop" = "You do not have any item in your basket. Let's make you start shopping!";
-
-"str.shop" = "Start Shopping";
-
-"broom" = "Bedroom";
-
-"lroom" = "Living Room";
-
-"droom" = "Dining Room";
-
-"main.title" = "MOBO";
-
-"save" = "Save";
-
-"full.name" = "  Full Name :";
-
-"phone" = "  Phone :";
-
-"mail" = "  E-mail :";
-
+/* No comment provided by engineer. */
 "birth.date" = "  Date of Birth :";
 
+/* No comment provided by engineer. */
+"broom" = "Bedroom";
+
+/* No comment provided by engineer. */
+"c.photo" = "Change Photo";
+
+/* No comment provided by engineer. */
+"detail" = "My Details";
+
+/* No comment provided by engineer. */
+"droom" = "Dining Room";
+
+/* No comment provided by engineer. */
+"empty.bag" = "You bag is empty";
+
+/* No comment provided by engineer. */
+"empty.bag.start.shop" = "You do not have any item in your basket. Let's make you start shopping!";
+
+/* No comment provided by engineer. */
+"fav" = "Favorites";
+
+/* No comment provided by engineer. */
+"full.name" = "  Full Name :";
+
+/* No comment provided by engineer. */
+"lroom" = "Living Room";
+
+/* No comment provided by engineer. */
+"mail" = "  E-mail :";
+
+/* No comment provided by engineer. */
+"main.title" = "MOBO";
+
+/* No comment provided by engineer. */
 "move.to.bag" = "Move to Bag";
 
+/* No comment provided by engineer. */
+"phone" = "  Phone :";
+
+/* No comment provided by engineer. */
+"str.shop" = "Start Shopping";
+
+/* No comment provided by engineer. */
+"save" = "Save";
+
+/* No comment provided by engineer. */
 "total.amount" = "Total Amount";
 
+/* No comment provided by engineer. */
 "total.dollar" = "Total: $";
-
-"fav" = "Favorites";

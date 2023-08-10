@@ -47,7 +47,7 @@ extension Furnitures {
                        price: 4000,
                        rating: 4,
                        isFavorite: false,
-                       category: "living",
+                       category: "livingroom",
                        stepperValue: 0)
         ]
     }

@@ -13,12 +13,12 @@ enum CategoryInScreen {
     case dining
 }
 
-func getCategoryInScreen(cat: CategoryInScreen) -> some View {
-    switch cat {
+func getCategoryInScreen(categoryType: CategoryInScreen) -> some View {
+    switch categoryType {
     case .bedroom:
         return VStack {
             SortFilterView()
-            CategoryItemViewInCategories(categoryTitle: Constants.categoryTitles[0])
+            CategoryItemViewInCategories(categoryTitle: Constants.categoryImages[1])
         }.navigationTitle("broom".locally())
             .navigationBarBackButtonHidden(true)
             .toolbar {
@@ -29,7 +29,7 @@ func getCategoryInScreen(cat: CategoryInScreen) -> some View {
     case .livingroom:
         return VStack {
             SortFilterView()
-            CategoryItemViewInCategories(categoryTitle: Constants.categoryTitles[1])
+            CategoryItemViewInCategories(categoryTitle: Constants.categoryImages[2])
         }.navigationTitle("lroom".locally())
             .navigationBarBackButtonHidden(true)
             .toolbar {
@@ -40,7 +40,7 @@ func getCategoryInScreen(cat: CategoryInScreen) -> some View {
     case .dining:
         return VStack {
             SortFilterView()
-            CategoryItemViewInCategories(categoryTitle: Constants.categoryTitles[2])
+            CategoryItemViewInCategories(categoryTitle: Constants.categoryImages[3])
         }.navigationTitle("droom".locally())
             .navigationBarBackButtonHidden(true)
             .toolbar {

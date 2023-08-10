@@ -11,7 +11,7 @@ struct ProfileScreen: View {
     var body: some View {
         VStack {
             NavigationBarEditWSave(title: "detail".locally(), size: 20, height: 35)
-            ImageView(imagename: Constants.images[4])
+            Image(Constants.emojiImages[0]).ECResizedImage(cornerRadius: 1)
                 .frame(width: 80, height: 80, alignment: .center)
                 .clipShape(Circle())
             VStack(alignment: .leading) {

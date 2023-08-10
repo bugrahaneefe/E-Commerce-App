@@ -13,7 +13,8 @@ struct CategoryItemView<Destination: View>: View {
     var body: some View {
         VStack {
             NavigationLink(destination: destination) {
-                ImageCategoryView(imagename: imageName)
+                Image(imageName)
+                    .ECFitImage()
             }
         }
     }

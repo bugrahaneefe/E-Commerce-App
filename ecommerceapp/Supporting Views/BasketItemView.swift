@@ -13,15 +13,14 @@ struct BasketItemView: View {
     var body: some View {
         ZStack {
             HStack(alignment: .top) {
-                ImageView(imagename: furn.imageName)
+                Image(furn.imageName).ECResizedImage(cornerRadius: 1)
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
-                        TextViewName(textname: furn.name)
-                            .poppinsMedium(size: 17)
+                        Text(furn.name).poppinsMedium(size: 17)
                         Spacer()
                         ButtonSystemImage(sysname: "trash")
                     }
-                    TextViewHeadline(textname: "\(furn.price)")
+                    Text("\(furn.price)").ECHeadlineBoldText()
                         .poppinsMedium(size: 14)
                         .padding(.top, -5)
                     Spacer()

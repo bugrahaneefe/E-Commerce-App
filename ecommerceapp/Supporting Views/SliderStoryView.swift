@@ -12,12 +12,12 @@ struct SliderStoryView: View {
         VStack(alignment: .leading, spacing: 2) {
             ScrollView(.horizontal, showsIndicators: false, content: {
                 HStack(spacing: 5) {
-                    ImageCategoryView(imagename: Constants.storyNames[0])
-                        .frame(width: 88, height: 88)
-                    ImageCategoryView(imagename: Constants.storyNames[1])
-                        .frame(width: 88, height: 88)
-                    ImageCategoryView(imagename: Constants.storyNames[2])
-                        .frame(width: 88, height: 88)
+                    Image(Constants.storyImages[0])
+                        .ECFitImage(width: 88, height: 88)
+                    Image(Constants.storyImages[1])
+                        .ECFitImage(width: 88, height: 88)
+                    Image(Constants.storyImages[2])
+                        .ECFitImage(width: 88, height: 88)
                 }.padding()
             })
         }

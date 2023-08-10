@@ -6,40 +6,59 @@
   
 */
 
-"detail" = "Detaylı Görünüm";
-
+/* No comment provided by engineer. */
 "basket" = "Sepet";
 
-"c.photo" = "Fotoğrafı Değiştir";
-
-"empty.bag" = "Sepet Boş";
-
-"empty.bag.start.shop" = "Sepetiniz boş, hadi alışverişe başlayalım!";
-
-"str.shop" = "Alışverişe Başla!";
-
-"broom" = "Yatak Odası";
-
-"lroom" = "Oturma Odası";
-
-"droom" = "Yemek Odası";
-
-"main.title" = "MOBO";
-
-"save" = "Kaydet";
-
-"full.name" = "  İsim Soyisim :";
-
-"phone" = "  Telefon :";
-
-"mail" = "  E-mail :";
-
+/* No comment provided by engineer. */
 "birth.date" = "  Doğum Tarihi :";
 
+/* No comment provided by engineer. */
+"broom" = "Yatak Odası";
+
+/* No comment provided by engineer. */
+"c.photo" = "Fotoğrafı Değiştir";
+
+/* No comment provided by engineer. */
+"detail" = "Detaylı Görünüm";
+
+/* No comment provided by engineer. */
+"droom" = "Yemek Odası";
+
+/* No comment provided by engineer. */
+"empty.bag" = "Sepet Boş";
+
+/* No comment provided by engineer. */
+"empty.bag.start.shop" = "Sepetiniz boş, hadi alışverişe başlayalım!";
+
+/* No comment provided by engineer. */
+"fav" = "Favoriler";
+
+/* No comment provided by engineer. */
+"full.name" = "  İsim Soyisim :";
+
+/* No comment provided by engineer. */
+"lroom" = "Oturma Odası";
+
+/* No comment provided by engineer. */
+"mail" = "  E-mail :";
+
+/* No comment provided by engineer. */
+"main.title" = "MOBO";
+
+/* No comment provided by engineer. */
 "move.to.bag" = "Sepete Taşı";
 
+/* No comment provided by engineer. */
+"phone" = "  Telefon :";
+
+/* No comment provided by engineer. */
+"str.shop" = "Alışverişe Başla!";
+
+/* No comment provided by engineer. */
+"save" = "Kaydet";
+
+/* No comment provided by engineer. */
 "total.amount" = "Toplam Tutar";
 
+/* No comment provided by engineer. */
 "total.dollar" = "Toplam: $";
-
-"fav" = "Favoriler";

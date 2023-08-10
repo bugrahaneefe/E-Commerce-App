@@ -6,35 +6,35 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct Constants {   
-    static let storyNames: [String] = [
-        "story0",
-        "story1",
-        "story2"
-    ]
+struct Constants {
     static let fontNames: [String] = [
         "Poppins-Medium",
         "Poppins-MediumItalic"
     ]
-    static let personRowNames: [String] = [
+    static let profileRowInfo: [String] = [
         "full.name".locally(),
         "phone".locally(),
         "mail".locally(),
         "birth.date".locally()
     ]
-    static let images: [String] = [
+    static let storyImages: [String] = [
+        "story0",
+        "story1",
+        "story2"
+    ]
+    static let categoryImages: [String] = [
         "mobomain",
         "bedroom",
         "livingroom",
-        "dining",
+        "dining"
+    ]
+    static let emojiImages: [String] = [
         "avatar",
         "surprised"
     ]
     static let categoryTitles: [String] = [
-        "bedroom",
-        "living",
-        "dining",
         "fav".locally()
     ]
     static let filter = "filter"

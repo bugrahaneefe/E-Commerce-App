@@ -14,20 +14,24 @@ struct ProfileItemView: View {
     @State private var emailInput: String = ""
     @State private var birthInput: String = ""
     var body: some View {
-        TextViewHeadlinePp(textname: Constants.personRowNames[0])
+        // Full Name Textfield
+        Text(Constants.profileRowInfo[0]).ECHeadlineBoldText()
         TextField(person.name, text: $nameInput)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
-        TextViewHeadlinePp(textname: Constants.personRowNames[1])
+        // Phone Textfield
+        Text(Constants.profileRowInfo[1]).ECHeadlineBoldText()
         TextField(person.phone, text: $phoneInput)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
-        TextViewHeadlinePp(textname: Constants.personRowNames[2])
+        // Email Textfield
+        Text(Constants.profileRowInfo[2]).ECHeadlineBoldText()
         TextField(person.email, text: $emailInput)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
-        TextViewHeadlinePp(textname: Constants.personRowNames[3])
-        TextField(person.birth, text: $birthInput)
+        // BirthDate Textfield
+        Text(Constants.profileRowInfo[3]).ECHeadlineBoldText()
+        TextField(person.birthDate, text: $birthInput)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
     }

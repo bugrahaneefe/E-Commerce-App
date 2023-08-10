@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct NavigationBarEdit: View {
-    var title: String
-    var size: Double
-    var height: Double
+    @Environment(\.frameWidthValue) var frameWidthValue
+    let title: String
+    let size: Double
+    let height: Double
     var body: some View {
         HStack {
             Text("")
         }
-        .frame(width: UIScreen.main.bounds.width, height: height)
+        .frame(width: frameWidthValue, height: height)
         .overlay(
-            TextViewTitle(textname: title, size: size)
-            , alignment: .center)
+            Text(title).ECPaddedText().poppinsMedium(size: size),
+            alignment: .center)
         .background(Color(UIColor(red: 254/255,
                                   green: 228/255,
                                   blue: 64/255,
@@ -26,9 +27,10 @@ struct NavigationBarEdit: View {
     }
 }
 struct NavigationBarEditWSave: View {
-    var title: String
-    var size: Double
-    var height: Double
+    @Environment(\.frameWidthValue) var frameWidthValue
+    let title: String
+    let size: Double
+    let height: Double
     var body: some View {
         HStack {
             Spacer()
@@ -40,9 +42,8 @@ struct NavigationBarEditWSave: View {
                 .frame(height: 30)
         }
         .padding(.horizontal, 15)
-        .frame(width: UIScreen.main.bounds.width, height: height)
-        .overlay(
-            TextViewTitle(textname: title, size: size)
-            , alignment: .center)
+        .frame(width: frameWidthValue, height: height)
+        .overlay(Text(title).ECPaddedText().poppinsMedium(size: size),
+                 alignment: .center)
     }
 }
