@@ -12,12 +12,12 @@ extension Text {
     var headlineText: some View {
         self.font(.headline)
             .lineLimit(2)
-            .foregroundColor(Color.black)
+            .foregroundColor(.black)
     }
     var headlineBoldText: some View {
         self.font(.headline)
             .lineLimit(2)
-            .foregroundColor(Color.black)
+            .foregroundColor(.black)
             .bold()
     }
     var paddedText: some View {

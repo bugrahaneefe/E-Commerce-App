@@ -17,26 +17,18 @@ struct ProfileItemView: View {
         // Full Name Textfield
         Text(Constants.profileRowInfo[0])
             .headlineBoldText
-        TextField(person.name, text: $nameInput)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding()
+        TextField(person.name, text: $nameInput).profileTextfieldEdit
         // Phone Textfield
         Text(Constants.profileRowInfo[1])
             .headlineBoldText
-        TextField(person.phone, text: $phoneInput)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding()
+        TextField(person.phone, text: $phoneInput).profileTextfieldEdit
         // Email Textfield
         Text(Constants.profileRowInfo[2])
             .headlineBoldText
-        TextField(person.email, text: $emailInput)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding()
+        TextField(person.email, text: $emailInput).profileTextfieldEdit
         // BirthDate Textfield
         Text(Constants.profileRowInfo[3])
             .headlineBoldText
-        TextField(person.birthDate, text: $birthInput)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding()
+        TextField(person.birthDate, text: $birthInput).profileTextfieldEdit
     }
 }

@@ -12,10 +12,7 @@ struct ContentView: View {
         NavigationView {
             VStack(spacing: 0) {
                 NavigationLink(destination: TabBar(), label: {
-                    Image(Constants
-                        .CategoryImagesNames
-                        .mobomain
-                        .rawValue)
+                    Image(Constants.CategoryImagesNames.mobomain.rawValue)
                     .fillImage
                 })
             }.padding()

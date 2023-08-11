@@ -13,7 +13,7 @@ struct FrameModifier: ViewModifier {
     var height: CGFloat?
     var alignment: Alignment
     func body(content: Content) -> some View {
-        if let width = width, let height = height {
+        if let width, let height {
             return AnyView(content.frame(width: width, height: height, alignment: alignment))
         } else {
             return AnyView(content)

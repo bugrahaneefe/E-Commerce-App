@@ -29,7 +29,7 @@ struct TabBar: View {
                         Image(systemName: "person.fill")
                     }.tag(3)
             }
-        }.accentColor(Color.init(UIColor(red: 254/255, green: 228/255, blue: 64/255, alpha: 1)))
+        }.accentColor(Color("ecYellow"))
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)

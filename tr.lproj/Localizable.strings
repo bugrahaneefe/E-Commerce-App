@@ -8,9 +8,7 @@
 
 // MARK: - B
 "basket" = "Sepet";
-
 "birth.date" = "  Doğum Tarihi :";
-
 "broom" = "Yatak Odası";
 
 // MARK: - C
@@ -18,17 +16,14 @@
 
 // MARK: - D
 "detail" = "Detaylı Görünüm";
-
 "droom" = "Yemek Odası";
 
 // MARK: - E
 "empty.bag" = "Sepet Boş";
-
 "empty.bag.start.shop" = "Sepetiniz boş, hadi alışverişe başlayalım!";
 
 // MARK: - F
 "fav" = "Favoriler";
-
 "full.name" = "  İsim Soyisim :";
 
 // MARK: - L
@@ -36,9 +31,7 @@
 
 // MARK: - M
 "mail" = "  E-mail :";
-
 "main.title" = "MOBO";
-
 "move.to.bag" = "Sepete Taşı";
 
 // MARK: - P
@@ -46,10 +39,8 @@
 
 // MARK: - S
 "str.shop" = "Alışverişe Başla!";
-
 "save" = "Kaydet";
 
 // MARK: - T
 "total.amount" = "Toplam Tutar";
-
 "total.dollar" = "Toplam: $";

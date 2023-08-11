@@ -35,7 +35,6 @@ struct ButtonWText: View {
     var text: String
     var backgroundColor: Color
     var cornerRadius: Double
-    var fontName: String
     var fontSize: Double
     var body: some View {
         Button(action: {
@@ -45,7 +44,7 @@ struct ButtonWText: View {
                 .foregroundColor(.black)
                 .background(backgroundColor)
                 .cornerRadius(cornerRadius)
-                .font(.custom(fontName, size: fontSize))
+                .font(.custom(Constants.FontNames.poppinsMed.rawValue, size: fontSize))
         }
     }
 }
@@ -57,7 +56,7 @@ struct FavoriteButton: View {
             self.furn.isFavorite.toggle()
         }) {
             Image(systemName: furn.isFavorite ? "heart.fill" : "heart")
-                .foregroundColor(furn.isFavorite ? .red :.gray)
+                .foregroundColor(furn.isFavorite ? .red : .gray)
                 .frame(width: 40, height: 40)
                 .background(Color.white)
         }

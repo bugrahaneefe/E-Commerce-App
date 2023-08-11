@@ -13,7 +13,8 @@ struct BasketItemView: View {
     var body: some View {
         ZStack {
             HStack(alignment: .top) {
-                Image(furn.imageName).resizedImage
+                Image(furn.imageName)
+                    .resizedImage
                     .cornerRadiusRectangle(5)
                     .frameCenter(width: 90, height: 120)
                 VStack(alignment: .leading) {

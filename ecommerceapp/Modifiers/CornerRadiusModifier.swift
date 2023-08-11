@@ -11,8 +11,7 @@ import SwiftUI
 struct CornerRadiusModifier: ViewModifier {
     var cornerRadius: CGFloat
     func body(content: Content) -> some View {
-        content
-            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+        content.clipShape(RoundedRectangle(cornerRadius: cornerRadius))
     }
 }
 

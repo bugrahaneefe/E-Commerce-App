@@ -14,19 +14,18 @@ struct BasketScreen: View {
             VStack {
                 NavigationBarEdit(title: "basket".locally(), size: 20, height: 35)
                 Spacer()
-                Image(Constants
-                    .EmojiImagesNames
-                    .surprised
-                    .rawValue).centerImage.frameCenter(width: 135, height: 180)
+                Image(Constants.EmojiImagesNames.surprised.rawValue)
+                    .centerImage
+                    .frameCenter(width: 135, height: 180)
                 Text("empty.bag".locally())
                     .headlineBoldText
                     .poppinsMedium(size: 16)
-                Text("empty.bag.start.shop".locally()).poppinsMedium(size: 10)
+                Text("empty.bag.start.shop".locally())
+                    .poppinsMedium(size: 10)
                 Spacer()
                 ButtonWText(text: "str.shop".locally(),
                             backgroundColor: .yellow,
                             cornerRadius: 10,
-                            fontName: Constants.FontNames.poppinsMedItalic.rawValue,
                             fontSize: 20)
             }
         } else {

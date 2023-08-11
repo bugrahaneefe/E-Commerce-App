@@ -10,21 +10,20 @@ import SwiftUI
 
 extension Image {
     var fillImage: some View {
-            self.aspectRatio(contentMode: .fill).ignoresSafeArea()
-        }
+        self.aspectRatio(contentMode: .fill)
+    }
     var centerImage: some View {
         self.aspectRatio(contentMode: .fill)
-            .ignoresSafeArea()
             .padding()
+            .frame(alignment: .center)
     }
     var resizedImage: some View {
         self.resizable()
             .aspectRatio(contentMode: .fill)
-            .ignoresSafeArea()
             .padding()
     }
     var fitImage: some View {
-            self.resizable()
-                .aspectRatio(contentMode: .fit)
+        self.resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }

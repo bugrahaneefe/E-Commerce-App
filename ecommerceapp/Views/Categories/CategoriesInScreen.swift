@@ -18,10 +18,7 @@ func getCategoryInScreen(categoryType: CategoryInScreen) -> some View {
     case .bedroom:
         return VStack {
             SortFilterView()
-            CategoryItemViewInCategories(categoryTitle: Constants
-                .CategoryImagesNames
-                .bedroom
-                .rawValue)
+            CategoryItemViewInCategories(categoryTitle: Constants.CategoryImagesNames.bedroom.rawValue)
         }.navigationTitle("broom".locally())
             .navigationBarBackButtonHidden(true)
             .toolbar {
@@ -32,10 +29,7 @@ func getCategoryInScreen(categoryType: CategoryInScreen) -> some View {
     case .livingroom:
         return VStack {
             SortFilterView()
-            CategoryItemViewInCategories(categoryTitle: Constants
-                .CategoryImagesNames
-                .livingroom
-                .rawValue)
+            CategoryItemViewInCategories(categoryTitle: Constants.CategoryImagesNames.livingroom.rawValue)
         }.navigationTitle("lroom".locally())
             .navigationBarBackButtonHidden(true)
             .toolbar {
@@ -46,10 +40,7 @@ func getCategoryInScreen(categoryType: CategoryInScreen) -> some View {
     case .dining:
         return VStack {
             SortFilterView()
-            CategoryItemViewInCategories(categoryTitle: Constants
-                .CategoryImagesNames
-                .dining
-                .rawValue)
+            CategoryItemViewInCategories(categoryTitle: Constants.CategoryImagesNames.dining.rawValue)
         }.navigationTitle("droom".locally())
             .navigationBarBackButtonHidden(true)
             .toolbar {

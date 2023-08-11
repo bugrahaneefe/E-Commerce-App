@@ -20,7 +20,6 @@ struct ProfileScreen: View {
                 ButtonWText(text: "c.photo".locally(),
                             backgroundColor: .white,
                             cornerRadius: 0,
-                            fontName: Constants.FontNames.poppinsMed.rawValue,
                             fontSize: 15)
             }.padding(.horizontal, 5)
             Spacer()

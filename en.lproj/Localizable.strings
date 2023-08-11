@@ -8,9 +8,7 @@
 
 // MARK: - B
 "basket" = "Basket";
-
 "birth.date" = "  Date of Birth :";
-
 "broom" = "Bedroom";
 
 // MARK: - C
@@ -18,17 +16,14 @@
 
 // MARK: - D
 "detail" = "My Details";
-
 "droom" = "Dining Room";
 
 // MARK: - E
 "empty.bag" = "You bag is empty";
-
 "empty.bag.start.shop" = "You do not have any item in your basket. Let's make you start shopping!";
 
 // MARK: - F
 "fav" = "Favorites";
-
 "full.name" = "  Full Name :";
 
 // MARK: - L
@@ -36,9 +31,7 @@
 
 // MARK: - M
 "mail" = "  E-mail :";
-
 "main.title" = "MOBO";
-
 "move.to.bag" = "Move to Bag";
 
 // MARK: - P
@@ -46,10 +39,8 @@
 
 // MARK: - S
 "str.shop" = "Start Shopping";
-
 "save" = "Save";
 
 // MARK: - T
 "total.amount" = "Total Amount";
-
 "total.dollar" = "Total: $";

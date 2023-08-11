@@ -22,7 +22,7 @@ struct NavigationBarEdit: View {
                 .paddedText
                 .poppinsMedium(size: size),
             alignment: .center)
-        .background(Color(UIColor(named: "ecYellow") ?? .yellow))
+        .background(Color("ecYellow"))
     }
 }
 struct NavigationBarEditWSave: View {
@@ -36,7 +36,6 @@ struct NavigationBarEditWSave: View {
             ButtonWText(text: "save".locally(),
                         backgroundColor: .white,
                         cornerRadius: 0,
-                        fontName: Constants.FontNames.poppinsMed.rawValue,
                         fontSize: 10)
                 .frame(height: 30)
         }

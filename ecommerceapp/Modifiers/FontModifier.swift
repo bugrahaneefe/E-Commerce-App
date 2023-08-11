@@ -17,7 +17,12 @@ struct FontModifier: ViewModifier {
 
 extension View {
     func poppinsMedium(size: CGFloat) -> some View {
-        ModifiedContent(content: self, modifier: FontModifier(size: size,
-                                                              name: Constants.FontNames.poppinsMed.rawValue))
+        ModifiedContent(
+            content: self,
+            modifier: FontModifier(
+                size: size,
+                name: Constants.FontNames.poppinsMed.rawValue
+            )
+        )
     }
 }

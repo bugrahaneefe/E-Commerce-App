@@ -16,7 +16,8 @@ struct FavoriteItemView: View {
                     .cornerRadiusRectangle(5)
                     .frameCenter(width: 90, height: 120)
                 VStack(alignment: .leading) {
-                    HStack(alignment: .top) {                        Text(furn.name).poppinsMedium(size: 17)
+                    HStack(alignment: .top) {
+                        Text(furn.name).poppinsMedium(size: 17)
                         Spacer()
                         ButtonSystemImage(sysname: "xmark.circle.fill")
                     }
@@ -28,7 +29,6 @@ struct FavoriteItemView: View {
                     ButtonWText(text: Constants.moveToBag,
                                 backgroundColor: .yellow,
                                 cornerRadius: 5,
-                                fontName: Constants.FontNames.poppinsMed.rawValue,
                                 fontSize: 15)
                 }
                 .padding()
