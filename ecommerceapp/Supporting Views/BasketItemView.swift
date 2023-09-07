@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct BasketItemView: View {
-    let furn: Furnitures
+    let furn: SetItems
     @Binding var quantity: Int // Binding to keep track of the quantity for each item
     var body: some View {
         ZStack {
@@ -21,7 +22,29 @@ struct BasketItemView: View {
                     HStack(alignment: .top) {
                         Text(furn.name).poppinsMedium(size: 17)
                         Spacer()
-                        ButtonSystemImage(sysname: "trash")
+                        Button(action: {
+                            do {
+                                let realm = try Realm()
+                                
+                                // Check the features of the item in the database
+                                if let furnInRealm = realm.objects(Furnitures.self).filter("name == %@ AND isBuyed == true", furn.name).first {
+                                    // You can add more conditions here to check other features if needed
+                                    try realm.write {
+                                        furnInRealm.isBuyed = false
+                                    }
+                                } else {
+                                    // Handle the case when the item is not found in the database
+                                    print("Item not found in the database.")
+                                }
+                            } catch {
+                                print("Error deleting item: \(error)")
+                            }
+                        }) {
+                            Image(systemName: "trash")
+                                .foregroundColor(.gray)
+                                .padding(.top, 5)
+                        }
+                        
                     }
                     Text("\(furn.price)")
                         .headlineBoldText

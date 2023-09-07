@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryItemViewInCategories: View {
-    let arrFurn = Furnitures.all()
+    let arrFurn = SetItems.all()
     let gridColumns = [
         GridItem(.flexible(), spacing: 15),
         GridItem(.flexible(), spacing: 15)
@@ -22,14 +22,14 @@ struct CategoryItemViewInCategories: View {
                         ItemCell(furn: furn)
                             .frame(maxWidth: .infinity)
                     }
-                }.padding(.vertical, 30)
+                }
             }.padding(.horizontal, 10)
         }
     }
 }
 
 struct CategoryItemViewInFavorites: View {
-    let arrFurn = Furnitures.all()
+    let arrFurn = FavoriedFurnitures.importDataFromRealm()
     var categoryTitle: String
     var body: some View {
         VStack {
@@ -40,15 +40,16 @@ struct CategoryItemViewInFavorites: View {
                         if arrFurn[index].isFavorite {
                             FavoriteItemView(furn: arrFurn[index])
                         }
-                    }.padding(.vertical, 30)
+                    }
                 }
             }
         }
     }
 }
 
+
 struct CategoryItemViewInBasket: View {
-    let arrFurn = Furnitures.all()
+    let arrFurn = BuyedFurnitures.importDataFromRealm()
     @State private var quantities: [Int]
     var totalPrice: Double {
         return zip(arrFurn, quantities)
@@ -67,7 +68,7 @@ struct CategoryItemViewInBasket: View {
                 VStack {
                     ForEach(arrFurn.indices, id: \.self) { index in
                         BasketItemView(furn: arrFurn[index], quantity: $quantities[index])
-                    }.padding(.vertical, 30)
+                    }
                 }
             }
             HStack {

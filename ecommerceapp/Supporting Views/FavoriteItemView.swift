@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavoriteItemView: View {
-    let furn: Furnitures
+    let furn: SetItems
     var body: some View {
         VStack {
             HStack(alignment: .top) {

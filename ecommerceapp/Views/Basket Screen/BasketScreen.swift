@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BasketScreen: View {
-    var ifArrIsEmpty: Bool = checkArrayEmpty(array: Furnitures.all())
+    var ifArrIsEmpty: Bool = checkArrayEmpty(array: SetItems.all())
     var body: some View {
         if ifArrIsEmpty {
             VStack {
@@ -34,7 +34,7 @@ struct BasketScreen: View {
     }
 }
 
-func checkArrayEmpty(array: [Furnitures]) -> Bool {
+func checkArrayEmpty(array: [SetItems]) -> Bool {
     if array.isEmpty {
         return true
     }

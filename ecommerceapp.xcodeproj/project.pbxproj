@@ -10,6 +10,9 @@
 		970AEC892A85647C00B50998 /* CornerRadiusModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970AEC882A85647C00B50998 /* CornerRadiusModifier.swift */; };
 		970AEC8B2A8569BF00B50998 /* FrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970AEC8A2A8569BF00B50998 /* FrameModifier.swift */; };
 		970AEC8D2A861CC600B50998 /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970AEC8C2A861CC600B50998 /* TextFields.swift */; };
+		9714B56A2AA892860090D8D2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9714B5692AA892860090D8D2 /* Realm */; };
+		9714B56C2AA892860090D8D2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9714B56B2AA892860090D8D2 /* RealmSwift */; };
+		9714B5752AA8A3500090D8D2 /* Furnitures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9714B5742AA8A3500090D8D2 /* Furnitures.swift */; };
 		979154DF2A84BBB000A1B056 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979154DE2A84BBB000A1B056 /* Images.swift */; };
 		979154E12A84BBD100A1B056 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979154E02A84BBD100A1B056 /* Strings.swift */; };
 		979154E42A84C29A00A1B056 /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979154E32A84C29A00A1B056 /* Texts.swift */; };
@@ -26,7 +29,6 @@
 		979F17C02A7FC9F300DD85ED /* CategoriesInDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F17BF2A7FC9F300DD85ED /* CategoriesInDetail.swift */; };
 		979F17C22A7FD77800DD85ED /* CategoriesInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F17C12A7FD77800DD85ED /* CategoriesInScreen.swift */; };
 		979F17C72A7FEA5D00DD85ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F17C62A7FEA5D00DD85ED /* Constants.swift */; };
-		97C99CC12A79A4A500270B48 /* Furnitures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C99CC02A79A4A500270B48 /* Furnitures.swift */; };
 		97C99CC42A79A64700270B48 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C99CC32A79A64700270B48 /* RatingView.swift */; };
 		97C99CC62A7A4C5000270B48 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C99CC52A7A4C5000270B48 /* Person.swift */; };
 		97D0A18E2A78E398005CE66E /* ECommerceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D0A18D2A78E398005CE66E /* ECommerceApp.swift */; };
@@ -47,6 +49,7 @@
 		970AEC882A85647C00B50998 /* CornerRadiusModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusModifier.swift; sourceTree = "<group>"; };
 		970AEC8A2A8569BF00B50998 /* FrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameModifier.swift; sourceTree = "<group>"; };
 		970AEC8C2A861CC600B50998 /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
+		9714B5742AA8A3500090D8D2 /* Furnitures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Furnitures.swift; sourceTree = "<group>"; };
 		979154DE2A84BBB000A1B056 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		979154E02A84BBD100A1B056 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		979154E32A84C29A00A1B056 /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
@@ -63,7 +66,6 @@
 		979F17BF2A7FC9F300DD85ED /* CategoriesInDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesInDetail.swift; sourceTree = "<group>"; };
 		979F17C12A7FD77800DD85ED /* CategoriesInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesInScreen.swift; sourceTree = "<group>"; };
 		979F17C62A7FEA5D00DD85ED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		97C99CC02A79A4A500270B48 /* Furnitures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Furnitures.swift; sourceTree = "<group>"; };
 		97C99CC32A79A64700270B48 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		97C99CC52A7A4C5000270B48 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		97D0A18A2A78E398005CE66E /* ecommerceapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ecommerceapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9714B56C2AA892860090D8D2 /* RealmSwift in Frameworks */,
+				9714B56A2AA892860090D8D2 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +138,8 @@
 		97C99CBF2A79A49200270B48 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				97C99CC02A79A4A500270B48 /* Furnitures.swift */,
 				97C99CC52A7A4C5000270B48 /* Person.swift */,
+				9714B5742AA8A3500090D8D2 /* Furnitures.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,6 +302,8 @@
 			);
 			name = ecommerceapp;
 			packageProductDependencies = (
+				9714B5692AA892860090D8D2 /* Realm */,
+				9714B56B2AA892860090D8D2 /* RealmSwift */,
 			);
 			productName = ecommerceapp;
 			productReference = 97D0A18A2A78E398005CE66E /* ecommerceapp.app */;
@@ -329,7 +335,7 @@
 			);
 			mainGroup = 97D0A1812A78E398005CE66E;
 			packageReferences = (
-				979F179C2A7BDC1E00DD85ED /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				9714B5682AA892860090D8D2 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 97D0A18B2A78E398005CE66E /* Products */;
 			projectDirPath = "";
@@ -400,7 +406,7 @@
 				979F17B42A7FAB1100DD85ED /* ProfileItemView.swift in Sources */,
 				97D0A1902A78E398005CE66E /* ContentView.swift in Sources */,
 				979F17AC2A7FA6B200DD85ED /* BasketItemView.swift in Sources */,
-				97C99CC12A79A4A500270B48 /* Furnitures.swift in Sources */,
+				9714B5752AA8A3500090D8D2 /* Furnitures.swift in Sources */,
 				979154E62A84E4C700A1B056 /* Environments.swift in Sources */,
 				97D0A1BA2A791E1E005CE66E /* FavoriteScreen.swift in Sources */,
 				970AEC892A85647C00B50998 /* CornerRadiusModifier.swift in Sources */,
@@ -625,15 +631,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		979F179C2A7BDC1E00DD85ED /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+		9714B5682AA892860090D8D2 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/SwiftLint";
+			repositoryURL = "https://github.com/realm/realm-swift";
 			requirement = {
-				branch = main;
+				branch = master;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9714B5692AA892860090D8D2 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9714B5682AA892860090D8D2 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		9714B56B2AA892860090D8D2 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9714B5682AA892860090D8D2 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 97D0A1822A78E398005CE66E /* Project object */;
 }

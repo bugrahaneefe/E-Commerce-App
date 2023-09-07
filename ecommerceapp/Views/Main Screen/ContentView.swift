@@ -6,14 +6,18 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ContentView: View {
+    init() {
+        SetItems.setup() // Call the setup function here
+    }
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
                 NavigationLink(destination: TabBar(), label: {
                     Image(Constants.CategoryImagesNames.mobomain.rawValue)
-                    .fillImage
+                        .fillImage
                 })
             }.padding()
         }
