@@ -50,42 +50,6 @@ struct ButtonWText: View {
     }
 }
 
-struct FavoriteButton: View {
-    @State var furn: SetItems
-    @State var furnInRealm: Furnitures? // Define furnInRealm as an optional
-
-    var body: some View {
-
-        Button(action: {
-            do {
-                self.furn.isFavorite.toggle()
-                let realm = try Realm()
-                if let existingFurnInRealm = realm.objects(Furnitures.self).filter("name == %@ AND imageName == %@", furn.name, furn.imageName).first {
-                    self.furnInRealm = existingFurnInRealm // Assign the existingFurnInRealm to furnInRealm
-                    if furn.isFavorite {
-                        try realm.write {
-                            furnInRealm?.isFavorite = true // Use furnInRealm here, it's an optional
-                        }
-                    } else {
-                        try realm.write {
-                            furnInRealm?.isFavorite = false // Use furnInRealm here, it's an optional
-                        }
-                    }
-                }
-            } catch {
-                print("Error updating favorite status: \(error)")
-            }
-        }) {
-            Image(systemName: furnInRealm?.isFavorite ?? false ? "heart.fill" : "heart")
-                .foregroundColor(furnInRealm?.isFavorite ?? false ? .red : .gray)
-                .frame(width: 40, height: 40)
-                .background(Color.white)
-        }
-        .cornerRadius(20)
-    }
-}
-
-
 struct DismissButton: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {

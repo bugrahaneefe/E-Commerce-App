@@ -12,7 +12,7 @@
 "broom" = "Yatak Odası";
 
 // MARK: - C
-"c.photo" = "Fotoğrafı Değiştir";
+"change.photo" = "Fotoğrafı Değiştir";
 
 // MARK: - D
 "detail" = "Detaylı Görünüm";

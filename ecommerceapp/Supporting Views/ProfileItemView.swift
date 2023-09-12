@@ -6,29 +6,50 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ProfileItemView: View {
-    let person = Person.all()
-    @State private var nameInput: String = ""
-    @State private var phoneInput: String = ""
-    @State private var emailInput: String = ""
-    @State private var birthInput: String = ""
+    @ObservedRealmObject var person: Person
     var body: some View {
         // Full Name Textfield
-        Text(Constants.profileRowInfo[0])
-            .headlineBoldText
-        TextField(person.name, text: $nameInput).profileTextfieldEdit
+        VStack(alignment: .leading, spacing: 0) {
+            Text(Constants.profileRowInfo[0])
+                .headlineBoldText
+            TextField(person.name, text: $person.name).profileTextfieldEdit
+        }.padding(.horizontal, 16)
+            .padding(.vertical, 0)
+            .frame(width: 343, height: 90, alignment: .leading)
+            .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+            .cornerRadius(8)
         // Phone Textfield
-        Text(Constants.profileRowInfo[1])
-            .headlineBoldText
-        TextField(person.phone, text: $phoneInput).profileTextfieldEdit
+        VStack(alignment: .leading, spacing: 0) {
+            Text(Constants.profileRowInfo[1])
+                .headlineBoldText
+            TextField(person.phone, text: $person.phone).profileTextfieldEdit
+        }.padding(.horizontal, 16)
+            .padding(.vertical, 0)
+            .frame(width: 343, height: 90, alignment: .leading)
+            .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+            .cornerRadius(8)
         // Email Textfield
-        Text(Constants.profileRowInfo[2])
-            .headlineBoldText
-        TextField(person.email, text: $emailInput).profileTextfieldEdit
+        VStack(alignment: .leading, spacing: 0) {
+            Text(Constants.profileRowInfo[2])
+                .headlineBoldText
+            TextField(person.email, text: $person.email).profileTextfieldEdit
+        }.padding(.horizontal, 16)
+            .padding(.vertical, 0)
+            .frame(width: 343, height: 90, alignment: .leading)
+            .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+            .cornerRadius(8)
         // BirthDate Textfield
-        Text(Constants.profileRowInfo[3])
-            .headlineBoldText
-        TextField(person.birthDate, text: $birthInput).profileTextfieldEdit
+        VStack(alignment: .leading, spacing: 0) {
+            Text(Constants.profileRowInfo[3])
+                .headlineBoldText
+            TextField(person.birthDate, text: $person.birthDate).profileTextfieldEdit
+        }.padding(.horizontal, 16)
+            .padding(.vertical, 0)
+            .frame(width: 343, height: 90, alignment: .leading)
+            .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+            .cornerRadius(8)
     }
 }

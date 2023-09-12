@@ -13,6 +13,39 @@ struct NavigationBarEdit: View {
     let size: Double
     let height: Double
     var body: some View {
+        Text(title)
+            .font(
+                Font.custom("Poppins", size: size)
+                    .weight(.semibold)
+            )
+            .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+            .frame(width: screenFrame.width-32, height: screenFrame.height * 0.1, alignment: .leadingLastTextBaseline)
+    }
+}
+
+struct NavigationBarMainEdit: View {
+    @Environment(\.screenFrame) var screenFrame
+    let title: String
+    let size: Double
+    let height: Double
+    var body: some View {
+        Text(title)
+            .font(
+                Font.custom("Poppins", size: size)
+                    .weight(.semibold)
+            )
+            .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+            .frame(width: screenFrame.width-32, height: screenFrame.height * 0.1, alignment: .centerLastTextBaseline)
+    }
+}
+
+
+struct NavigationBarEditWithoutBackground: View {
+    @Environment(\.screenFrame) var screenFrame
+    let title: String
+    let size: Double
+    let height: Double
+    var body: some View {
         HStack {
             Text("")
         }
@@ -22,27 +55,5 @@ struct NavigationBarEdit: View {
                 .paddedText
                 .poppinsMedium(size: size),
             alignment: .center)
-        .background(Color("ecYellow"))
-    }
-}
-struct NavigationBarEditWSave: View {
-    @Environment(\.screenFrame) var screenFrame
-    let title: String
-    let size: Double
-    var body: some View {
-        HStack {
-            Spacer()
-            ButtonWText(text: "save".locally(),
-                        backgroundColor: .white,
-                        cornerRadius: 0,
-                        fontSize: 10)
-                .frame(height: 20)
-        }
-        .padding(.horizontal, 15)
-        .frame(width: screenFrame.width, height: screenFrame.height * 0.05)
-        .overlay(Text(title)
-            .paddedText
-            .poppinsMedium(size: size),
-                 alignment: .center)
     }
 }

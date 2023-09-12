@@ -12,7 +12,7 @@
 "broom" = "Bedroom";
 
 // MARK: - C
-"c.photo" = "Change Photo";
+"change.photo" = "Change Photo";
 
 // MARK: - D
 "detail" = "My Details";

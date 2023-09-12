@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct CategoryItemViewInCategories: View {
-    let arrFurn = SetItems.all()
+    @ObservedResults(FurnituresGroup.self) var furnituresGroups
     let gridColumns = [
         GridItem(.flexible(), spacing: 15),
         GridItem(.flexible(), spacing: 15)
@@ -17,29 +18,26 @@ struct CategoryItemViewInCategories: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: gridColumns, spacing: 10) {
-                ForEach(arrFurn) { furn in
-                    if furn.category == categoryTitle {
-                        ItemCell(furn: furn)
-                            .frame(maxWidth: .infinity)
-                    }
+                if let furn = furnituresGroups.first {
+                    ItemCell(furnitureGroup: furn, categoryTitle: categoryTitle)
                 }
-            }.padding(.horizontal, 10)
+            }
+            .padding(.vertical, 68)
         }
     }
 }
 
+
 struct CategoryItemViewInFavorites: View {
-    let arrFurn = FavoriedFurnitures.importDataFromRealm()
+    @ObservedResults(FurnituresGroup.self) var furnituresGroups
     var categoryTitle: String
     var body: some View {
         VStack {
-            NavigationBarEdit(title: categoryTitle, size: 20, height: 35)
+            NavigationBarEdit(title: categoryTitle, size: 32, height: 114)
             ScrollView {
                 VStack {
-                    ForEach(arrFurn.indices, id: \.self) { index in
-                        if arrFurn[index].isFavorite {
-                            FavoriteItemView(furn: arrFurn[index])
-                        }
+                    if let furn = furnituresGroups.first {
+                        FavoriteItemView(furnitureGroup: furn)
                     }
                 }
             }
@@ -49,33 +47,27 @@ struct CategoryItemViewInFavorites: View {
 
 
 struct CategoryItemViewInBasket: View {
-    let arrFurn = BuyedFurnitures.importDataFromRealm()
-    @State private var quantities: [Int]
-    var totalPrice: Double {
-        return zip(arrFurn, quantities)
-            .reduce(0.0) { total, tuple in
-                let (furn, quantity) = tuple
-                return total + Double(quantity) * Double(furn.price)
-            }
-    }
-    init() {
-        _quantities = State(initialValue: Array(repeating: 1, count: arrFurn.count))
-    }
+    @ObservedResults(FurnituresGroup.self) var furnituresGroups
+//    let arrFurn = BuyedFurnitures.importDataFromRealm()
     var body: some View {
         VStack {
-            NavigationBarEdit(title: Constants.basket, size: 20, height: 35)
+            NavigationBarEdit(title: Constants.basket, size: 32, height: 114)
             ScrollView {
                 VStack {
-                    ForEach(arrFurn.indices, id: \.self) { index in
-                        BasketItemView(furn: arrFurn[index], quantity: $quantities[index])
+                    if let furn = furnituresGroups.first {
+                        // Pass the ItemGroup objects to a view further
+                        // down the hierarchy
+                        BasketItemView(furnitureGroup: furn)
                     }
+//                    ForEach(arrFurn.indices, id: \.self) { index in
+//                        BasketItemView(furn: arrFurn[index], quantity: $quantities[index])
+//                    }
                 }
             }
             HStack {
                 Text(Constants.totalAmount)
                     .poppinsMedium(size: 16)
                 Spacer()
-                Text(Constants.total+String(format: "%.2f", totalPrice))
             }
             .padding(.horizontal, 15)
             .padding(.bottom, 5)

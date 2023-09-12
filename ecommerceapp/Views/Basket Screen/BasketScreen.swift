@@ -6,43 +6,38 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct BasketScreen: View {
-    var ifArrIsEmpty: Bool = checkArrayEmpty(array: SetItems.all())
-    var body: some View {
-        if ifArrIsEmpty {
-            VStack {
-                NavigationBarEdit(title: "basket".locally(), size: 20, height: 35)
-                Spacer()
-                Image(Constants.EmojiImagesNames.surprised.rawValue)
-                    .centerImage
-                    .frameCenter(width: 135, height: 180)
-                Text("empty.bag".locally())
-                    .headlineBoldText
-                    .poppinsMedium(size: 16)
-                Text("empty.bag.start.shop".locally())
-                    .poppinsMedium(size: 10)
-                Spacer()
-                ButtonWText(text: "str.shop".locally(),
-                            backgroundColor: .yellow,
-                            cornerRadius: 10,
-                            fontSize: 20)
-            }
-        } else {
-            CategoryItemViewInBasket()
-        }
-    }
-}
+//    let furnitureGroup: FurnituresGroup // Define furnitureGroup as a property
 
-func checkArrayEmpty(array: [SetItems]) -> Bool {
-    if array.isEmpty {
-        return true
+    var body: some View {
+//        if furnitureGroup.furnitures.isEmpty {
+//            VStack {
+//                NavigationBarEdit(title: "basket".locally(), size: 20, height: 35)
+//                Spacer()
+//                Image(Constants.EmojiImagesNames.surprised.rawValue)
+//                    .centerImage
+//                    .frameCenter(width: 135, height: 180)
+//                Text("empty.bag".locally())
+//                    .headlineBoldText
+//                    .poppinsMedium(size: 16)
+//                Text("empty.bag.start.shop".locally())
+//                    .poppinsMedium(size: 10)
+//                Spacer()
+//                ButtonWText(text: "str.shop".locally(),
+//                            backgroundColor: .yellow,
+//                            cornerRadius: 10,
+//                            fontSize: 20)
+//            }
+//        } else {
+            CategoryItemViewInBasket()
+//        }
     }
-    return false
 }
 
 struct BasketScreen_Previews: PreviewProvider {
     static var previews: some View {
-        BasketScreen()
+        return BasketScreen()
     }
 }
