@@ -10,6 +10,7 @@ import RealmSwift
 
 struct FavoriteItemView: View {
     @ObservedRealmObject var furnitureGroup: FurnituresGroup
+    @State private var showAlert = false
     var body: some View {
         ForEach(furnitureGroup.furnitures) { (furn: Furnitures) in
             if furn.isFavorite {
@@ -67,7 +68,20 @@ struct FavoriteItemView: View {
                                 // Move to Bag View
                                 HStack(alignment: .center, spacing: 10) {
                                     Button(action: {
-                                        //move to bag action
+                                        do {
+                                            let realm = try Realm()
+                                            if let existingBuyedFurn = realm.objects(Furnitures.self).filter("name == %@ AND isBuyed == true", furn.name).first {
+                                                showAlert = true // Show the alert when the item already exists
+                                            } else {
+                                                if let existingBuyedFurn = realm.objects(Furnitures.self).filter("name == %@ AND isBuyed == false", furn.name).first {
+                                                    try realm.write {
+                                                        existingBuyedFurn.isBuyed = true
+                                                    }
+                                                }
+                                            }
+                                        } catch {
+                                            print("Error saving/updating items: \(error)")
+                                        }
                                     }) {
                                         Text(Constants.moveToBag)
                                             .font(
@@ -80,7 +94,7 @@ struct FavoriteItemView: View {
                                 }
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 0)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                .frame(width: 152, height: 32, alignment: .center)
                                 .background(Color(red: 1, green: 0.89, blue: 0.25))
                                 .cornerRadius(8)
                             }
@@ -93,6 +107,13 @@ struct FavoriteItemView: View {
                     .frame(width: 343, alignment: .topLeading)
                 }
                 .padding(16)
+                .alert(isPresented: $showAlert) { // Show the alert using the alert modifier
+                    Alert(
+                        title: Text("Item is already in your basket"),
+                        message: Text(""),
+                        dismissButton: .default(Text("OK"))
+                    )
+                }
                 
             }
         }

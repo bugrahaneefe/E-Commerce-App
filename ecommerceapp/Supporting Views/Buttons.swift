@@ -74,3 +74,39 @@ struct SortFilterView: View {
         }.padding()
     }
 }
+
+
+struct CustomStepper: View {
+    @Binding var value: Int
+    let range: ClosedRange<Int>
+
+    var body: some View {
+        HStack(spacing: 16.5) {
+            Button(action: decrement) {
+                Image(systemName: "minus")
+            }
+            Text("\(value)")
+                .font(
+                  Font.custom("Poppins", size: 14)
+                    .weight(.medium)
+                )
+                .multilineTextAlignment(.center)
+                .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+            Button(action: increment) {
+                Image(systemName: "plus")
+            }
+        }
+    }
+
+    private func increment() {
+        if value < range.upperBound {
+            value += 1
+        }
+    }
+
+    private func decrement() {
+        if value > range.lowerBound {
+            value -= 1
+        }
+    }
+}

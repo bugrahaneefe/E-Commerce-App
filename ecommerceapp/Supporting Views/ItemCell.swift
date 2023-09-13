@@ -11,13 +11,8 @@ import RealmSwift
 struct ItemCell: View {
     @ObservedRealmObject var furnitureGroup: FurnituresGroup
     var categoryTitle: String
-    //    @State var furn: SetItems
-    @State private var showAlert = false // Add a state variable to control the alert
-    
-    // ...
-    
+    @State private var showAlert = false
     var body: some View {
-        
         ForEach(furnitureGroup.furnitures) { furn in
             if furn.category == categoryTitle {
                 ZStack {
@@ -34,7 +29,6 @@ struct ItemCell: View {
                                     } else {
                                         if let existingBuyedFurn = realm.objects(Furnitures.self).filter("name == %@ AND isBuyed == false", furn.name).first {
                                             try realm.write {
-                                                let buyedFurn = Furnitures()
                                                 existingBuyedFurn.isBuyed = true
                                             }
                                         }

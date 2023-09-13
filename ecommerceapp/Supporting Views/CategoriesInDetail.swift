@@ -27,7 +27,6 @@ struct CategoryItemViewInCategories: View {
     }
 }
 
-
 struct CategoryItemViewInFavorites: View {
     @ObservedResults(FurnituresGroup.self) var furnituresGroups
     var categoryTitle: String
@@ -45,7 +44,6 @@ struct CategoryItemViewInFavorites: View {
     }
 }
 
-
 struct CategoryItemViewInBasket: View {
     @ObservedResults(FurnituresGroup.self) var furnituresGroups
 //    let arrFurn = BuyedFurnitures.importDataFromRealm()
@@ -59,9 +57,6 @@ struct CategoryItemViewInBasket: View {
                         // down the hierarchy
                         BasketItemView(furnitureGroup: furn)
                     }
-//                    ForEach(arrFurn.indices, id: \.self) { index in
-//                        BasketItemView(furn: arrFurn[index], quantity: $quantities[index])
-//                    }
                 }
             }
             HStack {
