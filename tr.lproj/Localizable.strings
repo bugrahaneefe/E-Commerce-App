@@ -20,11 +20,16 @@
 
 // MARK: - E
 "empty.bag" = "Sepet Boş";
-"empty.bag.start.shop" = "Sepetiniz boş, hadi alışverişe başlayalım!";
+"empty.bag.desc" = "Sepetiniz boş, hadi alışverişe başlayalım!";
+"empty.fav" = "Favoriniz Yok!";
+"empty.fav.desc" = "Favori Ürünlerinizi Ekleyin!";
 
 // MARK: - F
 "fav" = "Favoriler";
 "full.name" = "  İsim Soyisim :";
+
+// MARK: - I
+"is.already.in.basket" = "Ürün sepetinizde bulunuyor!";
 
 // MARK: - L
 "lroom" = "Oturma Odası";
@@ -33,6 +38,9 @@
 "mail" = "  E-mail :";
 "main.title" = "MOBO";
 "move.to.bag" = "Sepete Taşı";
+
+// MARK: - O
+"ok" = "Tamam";
 
 // MARK: - P
 "phone" = "  Telefon :";

@@ -34,29 +34,18 @@ struct FavoriteItemView: View {
                                 VStack(spacing: 4) {
                                     // Price View
                                     Text("$\(furn.price)")
-                                        .font(
-                                            Font.custom("Poppins", size: 16)
-                                                .weight(.medium)
-                                        )
+                                        .poppinsMedium(size: 16)
                                         .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
                                         .frame(maxWidth: .infinity, alignment: .topLeading)
                                     // Furniture Name View
                                     Text(furn.name)
-                                        .font(Font.custom("Poppins", size: 12))
+                                        .poppinsMedium(size: 12)
                                         .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
                                         .frame(maxWidth: .infinity, alignment: .topLeading)
                                 }
                                 // Delete From Favorites Button
                                 Button(action: {
-                                    if let realm = try? Realm(), let existingFurn = realm.object(ofType: Furnitures.self, forPrimaryKey: furn.id) {
-                                        do {
-                                            try realm.write {
-                                                existingFurn.isFavorite = false
-                                            }
-                                        } catch {
-                                            print("Error updating favorite status: \(error)")
-                                        }
-                                    }
+                                    RealmManager.deleteFromFavorite(furn, isFavorite: furn.isFavorite)
                                 }) {
                                     Image(systemName: "xmark.circle.fill")
                                         .foregroundColor(.gray)
@@ -68,26 +57,12 @@ struct FavoriteItemView: View {
                                 // Move to Bag View
                                 HStack(alignment: .center, spacing: 10) {
                                     Button(action: {
-                                        do {
-                                            let realm = try Realm()
-                                            if let existingBuyedFurn = realm.objects(Furnitures.self).filter("name == %@ AND isBuyed == true", furn.name).first {
-                                                showAlert = true // Show the alert when the item already exists
-                                            } else {
-                                                if let existingBuyedFurn = realm.objects(Furnitures.self).filter("name == %@ AND isBuyed == false", furn.name).first {
-                                                    try realm.write {
-                                                        existingBuyedFurn.isBuyed = true
-                                                    }
-                                                }
-                                            }
-                                        } catch {
-                                            print("Error saving/updating items: \(error)")
+                                        if RealmManager.updateIsBuyedStatusWithAlert(furn, isBuyed: furn.isBuyed) {
+                                            showAlert = true
                                         }
                                     }) {
                                         Text(Constants.moveToBag)
-                                            .font(
-                                                Font.custom("Poppins", size: 14)
-                                                    .weight(.medium)
-                                            )
+                                            .poppinsMedium(size: 14)
                                             .multilineTextAlignment(.center)
                                             .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
                                     }
@@ -109,12 +84,11 @@ struct FavoriteItemView: View {
                 .padding(16)
                 .alert(isPresented: $showAlert) { // Show the alert using the alert modifier
                     Alert(
-                        title: Text("Item is already in your basket"),
+                        title: Text("is.already.in.basket".locally()),
                         message: Text(""),
-                        dismissButton: .default(Text("OK"))
+                        dismissButton: .default(Text("ok".locally()))
                     )
                 }
-                
             }
         }
     }

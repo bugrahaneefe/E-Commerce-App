@@ -75,8 +75,7 @@ struct SortFilterView: View {
     }
 }
 
-
-struct CustomStepper: View {
+struct StepperButton: View {
     @Binding var value: Int
     let range: ClosedRange<Int>
 
@@ -86,10 +85,7 @@ struct CustomStepper: View {
                 Image(systemName: "minus")
             }
             Text("\(value)")
-                .font(
-                  Font.custom("Poppins", size: 14)
-                    .weight(.medium)
-                )
+                .poppinsMedium(size: 14)
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
             Button(action: increment) {

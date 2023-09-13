@@ -27,40 +27,7 @@ class FurnituresGroup: Object, ObjectKeyIdentifiable {
 }
 
 extension Furnitures {
-//    static let furn1 = Furnitures(value: ["name": "Wooden Bedside Table",
-//                                          "imageName": "woodtable",
-//                                          "price": 2399,
-//                                          "rating": 4,
-//                                          "isFavorite": true,
-//                                          "category": "bedroom",
-//                                          "stepperValue": 0,
-//                                          "isBuyed": false])
-//    static let furn2 = Furnitures(value: ["name": "TV Table",
-//                                          "imageName": "tvtable",
-//                                          "price": 4000,
-//                                          "rating": 4,
-//                                          "isFavorite": false,
-//                                          "category": "livingroom",
-//                                          "stepperValue": 0,
-//                                          "isBuyed": false])
-//    static let furn3 = Furnitures(value: ["name": "Wood Mini-Table",
-//                                          "imageName": "minitable",
-//                                          "price": 500,
-//                                          "rating": 3,
-//                                          "isFavorite": false,
-//                                          "category": "bedroom",
-//                                          "stepperValue": 0,
-//                                          "isBuyed": false])
-//    static let furn4 = Furnitures(value: ["name": "Wood Chair",
-//                                          "imageName": "woodchair",
-//                                          "price": 1500,
-//                                          "rating": 5,
-//                                          "isFavorite": true,
-//                                          "category": "dining",
-//                                          "stepperValue": 0,
-//                                          "isBuyed": false])
-//    static let furnArray = [furn1, furn2, furn3, furn4]
     static func setup() {
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 }

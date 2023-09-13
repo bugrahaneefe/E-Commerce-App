@@ -10,7 +10,7 @@ import RealmSwift
 
 struct ContentView: View {
     init() {
-        Furnitures.setup() // Call the setup function here
+        Furnitures.setup()
     }
     var body: some View {
         NavigationView {

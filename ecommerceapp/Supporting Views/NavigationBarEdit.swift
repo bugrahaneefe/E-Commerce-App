@@ -14,10 +14,7 @@ struct NavigationBarEdit: View {
     let height: Double
     var body: some View {
         Text(title)
-            .font(
-                Font.custom("Poppins", size: size)
-                    .weight(.semibold)
-            )
+            .poppinsMedium(size: size)
             .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
             .frame(width: screenFrame.width-32, height: screenFrame.height * 0.1, alignment: .leadingLastTextBaseline)
     }
@@ -30,15 +27,11 @@ struct NavigationBarMainEdit: View {
     let height: Double
     var body: some View {
         Text(title)
-            .font(
-                Font.custom("Poppins", size: size)
-                    .weight(.semibold)
-            )
+            .poppinsMedium(size: size)
             .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
             .frame(width: screenFrame.width-32, height: screenFrame.height * 0.1, alignment: .centerLastTextBaseline)
     }
 }
-
 
 struct NavigationBarEditWithoutBackground: View {
     @Environment(\.screenFrame) var screenFrame

@@ -46,15 +46,12 @@ struct CategoryItemViewInFavorites: View {
 
 struct CategoryItemViewInBasket: View {
     @ObservedResults(FurnituresGroup.self) var furnituresGroups
-//    let arrFurn = BuyedFurnitures.importDataFromRealm()
     var body: some View {
         VStack {
             NavigationBarEdit(title: Constants.basket, size: 32, height: 114)
             ScrollView {
                 VStack {
                     if let furn = furnituresGroups.first {
-                        // Pass the ItemGroup objects to a view further
-                        // down the hierarchy
                         BasketItemView(furnitureGroup: furn)
                     }
                 }

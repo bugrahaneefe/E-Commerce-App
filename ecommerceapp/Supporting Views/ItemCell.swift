@@ -22,22 +22,10 @@ struct ItemCell: View {
                     HStack(alignment: .center, spacing: 15) {
                         VStack(alignment: .leading) {
                             Button(action: {
-                                do {
-                                    let realm = try Realm()
-                                    if let existingBuyedFurn = realm.objects(Furnitures.self).filter("name == %@ AND isBuyed == true", furn.name).first {
-                                        showAlert = true // Show the alert when the item already exists
-                                    } else {
-                                        if let existingBuyedFurn = realm.objects(Furnitures.self).filter("name == %@ AND isBuyed == false", furn.name).first {
-                                            try realm.write {
-                                                existingBuyedFurn.isBuyed = true
-                                            }
-                                        }
-                                    }
-                                } catch {
-                                    print("Error saving/updating items: \(error)")
+                                if RealmManager.updateIsBuyedStatusWithAlert(furn, isBuyed: furn.isBuyed) {
+                                    showAlert = true
                                 }
-                            })
-                            {
+                            }) {
                                 Image(furn.imageName)
                                     .resizedImage
                                     .cornerRadius(5)
@@ -49,19 +37,10 @@ struct ItemCell: View {
                                     .headlineBoldText
                                 Spacer()
                                 Button(action: {
-                                    if let realm = try? Realm(), let existingFurn = realm.object(ofType: Furnitures.self, forPrimaryKey: furn.id) {
-                                        do {
-                                            try realm.write {
-                                                existingFurn.isFavorite.toggle()
-                                            }
-                                        } catch {
-                                            print("Error updating favorite status: \(error)")
-                                        }
-                                    }
-
+                                    RealmManager.toggleFavorite(furn, isFavorite: furn.isFavorite)
                                 }) {
-                                    Image(systemName: furn.isFavorite ?? false ? "heart.fill" : "heart")
-                                        .foregroundColor(furn.isFavorite ?? false ? .red : .gray)
+                                    Image(systemName: furn.isFavorite ? "heart.fill" : "heart")
+                                        .foregroundColor(furn.isFavorite ? .red : .gray)
                                         .frame(width: 40, height: 40)
                                         .background(Color.white)
                                 }
@@ -83,9 +62,9 @@ struct ItemCell: View {
                 }
                 .alert(isPresented: $showAlert) { // Show the alert using the alert modifier
                     Alert(
-                        title: Text("Item is already in your basket"),
+                        title: Text("is.already.in.basket".locally()),
                         message: Text(""),
-                        dismissButton: .default(Text("OK"))
+                        dismissButton: .default(Text("ok".locally()))
                     )
                 }
             }

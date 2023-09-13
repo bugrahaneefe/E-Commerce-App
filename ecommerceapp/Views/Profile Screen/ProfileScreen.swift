@@ -11,7 +11,7 @@ import RealmSwift
 struct ProfileScreen: View {
     @ObservedResults(Person.self) var person
     var body: some View {
-        VStack{
+        VStack {
             VStack {
                 NavigationBarEditWithoutBackground(title: "detail".locally(), size: 16, height: 32)
             }
