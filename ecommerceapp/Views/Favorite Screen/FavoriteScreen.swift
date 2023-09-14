@@ -9,12 +9,9 @@ import SwiftUI
 import RealmSwift
 
 struct FavoriteScreen: View {
-        @ObservedResults(FurnituresGroup.self) var furnituresGroups
-        var isBasketEmpty: Bool {
-            return furnituresGroups.first?.furnitures.contains(where: { $0.isFavorite }) != true
-        }
+        @ObservedResults(FurnituresGroup.self) var furnituresGroup
         var body: some View {
-            if isBasketEmpty {
+            if ((furnituresGroup.first?.isBasketEmpty) != nil) {
                 VStack {
                     NavigationBarEdit(title: "fav".locally(), size: 32, height: 114)
                     ScrollView {

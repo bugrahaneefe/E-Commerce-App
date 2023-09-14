@@ -10,7 +10,7 @@ import RealmSwift
 
 struct BasketItemView: View {
     @ObservedRealmObject var furnitureGroup: FurnituresGroup
-    @State private var quantity: Int = 1
+    @State private var totalAmount: Int = 0
     var body: some View {
         ForEach(furnitureGroup.furnitures, id: \.self) { (furn: Furnitures) in
             if furn.isBuyed {
@@ -47,18 +47,17 @@ struct BasketItemView: View {
                                 // Furniture Delete From Basket Button View
                                 Button(action: {
                                     RealmManager.deleteFromBasket(furn, isBuyed: furn.isBuyed)
-                                }) {
-                                    Image(systemName: "trash")
-                                        .foregroundColor(.gray)
-                                        .frame(width: 24, height: 24)
+                                })
+                                {
+                                    Image.TrashImage()
                                 }
 
                             }
                             .padding(0)
                             // Stepper View
                             HStack(alignment: .top, spacing: 10) {
-                                StepperButton(value: $quantity, range: 1...10)
-                                    .foregroundColor(.black)
+//                                StepperButton(value: $furn.buyedQuantitiy, range: 1...10)
+//                                    .foregroundColor(.black)
                             }
                             .padding(.horizontal, 8)
                             .padding(.top, 8)

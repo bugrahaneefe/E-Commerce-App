@@ -25,4 +25,18 @@ extension Image {
         self.resizable()
             .aspectRatio(contentMode: .fit)
     }
+    struct TrashImage: View {
+        var body: some View {
+            Image(systemName: "trash")
+                .foregroundColor(Color.gray)
+                .frame(width: 24, height: 24)
+        }
+    }
+    struct DeleteIcon: View {
+        var body: some View {
+            Image(systemName: "xmark.circle.fill")
+                .foregroundColor(.gray)
+                .padding(.top, 5)
+        }
+    }
 }

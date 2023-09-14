@@ -39,6 +39,21 @@ struct ProfileScreen: View {
     }
 }
 
+extension ProfileScreen {
+    struct ProfileItemCell: View {
+        var rowIndex: Int
+        @Binding var name: String
+
+        var body: some View {
+            VStack(alignment: .leading, spacing: 0) {
+                Text(Constants.profileRowInfo[rowIndex])
+                    .headlineBoldText
+                TextField(name, text: $name).profileTextfieldEdit
+            }.profileItemStackEdit
+        }
+    }
+}
+
 struct ProfileScreen_Previews: PreviewProvider {
     static var previews: some View {
         ProfileScreen()

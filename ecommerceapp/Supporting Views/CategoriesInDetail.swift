@@ -17,7 +17,7 @@ struct CategoryItemViewInCategories: View {
     var categoryTitle: String
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: gridColumns, spacing: 10) {
+            LazyVGrid(columns: gridColumns, spacing: 150) {
                 if let furn = furnituresGroups.first {
                     ItemCell(furnitureGroup: furn, categoryTitle: categoryTitle)
                 }

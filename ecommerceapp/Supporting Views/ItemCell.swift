@@ -15,11 +15,8 @@ struct ItemCell: View {
     var body: some View {
         ForEach(furnitureGroup.furnitures) { furn in
             if furn.category == categoryTitle {
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(.white)
-                        .cornerRadius(5)
-                    HStack(alignment: .center, spacing: 15) {
+                VStack {
+                    HStack(alignment: .center, spacing: 10) {
                         VStack(alignment: .leading) {
                             Button(action: {
                                 if RealmManager.updateIsBuyedStatusWithAlert(furn, isBuyed: furn.isBuyed) {
@@ -53,6 +50,7 @@ struct ItemCell: View {
                             }
                             Spacer()
                             Text(furn.name)
+                            Spacer()
                         }
                         .padding(.init(top: 15, leading: 3, bottom: 5, trailing: 3))
                         Spacer()

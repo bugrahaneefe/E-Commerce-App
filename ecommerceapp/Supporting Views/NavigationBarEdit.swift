@@ -40,13 +40,10 @@ struct NavigationBarEditWithoutBackground: View {
     let height: Double
     var body: some View {
         HStack {
-            Text("")
-        }
-        .frame(width: screenFrame.width, height: screenFrame.height * 0.1)
-        .overlay(
             Text(title)
                 .paddedText
-                .poppinsMedium(size: size),
-            alignment: .center)
+                .poppinsMedium(size: size)
+        }
+        .frame(width: screenFrame.width, height: screenFrame.height * 0.1)
     }
 }

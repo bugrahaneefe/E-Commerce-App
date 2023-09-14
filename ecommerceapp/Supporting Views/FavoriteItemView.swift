@@ -47,9 +47,7 @@ struct FavoriteItemView: View {
                                 Button(action: {
                                     RealmManager.deleteFromFavorite(furn, isFavorite: furn.isFavorite)
                                 }) {
-                                    Image(systemName: "xmark.circle.fill")
-                                        .foregroundColor(.gray)
-                                        .padding(.top, 5)
+                                    Image.DeleteIcon()
                                 }
                             }
                             .padding(0)

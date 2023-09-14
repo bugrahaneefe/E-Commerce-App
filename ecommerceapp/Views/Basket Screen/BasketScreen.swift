@@ -9,12 +9,9 @@ import SwiftUI
 import RealmSwift
 
 struct BasketScreen: View {
-    @ObservedResults(FurnituresGroup.self) var furnituresGroups
-    var isBasketEmpty: Bool {
-        return furnituresGroups.first?.furnitures.contains(where: { $0.isBuyed }) != true
-    }
+    @ObservedResults(FurnituresGroup.self) var furnituresGroup
     var body: some View {
-        if isBasketEmpty {
+        if ((furnituresGroup.first?.isBasketEmpty) != nil) {
             VStack {
                 NavigationBarEdit(title: "basket".locally(), size: 32, height: 114)
                 ScrollView {
@@ -61,6 +58,6 @@ struct BasketScreen: View {
 
 struct BasketScreen_Previews: PreviewProvider {
     static var previews: some View {
-        return BasketScreen()
+        BasketScreen()
     }
 }
