@@ -46,6 +46,16 @@ struct CategoryItemViewInFavorites: View {
 
 struct CategoryItemViewInBasket: View {
     @ObservedResults(FurnituresGroup.self) var furnituresGroups
+    // MARK: Total Amount Calculation
+    var totalAmount: Int {
+        var amount = 0
+        if let furnituresList = furnituresGroups.first?.furnitures {
+            for furn in Array(furnituresList) where furn.isBuyed {
+                    amount += furn.price * furn.buyedQuantity
+            }
+        }
+        return amount
+    }
     var body: some View {
         VStack {
             NavigationBarEdit(title: Constants.basket, size: 32, height: 114)
@@ -56,13 +66,25 @@ struct CategoryItemViewInBasket: View {
                     }
                 }
             }
-            HStack {
-                Text(Constants.totalAmount)
-                    .poppinsMedium(size: 16)
-                Spacer()
+            HStack(alignment: .top, spacing: 63) {
+                VStack(alignment: .leading, spacing: 4) {
+                    // MARK: Total Text View
+                    Text.TotalText()
+                }
+                .padding(.leading, 0)
+                .padding(.trailing, 70)
+                .padding(.vertical, 0)
+                VStack(alignment: .leading, spacing: 4) {
+                    // MARK: Total Amount Text View
+                    Text.TotalAmountText(totalAmount: totalAmount)
+                }
+                .padding(.leading, 0)
+                .padding(.trailing, 70)
+                .padding(.vertical, 0)
             }
-            .padding(.horizontal, 15)
-            .padding(.bottom, 5)
+            .padding(.horizontal, 16)
+            .padding(.top, 24)
+            .padding(.bottom, 16)
         }
     }
 }

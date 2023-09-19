@@ -50,5 +50,4 @@
 "save" = "Save";
 
 // MARK: - T
-"total.amount" = "Total Amount";
-"total.dollar" = "Total: $";
+"total.amount" = "Total:";

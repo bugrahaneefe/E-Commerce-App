@@ -18,38 +18,35 @@ struct ItemCell: View {
                 VStack {
                     HStack(alignment: .center, spacing: 10) {
                         VStack(alignment: .leading) {
-                            Button(action: {
-                                if RealmManager.updateIsBuyedStatusWithAlert(furn, isBuyed: furn.isBuyed) {
+                            // MARK: Furniture Image View
+                            Button {
+                                if RealmManager.shared.updateIsBuyedStatusWithAlert(furn) {
                                     showAlert = true
                                 }
-                            }) {
-                                Image(furn.imageName)
-                                    .resizedImage
-                                    .cornerRadius(5)
-                                    .frame(width: 164, height: 200) // Fixed frameCenter to frame
+                            } label: {
+                                Image.FurnItemCellImage(imageName: furn.imageName)
                             }
                             .cornerRadius(20)
                             HStack {
-                                Text("$\(furn.price)")
-                                    .headlineBoldText
+                                // MARK: Furniture Price View
+                                Text.FurnPrice(priceQuantitiy: furn.price)
                                 Spacer()
-                                Button(action: {
-                                    RealmManager.toggleFavorite(furn, isFavorite: furn.isFavorite)
-                                }) {
-                                    Image(systemName: furn.isFavorite ? "heart.fill" : "heart")
-                                        .foregroundColor(furn.isFavorite ? .red : .gray)
-                                        .frame(width: 40, height: 40)
-                                        .background(Color.white)
+                                // MARK: Furniture Favorite Button View
+                                Button {
+                                    RealmManager.shared.toggleFavorite(furn)
+                                } label: {
+                                    Image.FurnIsFavorite(isFavorite: furn.isFavorite)
                                 }
                                 .cornerRadius(20)
                             }
                             HStack {
+                                // MARK: Furniture Rating View
                                 RatingView(rating: .constant(furn.rating))
-                                Text("(\(furn.rating))")
-                                    .footnoteText
+                                Text.FurnRatingText(rating: furn.rating)
                             }
                             Spacer()
-                            Text(furn.name)
+                            // MARK: Furniture Name Text
+                            Text.FurnItemCellName(furnName: furn.name)
                             Spacer()
                         }
                         .padding(.init(top: 15, leading: 3, bottom: 5, trailing: 3))
@@ -58,7 +55,7 @@ struct ItemCell: View {
                     .frame(height: 170)
                     .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 }
-                .alert(isPresented: $showAlert) { // Show the alert using the alert modifier
+                .alert(isPresented: $showAlert) {
                     Alert(
                         title: Text("is.already.in.basket".locally()),
                         message: Text(""),

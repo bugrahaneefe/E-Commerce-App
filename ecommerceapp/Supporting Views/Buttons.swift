@@ -11,9 +11,8 @@ import RealmSwift
 struct ButtonSystemImage: View {
     var sysname: String
     var body: some View {
-        Button(action: {
-            // button action
-        }) {
+        Button {
+        } label: {
             Image(systemName: sysname)
                 .foregroundColor(.gray)
                 .padding(.top, 5)
@@ -24,9 +23,8 @@ struct ButtonSystemImage: View {
 struct ButtonAssetImage: View {
     var imagename: String
     var body: some View {
-        Button(action: {
-            // button action
-        }) {
+        Button {
+        } label: {
             Image(imagename)
         }
     }
@@ -38,9 +36,8 @@ struct ButtonWText: View {
     var cornerRadius: Double
     var fontSize: Double
     var body: some View {
-        Button(action: {
-            // button action
-        }) {
+        Button {
+        } label: {
             Text(text)
                 .foregroundColor(.black)
                 .background(backgroundColor)
@@ -53,9 +50,9 @@ struct ButtonWText: View {
 struct DismissButton: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
-        Button(action: {
-            presentationMode.wrappedValue.dismiss() // Go back to the previous page
-        }) {
+        Button {
+            presentationMode.wrappedValue.dismiss()
+        } label: {
             HStack {
                 Image(systemName: "arrow.left")
             }
@@ -72,37 +69,5 @@ struct SortFilterView: View {
             ButtonAssetImage(imagename: Constants.filter)
             Spacer()
         }.padding()
-    }
-}
-
-struct StepperButton: View {
-    @Binding var value: Int
-    let range: ClosedRange<Int>
-
-    var body: some View {
-        HStack(spacing: 16.5) {
-            Button(action: decrement) {
-                Image(systemName: "minus")
-            }
-            Text("\(value)")
-                .poppinsMedium(size: 14)
-                .multilineTextAlignment(.center)
-                .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
-            Button(action: increment) {
-                Image(systemName: "plus")
-            }
-        }
-    }
-
-    private func increment() {
-        if value < range.upperBound {
-            value += 1
-        }
-    }
-
-    private func decrement() {
-        if value > range.lowerBound {
-            value -= 1
-        }
     }
 }

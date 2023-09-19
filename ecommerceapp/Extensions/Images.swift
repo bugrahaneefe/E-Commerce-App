@@ -39,4 +39,71 @@ extension Image {
                 .padding(.top, 5)
         }
     }
+    struct StepperButtonPlus: View {
+        var body: some View {
+            Image(systemName: "plus")
+                .foregroundColor(.black)
+        }
+    }
+    struct StepperButtonMinus: View {
+        var body: some View {
+            Image(systemName: "minus")
+                .foregroundColor(.black)
+        }
+    }
+    struct FurnImage: View {
+        var imageName: String
+        var body: some View {
+            Rectangle()
+                .foregroundColor(.clear)
+                .frame(width: 94, height: 115)
+                .background(
+                    Image(imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 94, height: 115)
+                        .clipped()
+                )
+                .cornerRadius(8)
+        }
+    }
+    struct FurnItemCellImage: View {
+        var imageName: String
+        var body: some View {
+            Image(imageName)
+                .resizedImage
+                .cornerRadius(5)
+                .frame(width: 164, height: 200)
+        }
+    }
+    struct FurnIsFavorite: View {
+        var isFavorite: Bool
+        var body: some View {
+            Image(systemName: isFavorite ? "heart.fill" : "heart")
+                .foregroundColor(isFavorite ? .red : .gray)
+                .frame(width: 40, height: 40)
+                .background(Color.white)
+        }
+    }
+    struct MainScreen: View {
+        var body: some View {
+            Image(Constants.CategoryImagesNames.mobomain.rawValue)
+                .fillImage
+        }
+    }
+    struct ProfilePhoto: View {
+        var body: some View {
+            Image(Constants.EmojiImagesNames.avatar.rawValue)
+                .resizedImage
+                .cornerRadiusRectangle(5)
+                .frameCenter(width: 100, height: 80)
+                .clipShape(Circle())
+        }
+    }
+    struct SurprisedEmoji: View {
+        var body: some View {
+            Image(Constants.EmojiImagesNames.surprised.rawValue)
+                .frame(width: 120, height: 120)
+        }
+    }
 }

@@ -50,5 +50,4 @@
 "save" = "Kaydet";
 
 // MARK: - T
-"total.amount" = "Toplam Tutar";
-"total.dollar" = "Toplam: $";
+"total.amount" = "Toplam: ";

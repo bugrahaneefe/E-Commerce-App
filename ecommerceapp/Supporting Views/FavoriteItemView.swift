@@ -16,59 +16,40 @@ struct FavoriteItemView: View {
             if furn.isFavorite {
                 VStack(alignment: .leading, spacing: 24) {
                     HStack(alignment: .top, spacing: 16) {
-                        // Furniture Image View
-                        Rectangle()
-                            .foregroundColor(.clear)
-                            .frame(width: 94, height: 115)
-                            .background(
-                                Image(furn.imageName)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 94, height: 115)
-                                    .clipped()
-                            )
-                            .cornerRadius(8)
-                        // Furniture Details View
+                        // MARK: Furniture Image View
+                        Image.FurnImage(imageName: furn.imageName)
+                        // MARK: Furniture Details View
                         VStack(alignment: .leading, spacing: 19) {
                             HStack(alignment: .top, spacing: 8) {
                                 VStack(spacing: 4) {
-                                    // Price View
-                                    Text("$\(furn.price)")
-                                        .poppinsMedium(size: 16)
-                                        .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
-                                        .frame(maxWidth: .infinity, alignment: .topLeading)
-                                    // Furniture Name View
-                                    Text(furn.name)
-                                        .poppinsMedium(size: 12)
-                                        .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
-                                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                                    // MARK: Price View
+                                    Text.FurnPrice(priceQuantitiy: furn.price)
+                                    // MARK: Furniture Name View
+                                    Text.FurnName(furnName: furn.name)
                                 }
-                                // Delete From Favorites Button
-                                Button(action: {
-                                    RealmManager.deleteFromFavorite(furn, isFavorite: furn.isFavorite)
-                                }) {
+                                // MARK: Delete From Favorites Button
+                                Button {
+                                    RealmManager.shared.deleteFromFavorite(furn)
+                                } label: {
                                     Image.DeleteIcon()
                                 }
                             }
                             .padding(0)
                             VStack(alignment: .center, spacing: 10) {
-                                // Move to Bag View
+                                // MARK: Move to Bag View
                                 HStack(alignment: .center, spacing: 10) {
-                                    Button(action: {
-                                        if RealmManager.updateIsBuyedStatusWithAlert(furn, isBuyed: furn.isBuyed) {
+                                    Button {
+                                        if RealmManager.shared.updateIsBuyedStatusWithAlert(furn) {
                                             showAlert = true
                                         }
-                                    }) {
-                                        Text(Constants.moveToBag)
-                                            .poppinsMedium(size: 14)
-                                            .multilineTextAlignment(.center)
-                                            .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+                                    } label: {
+                                        Text.MoveToBagText()
                                     }
                                 }
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 0)
                                 .frame(width: 152, height: 32, alignment: .center)
-                                .background(Color(red: 1, green: 0.89, blue: 0.25))
+                                .background(Color.ECBackground)
                                 .cornerRadius(8)
                             }
                             .padding(0)
@@ -80,7 +61,7 @@ struct FavoriteItemView: View {
                     .frame(width: 343, alignment: .topLeading)
                 }
                 .padding(16)
-                .alert(isPresented: $showAlert) { // Show the alert using the alert modifier
+                .alert(isPresented: $showAlert) {
                     Alert(
                         title: Text("is.already.in.basket".locally()),
                         message: Text(""),

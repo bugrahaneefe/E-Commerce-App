@@ -15,8 +15,8 @@ struct NavigationBarEdit: View {
     var body: some View {
         Text(title)
             .poppinsMedium(size: size)
-            .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
-            .frame(width: screenFrame.width-32, height: screenFrame.height * 0.1, alignment: .leadingLastTextBaseline)
+            .foregroundColor(Color.ECDarkGray)
+            .frame(width: screenFrame.width - 32, height: screenFrame.height * 0.1, alignment: .leadingLastTextBaseline)
     }
 }
 
@@ -28,8 +28,8 @@ struct NavigationBarMainEdit: View {
     var body: some View {
         Text(title)
             .poppinsMedium(size: size)
-            .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
-            .frame(width: screenFrame.width-32, height: screenFrame.height * 0.1, alignment: .centerLastTextBaseline)
+            .foregroundColor(Color.ECDarkGray)
+            .frame(width: screenFrame.width - 32, height: screenFrame.height * 0.1, alignment: .centerLastTextBaseline)
     }
 }
 

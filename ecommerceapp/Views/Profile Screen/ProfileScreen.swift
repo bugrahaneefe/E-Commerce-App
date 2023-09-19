@@ -18,11 +18,9 @@ struct ProfileScreen: View {
             .frame(width: 375, height: 56)
             .background(.white.opacity(0.9))
             VStack(alignment: .center, spacing: 8) {
-                Image(Constants.EmojiImagesNames.avatar.rawValue)
-                    .resizedImage
-                    .cornerRadiusRectangle(5)
-                    .frameCenter(width: 100, height: 80)
-                    .clipShape(Circle())
+                // MARK: Profile Photo Image View
+                Image.ProfilePhoto()
+                // MARK: Change Photo Button
                 ButtonWText(text: "change.photo".locally(),
                             backgroundColor: .white,
                             cornerRadius: 0,
@@ -43,9 +41,9 @@ extension ProfileScreen {
     struct ProfileItemCell: View {
         var rowIndex: Int
         @Binding var name: String
-
         var body: some View {
             VStack(alignment: .leading, spacing: 0) {
+                // MARK: Profile Page Rows
                 Text(Constants.profileRowInfo[rowIndex])
                     .headlineBoldText
                 TextField(name, text: $name).profileTextfieldEdit
