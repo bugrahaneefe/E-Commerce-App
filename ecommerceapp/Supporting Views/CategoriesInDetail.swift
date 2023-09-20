@@ -32,7 +32,7 @@ struct CategoryItemViewInFavorites: View {
     var categoryTitle: String
     var body: some View {
         VStack {
-            NavigationBarEdit(title: categoryTitle, size: 32, height: 114)
+            NavigationBarEdit(title: categoryTitle, size: 32, height: UIScreen.main.bounds.height * 0.15)
             ScrollView {
                 VStack {
                     if let furn = furnituresGroups.first {
@@ -58,7 +58,7 @@ struct CategoryItemViewInBasket: View {
     }
     var body: some View {
         VStack {
-            NavigationBarEdit(title: Constants.basket, size: 32, height: 114)
+            NavigationBarEdit(title: Constants.basket, size: 32, height: UIScreen.main.bounds.height * 0.15)
             ScrollView {
                 VStack {
                     if let furn = furnituresGroups.first {
@@ -69,14 +69,14 @@ struct CategoryItemViewInBasket: View {
             HStack(alignment: .top, spacing: 63) {
                 VStack(alignment: .leading, spacing: 4) {
                     // MARK: Total Text View
-                    Text.TotalText()
+                    Text.totalText
                 }
                 .padding(.leading, 0)
                 .padding(.trailing, 70)
                 .padding(.vertical, 0)
                 VStack(alignment: .leading, spacing: 4) {
                     // MARK: Total Amount Text View
-                    Text.TotalAmountText(totalAmount: totalAmount)
+                    TotalAmountText(totalAmount: totalAmount)
                 }
                 .padding(.leading, 0)
                 .padding(.trailing, 70)

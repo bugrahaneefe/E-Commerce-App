@@ -21,9 +21,9 @@ struct BasketItemView: View {
                             HStack(alignment: .top, spacing: 8) {
                                 VStack(alignment: .leading, spacing: 4) {
                                     // MARK: Furniture Price View
-                                    Text.FurnPrice(priceQuantitiy: furn.price)
+                                    FurnPrice(priceQuantitiy: furn.price)
                                     // MARK: Furniture Name View
-                                    Text.FurnName(furnName: furn.name)
+                                    FurnName(furnName: furn.name)
                                 }
                                 .padding(0)
                                 .frame(maxWidth: .infinity, alignment: .topLeading)
@@ -43,7 +43,7 @@ struct BasketItemView: View {
                                     } label: {
                                         StepperButtonElements(imageName: "minus")
                                     }
-                                    Text.FurnBuyedQuantity(furnBuyedQuantity: furn.buyedQuantity)
+                                    FurnBuyedQuantity(furnBuyedQuantity: furn.buyedQuantity)
                                     Button {
                                         RealmManager.shared.incrementBuyedQuantity(furn, upperBound: 5)
                                     } label: {
@@ -54,13 +54,15 @@ struct BasketItemView: View {
                             .padding(.horizontal, 8)
                             .padding(.top, 8)
                             .padding(.bottom, 7)
-                            .frame(width: 98, height: 36, alignment: .top)
+                            .frame(width: UIScreen.main.bounds.width * 0.25,
+                                   height: UIScreen.main.bounds.height * 0.04,
+                                   alignment: .top)
                             .background(Color.ECBackground)
                             .cornerRadius(8)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    .frame(width: 343, alignment: .topLeading)
+                    .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .topLeading)
                 }
                 .padding(16)
             }

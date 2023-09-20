@@ -11,7 +11,7 @@ extension VStack {
     var profileItemStackEdit: some View {
         self.padding(.horizontal, 16)
             .padding(.vertical, 0)
-            .frameCenter(width: 343, height: 90)
+            .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.1)
             .background(Color.ECBackground)
             .cornerRadius(8)
     }

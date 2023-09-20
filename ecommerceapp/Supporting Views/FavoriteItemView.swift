@@ -23,9 +23,9 @@ struct FavoriteItemView: View {
                             HStack(alignment: .top, spacing: 8) {
                                 VStack(spacing: 4) {
                                     // MARK: Price View
-                                    Text.FurnPrice(priceQuantitiy: furn.price)
+                                    FurnPrice(priceQuantitiy: furn.price)
                                     // MARK: Furniture Name View
-                                    Text.FurnName(furnName: furn.name)
+                                    FurnName(furnName: furn.name)
                                 }
                                 // MARK: Delete From Favorites Button
                                 Button {
@@ -43,22 +43,24 @@ struct FavoriteItemView: View {
                                             showAlert = true
                                         }
                                     } label: {
-                                        Text.MoveToBagText()
+                                        Text.moveToBagText
                                     }
                                 }
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 0)
-                                .frame(width: 152, height: 32, alignment: .center)
+                                .frame(width: UIScreen.main.bounds.width * 0.3,
+                                       height: UIScreen.main.bounds.height * 0.04,
+                                       alignment: .center)
                                 .background(Color.ECYellow)
                                 .cornerRadius(8)
                             }
                             .padding(0)
-                            .frame(height: 36, alignment: .center)
+                            .frame(height: UIScreen.main.bounds.height * 0.04, alignment: .center)
                         }.padding(0)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     .padding(0)
-                    .frame(width: 343, alignment: .topLeading)
+                    .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .topLeading)
                 }
                 .padding(16)
                 .alert(isPresented: $showAlert) {

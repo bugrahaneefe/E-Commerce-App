@@ -13,7 +13,7 @@ struct ProfileScreen: View {
     var body: some View {
         VStack {
             VStack {
-                NavigationBarEditWithoutBackground(title: "detail".locally(), size: 16, height: 32)
+                NavigationBarEditWithoutBackground(title: "detail".locally(), size: 16, height: UIScreen.main.bounds.height * 0.05)
             }
             .frame(width: 375, height: 56)
             .background(.white.opacity(0.9))
@@ -27,7 +27,7 @@ struct ProfileScreen: View {
                             fontSize: 15)
             }
             .padding(16)
-            .frame(width: 375, alignment: .center)
+            .frame(width: UIScreen.main.bounds.width * 0.92, alignment: .center)
             ScrollView(.vertical, showsIndicators: false, content: {
                 if let person = person.first {
                     ProfileItemView(person: person)

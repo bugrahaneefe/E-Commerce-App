@@ -1,12 +1,11 @@
 //
-//  Buttons.swift
+//  ButtonsComponent.swift
 //  ecommerceapp
 //
 //  Created by Buğrahan Efe on 6.08.2023.
 //
 
 import SwiftUI
-import RealmSwift
 
 struct ButtonSystemImage: View {
     var sysname: String
@@ -69,5 +68,13 @@ struct SortFilterView: View {
             ButtonAssetImage(imagename: Constants.filter)
             Spacer()
         }.padding()
+    }
+}
+
+struct StepperButtonElements: View {
+    var imageName: String
+    var body: some View {
+        Image(systemName: imageName)
+            .foregroundColor(.black)
     }
 }

@@ -16,19 +16,19 @@ struct BasketScreen: View {
     var body: some View {
         if isBasketEmpty {
             VStack {
-                NavigationBarEdit(title: "basket".locally(), size: 32, height: 114)
+                NavigationBarEdit(title: "basket".locally(), size: 32, height: UIScreen.main.bounds.height * 0.15)
                 ScrollView {
                         VStack(alignment: .center, spacing: 16) {
                             // MARK: Surprised Emoji View
                             Image.surprisedEmoji
                             VStack(alignment: .center, spacing: 4) {
                                 // MARK: Empty Bag Text View
-                                Text.EmptyViewText(emptyViewName: "empty.bag")
+                                EmptyViewText(emptyViewName: "empty.bag")
                                 // MARK: Empty Bag Description
-                                Text.EmptyDescriptionText(descName: "empty.bag.desc")
+                                EmptyDescriptionText(descName: "empty.bag.desc")
                             }
                         }
-                        .frameCenter(width: 375, height: 812)
+                        .frameCenter(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.8)
                         .background(.white)
                         .cornerRadius(24)
                     }
@@ -40,7 +40,7 @@ struct BasketScreen: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 0)
-                .frameCenter(width: 343, height: 64)
+                .frameCenter(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.05)
                 .background(Color.ECYellow)
                 .cornerRadius(8)
             }

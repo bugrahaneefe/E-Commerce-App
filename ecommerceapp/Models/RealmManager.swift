@@ -19,7 +19,7 @@ final class RealmManager {
         }
     }
     func deleteFromBasket(_ furn: Furnitures) {
-        guard let realm = self.realm else {
+        guard let realm else {
             return
         }
         do {
@@ -37,7 +37,7 @@ final class RealmManager {
         }
     }
     func deleteFromFavorite(_ furn: Furnitures) {
-        guard let realm = self.realm else {
+        guard let realm else {
             return
         }
         do {
@@ -54,7 +54,7 @@ final class RealmManager {
         }
     }
     func updateIsBuyedStatusWithAlert(_ furn: Furnitures) -> Bool {
-        guard let realm = self.realm else {
+        guard let realm else {
             return false
         }
         do {
@@ -72,7 +72,7 @@ final class RealmManager {
         }
     }
     func toggleFavorite(_ furn: Furnitures) {
-        guard let realm = self.realm else {
+        guard let realm else {
             return
         }
         if let furn = realm.object(ofType: Furnitures.self, forPrimaryKey: furn.id) {
@@ -86,7 +86,7 @@ final class RealmManager {
         }
     }
     func incrementBuyedQuantity(_ furn: Furnitures, upperBound: Int) {
-        guard let realm = self.realm else {
+        guard let realm else {
             return
         }
         do {
@@ -105,7 +105,7 @@ final class RealmManager {
         }
     }
     func decrementBuyedQuantity(_ furn: Furnitures, lowerBound: Int) {
-        guard let realm = self.realm else {
+        guard let realm else {
             return
         }
         do {

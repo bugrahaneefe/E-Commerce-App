@@ -10,25 +10,26 @@ import RealmSwift
 
 struct FavoriteScreen: View {
         @ObservedResults(FurnituresGroup.self) var furnituresGroups
-        var isBasketEmpty: Bool {
+        var isFavoriteEmpty: Bool {
             return furnituresGroups.first?.furnitures.contains(where: { $0.isFavorite }) != true
         }
         var body: some View {
-            if isBasketEmpty {
+            if isFavoriteEmpty {
                 VStack {
-                    NavigationBarEdit(title: "fav".locally(), size: 32, height: 114)
+                    NavigationBarEdit(title: "fav".locally(), size: 32, height: UIScreen.main.bounds.height * 0.15)
                     ScrollView {
                             VStack(alignment: .center, spacing: 16) {
                                 // MARK: Surprised Emoji View
                                 Image.surprisedEmoji
                                 VStack(alignment: .center, spacing: 4) {
                                     // MARK: Empty Favorite Text View
-                                    Text.EmptyViewText(emptyViewName: "empty.fav")
+                                    EmptyViewText(emptyViewName: "empty.fav")
                                     // MARK: Empty Favorite Description
-                                    Text.EmptyDescriptionText(descName: "empty.fav.desc")
+                                    EmptyDescriptionText(descName: "empty.fav.desc")
                                 }
                             }
-                            .frame(width: 375, height: 812)
+                            .frameCenter(width: UIScreen.main.bounds.width * 0.9,
+                                         height: UIScreen.main.bounds.height * 0.8)
                             .background(.white)
                             .cornerRadius(24)
                         }

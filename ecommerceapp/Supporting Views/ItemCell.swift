@@ -29,7 +29,7 @@ struct ItemCell: View {
                             .cornerRadius(20)
                             HStack {
                                 // MARK: Furniture Price View
-                                Text.FurnPrice(priceQuantitiy: furn.price)
+                                FurnPrice(priceQuantitiy: furn.price)
                                 Spacer()
                                 // MARK: Furniture Favorite Button View
                                 Button {
@@ -42,17 +42,17 @@ struct ItemCell: View {
                             HStack {
                                 // MARK: Furniture Rating View
                                 RatingView(rating: .constant(furn.rating))
-                                Text.FurnRatingText(rating: furn.rating)
+                                FurnRatingText(rating: furn.rating)
                             }
                             Spacer()
                             // MARK: Furniture Name Text
-                            Text.FurnItemCellName(furnName: furn.name)
+                            FurnItemCellName(furnName: furn.name)
                             Spacer()
                         }
                         .padding(.init(top: 15, leading: 3, bottom: 5, trailing: 3))
                         Spacer()
                     }
-                    .frame(height: 170)
+                    .frame(height: UIScreen.main.bounds.height * 0.2)
                     .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 }
                 .alert(isPresented: $showAlert) {

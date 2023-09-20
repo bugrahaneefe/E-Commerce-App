@@ -11,7 +11,7 @@ struct CategoryScreen: View {
     var body: some View {
             NavigationView {
                 VStack {
-                    NavigationBarMainEdit(title: "main.title".locally(), size: 32, height: 114)
+                    NavigationBarMainEdit(title: "main.title".locally(), size: 32, height: UIScreen.main.bounds.height * 0.15)
                     VStack {
                         SliderStoryView()
                         ScrollView(.vertical, showsIndicators: false, content: {

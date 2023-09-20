@@ -1,5 +1,5 @@
 //
-//  Components.swift
+//  ImagesComponent.swift
 //  ecommerceapp
 //
 //  Created by Buğrahan Efe on 20.09.2023.
@@ -7,15 +7,6 @@
 
 import SwiftUI
 
-// MARK: BUTTONS
-struct StepperButtonElements: View {
-    var imageName: String
-    var body: some View {
-        Image(systemName: imageName)
-            .foregroundColor(.black)
-    }
-}
-// MARK: IMAGES
 struct FurnImage: View {
     var imageName: String
     var body: some View {
