@@ -19,7 +19,7 @@ struct ProfileScreen: View {
             .background(.white.opacity(0.9))
             VStack(alignment: .center, spacing: 8) {
                 // MARK: Profile Photo Image View
-                Image.ProfilePhoto()
+                Image.profilePhoto
                 // MARK: Change Photo Button
                 ButtonWText(text: "change.photo".locally(),
                             backgroundColor: .white,

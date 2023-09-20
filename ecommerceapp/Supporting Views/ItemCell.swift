@@ -24,7 +24,7 @@ struct ItemCell: View {
                                     showAlert = true
                                 }
                             } label: {
-                                Image.FurnItemCellImage(imageName: furn.imageName)
+                                FurnItemCellImage(imageName: furn.imageName)
                             }
                             .cornerRadius(20)
                             HStack {
@@ -35,7 +35,7 @@ struct ItemCell: View {
                                 Button {
                                     RealmManager.shared.toggleFavorite(furn)
                                 } label: {
-                                    Image.FurnIsFavorite(isFavorite: furn.isFavorite)
+                                    FurnIsFavorite(isFavorite: furn.isFavorite)
                                 }
                                 .cornerRadius(20)
                             }

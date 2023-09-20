@@ -90,7 +90,7 @@ final class RealmManager {
             return
         }
         do {
-            if let existingFurn = realm.object(ofType: Furnitures.self, forPrimaryKey: furn.id) { 
+            if let existingFurn = realm.object(ofType: Furnitures.self, forPrimaryKey: furn.id) {
                 try realm.write {
                     if existingFurn.buyedQuantity < upperBound {
                         existingFurn.buyedQuantity += 1
@@ -122,5 +122,11 @@ final class RealmManager {
         } catch {
             print("Error updating buyed status: \(error)")
         }
+    }
+}
+
+extension RealmManager {
+    enum DBError: Error {
+        case notFoundData
     }
 }

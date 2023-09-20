@@ -17,7 +17,7 @@ struct FavoriteItemView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     HStack(alignment: .top, spacing: 16) {
                         // MARK: Furniture Image View
-                        Image.FurnImage(imageName: furn.imageName)
+                        FurnImage(imageName: furn.imageName)
                         // MARK: Furniture Details View
                         VStack(alignment: .leading, spacing: 19) {
                             HStack(alignment: .top, spacing: 8) {
@@ -31,7 +31,7 @@ struct FavoriteItemView: View {
                                 Button {
                                     RealmManager.shared.deleteFromFavorite(furn)
                                 } label: {
-                                    Image.DeleteIcon()
+                                    Image.deleteIcon
                                 }
                             }
                             .padding(0)
@@ -49,7 +49,7 @@ struct FavoriteItemView: View {
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 0)
                                 .frame(width: 152, height: 32, alignment: .center)
-                                .background(Color.ECBackground)
+                                .background(Color.ECYellow)
                                 .cornerRadius(8)
                             }
                             .padding(0)

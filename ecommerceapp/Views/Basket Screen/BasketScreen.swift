@@ -20,7 +20,7 @@ struct BasketScreen: View {
                 ScrollView {
                         VStack(alignment: .center, spacing: 16) {
                             // MARK: Surprised Emoji View
-                            Image.SurprisedEmoji()
+                            Image.surprisedEmoji
                             VStack(alignment: .center, spacing: 4) {
                                 // MARK: Empty Bag Text View
                                 Text.EmptyViewText(emptyViewName: "empty.bag")

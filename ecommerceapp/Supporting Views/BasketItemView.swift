@@ -16,7 +16,7 @@ struct BasketItemView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     HStack(alignment: .top, spacing: 16) {
                         // MARK: Furniture Image View
-                        Image.FurnImage(imageName: furn.imageName)
+                        FurnImage(imageName: furn.imageName)
                         VStack(alignment: .leading, spacing: 19) {
                             HStack(alignment: .top, spacing: 8) {
                                 VStack(alignment: .leading, spacing: 4) {
@@ -31,7 +31,7 @@ struct BasketItemView: View {
                                 Button {
                                     RealmManager.shared.deleteFromBasket(furn)
                                 } label: {
-                                    Image.TrashImage()
+                                    Image.trashImage
                                 }
                             }
                             .padding(0)
@@ -41,13 +41,13 @@ struct BasketItemView: View {
                                     Button {
                                         RealmManager.shared.decrementBuyedQuantity(furn, lowerBound: 0)
                                     } label: {
-                                        Image.StepperButtonMinus()
+                                        StepperButtonElements(imageName: "minus")
                                     }
                                     Text.FurnBuyedQuantity(furnBuyedQuantity: furn.buyedQuantity)
                                     Button {
                                         RealmManager.shared.incrementBuyedQuantity(furn, upperBound: 5)
                                     } label: {
-                                        Image.StepperButtonPlus()
+                                        StepperButtonElements(imageName: "plus")
                                     }
                                 }
                             }
