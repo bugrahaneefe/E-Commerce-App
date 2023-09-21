@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "minitable.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

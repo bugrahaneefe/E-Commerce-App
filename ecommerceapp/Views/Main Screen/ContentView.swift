@@ -6,16 +6,20 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ContentView: View {
+    init() {
+        Furnitures.setup()
+    }
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            VStack(spacing: 0) {
+                NavigationLink(destination: TabBar(), label: {
+                    Image.mainScreen
+                })
+            }.padding()
         }
-        .padding()
     }
 }
 

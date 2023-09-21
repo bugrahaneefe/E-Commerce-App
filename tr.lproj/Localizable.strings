@@ -1,0 +1,53 @@
+/* 
+  Localizable.strings
+  ecommerceapp
+
+  Created by Buğrahan Efe on 8.08.2023.
+  
+*/
+
+// MARK: - B
+"basket" = "Sepet";
+"birth.date" = "  Doğum Tarihi :";
+"broom" = "Yatak Odası";
+
+// MARK: - C
+"change.photo" = "Fotoğrafı Değiştir";
+
+// MARK: - D
+"detail" = "Detaylı Görünüm";
+"droom" = "Yemek Odası";
+
+// MARK: - E
+"empty.bag" = "Sepet Boş";
+"empty.bag.desc" = "Sepetiniz boş, hadi alışverişe başlayalım!";
+"empty.fav" = "Favoriniz Yok!";
+"empty.fav.desc" = "Favori Ürünlerinizi Ekleyin!";
+
+// MARK: - F
+"fav" = "Favoriler";
+"full.name" = "  İsim Soyisim :";
+
+// MARK: - I
+"is.already.in.basket" = "Ürün sepetinizde bulunuyor!";
+
+// MARK: - L
+"lroom" = "Oturma Odası";
+
+// MARK: - M
+"mail" = "  E-mail :";
+"main.title" = "MOBO";
+"move.to.bag" = "Sepete Taşı";
+
+// MARK: - O
+"ok" = "Tamam";
+
+// MARK: - P
+"phone" = "  Telefon :";
+
+// MARK: - S
+"str.shop" = "Alışverişe Başla!";
+"save" = "Kaydet";
+
+// MARK: - T
+"total.amount" = "Toplam: ";
