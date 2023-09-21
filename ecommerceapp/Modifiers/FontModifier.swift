@@ -11,7 +11,7 @@ struct FontModifier: ViewModifier {
     let size: CGFloat
     let name: String
     func body(content: Content) -> some View {
-        content.font(.custom(name, size: size)).foregroundColor(.black)
+        content.font(.custom(name, size: size))
     }
 }
 

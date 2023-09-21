@@ -5,7 +5,6 @@
 //  Created by Buğrahan Efe on 10.08.2023.
 //
 
-import Foundation
 import SwiftUI
 
 extension Text {
@@ -38,4 +37,16 @@ extension Text {
         self.font(.footnote)
             .foregroundColor(.gray)
     }
+    static let moveToBagText: some View = {
+        Text(Constants.moveToBag)
+            .poppinsMedium(size: 14)
+            .multilineTextAlignment(.center)
+            .foregroundColor(Color.ECDarkGray)
+    }()
+    static var totalText: some View = {
+        Text(Constants.totalAmount)
+            .poppinsMedium(size: 18)
+            .bold()
+            .foregroundColor(Color.ECDarkGray)
+    }()
 }

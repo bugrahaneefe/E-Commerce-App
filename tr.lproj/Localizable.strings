@@ -12,7 +12,7 @@
 "broom" = "Yatak Odası";
 
 // MARK: - C
-"c.photo" = "Fotoğrafı Değiştir";
+"change.photo" = "Fotoğrafı Değiştir";
 
 // MARK: - D
 "detail" = "Detaylı Görünüm";
@@ -20,11 +20,16 @@
 
 // MARK: - E
 "empty.bag" = "Sepet Boş";
-"empty.bag.start.shop" = "Sepetiniz boş, hadi alışverişe başlayalım!";
+"empty.bag.desc" = "Sepetiniz boş, hadi alışverişe başlayalım!";
+"empty.fav" = "Favoriniz Yok!";
+"empty.fav.desc" = "Favori Ürünlerinizi Ekleyin!";
 
 // MARK: - F
 "fav" = "Favoriler";
 "full.name" = "  İsim Soyisim :";
+
+// MARK: - I
+"is.already.in.basket" = "Ürün sepetinizde bulunuyor!";
 
 // MARK: - L
 "lroom" = "Oturma Odası";
@@ -34,6 +39,9 @@
 "main.title" = "MOBO";
 "move.to.bag" = "Sepete Taşı";
 
+// MARK: - O
+"ok" = "Tamam";
+
 // MARK: - P
 "phone" = "  Telefon :";
 
@@ -42,5 +50,4 @@
 "save" = "Kaydet";
 
 // MARK: - T
-"total.amount" = "Toplam Tutar";
-"total.dollar" = "Toplam: $";
+"total.amount" = "Toplam: ";

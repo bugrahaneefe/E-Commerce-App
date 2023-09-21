@@ -10,8 +10,8 @@ import SwiftUI
 struct CategoryScreen: View {
     var body: some View {
             NavigationView {
-                VStack(alignment: .leading) {
-                    NavigationBarEdit(title: "main.title".locally(), size: 30, height: 100)
+                VStack {
+                    NavigationBarMainEdit(title: "main.title".locally(), size: 32, height: UIScreen.main.bounds.height * 0.15)
                     VStack {
                         SliderStoryView()
                         ScrollView(.vertical, showsIndicators: false, content: {

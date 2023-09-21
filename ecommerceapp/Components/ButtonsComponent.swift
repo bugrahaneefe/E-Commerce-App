@@ -1,5 +1,5 @@
 //
-//  Buttons.swift
+//  ButtonsComponent.swift
 //  ecommerceapp
 //
 //  Created by Buğrahan Efe on 6.08.2023.
@@ -10,9 +10,8 @@ import SwiftUI
 struct ButtonSystemImage: View {
     var sysname: String
     var body: some View {
-        Button(action: {
-            // button action
-        }) {
+        Button {
+        } label: {
             Image(systemName: sysname)
                 .foregroundColor(.gray)
                 .padding(.top, 5)
@@ -23,9 +22,8 @@ struct ButtonSystemImage: View {
 struct ButtonAssetImage: View {
     var imagename: String
     var body: some View {
-        Button(action: {
-            // button action
-        }) {
+        Button {
+        } label: {
             Image(imagename)
         }
     }
@@ -37,9 +35,8 @@ struct ButtonWText: View {
     var cornerRadius: Double
     var fontSize: Double
     var body: some View {
-        Button(action: {
-            // button action
-        }) {
+        Button {
+        } label: {
             Text(text)
                 .foregroundColor(.black)
                 .background(backgroundColor)
@@ -49,27 +46,12 @@ struct ButtonWText: View {
     }
 }
 
-struct FavoriteButton: View {
-    @State var furn: Furnitures
-    var body: some View {
-        Button(action: {
-            self.furn.isFavorite.toggle()
-        }) {
-            Image(systemName: furn.isFavorite ? "heart.fill" : "heart")
-                .foregroundColor(furn.isFavorite ? .red : .gray)
-                .frame(width: 40, height: 40)
-                .background(Color.white)
-        }
-        .cornerRadius(20)
-    }
-}
-
 struct DismissButton: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
-        Button(action: {
-            presentationMode.wrappedValue.dismiss() // Go back to the previous page
-        }) {
+        Button {
+            presentationMode.wrappedValue.dismiss()
+        } label: {
             HStack {
                 Image(systemName: "arrow.left")
             }
@@ -86,5 +68,13 @@ struct SortFilterView: View {
             ButtonAssetImage(imagename: Constants.filter)
             Spacer()
         }.padding()
+    }
+}
+
+struct StepperButtonElements: View {
+    var imageName: String
+    var body: some View {
+        Image(systemName: imageName)
+            .foregroundColor(.black)
     }
 }

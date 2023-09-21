@@ -6,35 +6,71 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct FavoriteItemView: View {
-    let furn: Furnitures
+    @ObservedRealmObject var furnitureGroup: FurnituresGroup
+    @State private var showAlert = false
     var body: some View {
-        VStack {
-            HStack(alignment: .top) {
-                Image(furn.imageName).resizedImage
-                    .cornerRadiusRectangle(5)
-                    .frameCenter(width: 90, height: 120)
-                VStack(alignment: .leading) {
-                    HStack(alignment: .top) {
-                        Text(furn.name).poppinsMedium(size: 17)
-                        Spacer()
-                        ButtonSystemImage(sysname: "xmark.circle.fill")
+        ForEach(furnitureGroup.furnitures) { (furn: Furnitures) in
+            if furn.isFavorite {
+                VStack(alignment: .leading, spacing: 24) {
+                    HStack(alignment: .top, spacing: 16) {
+                        // MARK: Furniture Image View
+                        FurnImage(imageName: furn.imageName)
+                        // MARK: Furniture Details View
+                        VStack(alignment: .leading, spacing: 19) {
+                            HStack(alignment: .top, spacing: 8) {
+                                VStack(spacing: 4) {
+                                    // MARK: Price View
+                                    FurnPrice(priceQuantitiy: furn.price)
+                                    // MARK: Furniture Name View
+                                    FurnName(furnName: furn.name)
+                                }
+                                // MARK: Delete From Favorites Button
+                                Button {
+                                    RealmManager.shared.deleteFromFavorite(furn)
+                                } label: {
+                                    Image.deleteIcon
+                                }
+                            }
+                            .padding(0)
+                            VStack(alignment: .center, spacing: 10) {
+                                // MARK: Move to Bag View
+                                HStack(alignment: .center, spacing: 10) {
+                                    Button {
+                                        if RealmManager.shared.updateIsBuyedStatusWithAlert(furn) {
+                                            showAlert = true
+                                        }
+                                    } label: {
+                                        Text.moveToBagText
+                                    }
+                                }
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 0)
+                                .frame(width: UIScreen.main.bounds.width * 0.3,
+                                       height: UIScreen.main.bounds.height * 0.04,
+                                       alignment: .center)
+                                .background(Color.ECYellow)
+                                .cornerRadius(8)
+                            }
+                            .padding(0)
+                            .frame(height: UIScreen.main.bounds.height * 0.04, alignment: .center)
+                        }.padding(0)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    Text("\(furn.price)")
-                        .headlineBoldText
-                        .poppinsMedium(size: 14)
-                        .padding(.top, -5)
-                    Spacer()
-                    ButtonWText(text: Constants.moveToBag,
-                                backgroundColor: .yellow,
-                                cornerRadius: 5,
-                                fontSize: 15)
+                    .padding(0)
+                    .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .topLeading)
                 }
-                .padding()
+                .padding(16)
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("is.already.in.basket".locally()),
+                        message: Text(""),
+                        dismissButton: .default(Text("ok".locally()))
+                    )
+                }
             }
-            .frame(height: 80)
-            .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
     }
 }

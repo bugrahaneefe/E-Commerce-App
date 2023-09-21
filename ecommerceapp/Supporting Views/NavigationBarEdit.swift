@@ -13,37 +13,37 @@ struct NavigationBarEdit: View {
     let size: Double
     let height: Double
     var body: some View {
-        HStack {
-            Text("")
-        }
-        .frame(width: screenFrame.width, height: screenFrame.height * 0.1)
-        .overlay(
-            Text(title)
-                .paddedText
-                .poppinsMedium(size: size),
-            alignment: .center)
-        .background(Color("ecYellow"))
+        Text(title)
+            .poppinsMedium(size: size)
+            .foregroundColor(Color.ECDarkGray)
+            .frame(width: screenFrame.width - 32, height: screenFrame.height * 0.1, alignment: .leadingLastTextBaseline)
     }
 }
-struct NavigationBarEditWSave: View {
+
+struct NavigationBarMainEdit: View {
+    @Environment(\.screenFrame) var screenFrame
+    let title: String
+    let size: Double
+    let height: Double
+    var body: some View {
+        Text(title)
+            .poppinsMedium(size: size)
+            .foregroundColor(Color.ECDarkGray)
+            .frame(width: screenFrame.width - 32, height: screenFrame.height * 0.1, alignment: .centerLastTextBaseline)
+    }
+}
+
+struct NavigationBarEditWithoutBackground: View {
     @Environment(\.screenFrame) var screenFrame
     let title: String
     let size: Double
     let height: Double
     var body: some View {
         HStack {
-            Spacer()
-            ButtonWText(text: "save".locally(),
-                        backgroundColor: .white,
-                        cornerRadius: 0,
-                        fontSize: 10)
-                .frame(height: 30)
+            Text(title)
+                .paddedText
+                .poppinsMedium(size: size)
         }
-        .padding(.horizontal, 15)
         .frame(width: screenFrame.width, height: screenFrame.height * 0.1)
-        .overlay(Text(title)
-            .paddedText
-            .poppinsMedium(size: size),
-                 alignment: .center)
     }
 }

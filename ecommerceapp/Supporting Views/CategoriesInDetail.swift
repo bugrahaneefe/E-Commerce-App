@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct CategoryItemViewInCategories: View {
-    let arrFurn = Furnitures.all()
+    @ObservedResults(FurnituresGroup.self) var furnituresGroups
     let gridColumns = [
         GridItem(.flexible(), spacing: 15),
         GridItem(.flexible(), spacing: 15)
@@ -16,31 +17,27 @@ struct CategoryItemViewInCategories: View {
     var categoryTitle: String
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: gridColumns, spacing: 10) {
-                ForEach(arrFurn) { furn in
-                    if furn.category == categoryTitle {
-                        ItemCell(furn: furn)
-                            .frame(maxWidth: .infinity)
-                    }
-                }.padding(.vertical, 30)
-            }.padding(.horizontal, 10)
+            LazyVGrid(columns: gridColumns, spacing: 150) {
+                if let furn = furnituresGroups.first {
+                    ItemCell(furnitureGroup: furn, categoryTitle: categoryTitle)
+                }
+            }
+            .padding(.vertical, 68)
         }
     }
 }
 
 struct CategoryItemViewInFavorites: View {
-    let arrFurn = Furnitures.all()
+    @ObservedResults(FurnituresGroup.self) var furnituresGroups
     var categoryTitle: String
     var body: some View {
         VStack {
-            NavigationBarEdit(title: categoryTitle, size: 20, height: 35)
+            NavigationBarEdit(title: categoryTitle, size: 32, height: UIScreen.main.bounds.height * 0.15)
             ScrollView {
                 VStack {
-                    ForEach(arrFurn.indices, id: \.self) { index in
-                        if arrFurn[index].isFavorite {
-                            FavoriteItemView(furn: arrFurn[index])
-                        }
-                    }.padding(.vertical, 30)
+                    if let furn = furnituresGroups.first {
+                        FavoriteItemView(furnitureGroup: furn)
+                    }
                 }
             }
         }
@@ -48,36 +45,46 @@ struct CategoryItemViewInFavorites: View {
 }
 
 struct CategoryItemViewInBasket: View {
-    let arrFurn = Furnitures.all()
-    @State private var quantities: [Int]
-    var totalPrice: Double {
-        return zip(arrFurn, quantities)
-            .reduce(0.0) { total, tuple in
-                let (furn, quantity) = tuple
-                return total + Double(quantity) * Double(furn.price)
+    @ObservedResults(FurnituresGroup.self) var furnituresGroups
+    // MARK: Total Amount Calculation
+    var totalAmount: Int {
+        var amount = 0
+        if let furnituresList = furnituresGroups.first?.furnitures {
+            for furn in Array(furnituresList) where furn.isBuyed {
+                    amount += furn.price * furn.buyedQuantity
             }
-    }
-    init() {
-        _quantities = State(initialValue: Array(repeating: 1, count: arrFurn.count))
+        }
+        return amount
     }
     var body: some View {
         VStack {
-            NavigationBarEdit(title: Constants.basket, size: 20, height: 35)
+            NavigationBarEdit(title: Constants.basket, size: 32, height: UIScreen.main.bounds.height * 0.15)
             ScrollView {
                 VStack {
-                    ForEach(arrFurn.indices, id: \.self) { index in
-                        BasketItemView(furn: arrFurn[index], quantity: $quantities[index])
-                    }.padding(.vertical, 30)
+                    if let furn = furnituresGroups.first {
+                        BasketItemView(furnitureGroup: furn)
+                    }
                 }
             }
-            HStack {
-                Text(Constants.totalAmount)
-                    .poppinsMedium(size: 16)
-                Spacer()
-                Text(Constants.total+String(format: "%.2f", totalPrice))
+            HStack(alignment: .top, spacing: 63) {
+                VStack(alignment: .leading, spacing: 4) {
+                    // MARK: Total Text View
+                    Text.totalText
+                }
+                .padding(.leading, 0)
+                .padding(.trailing, 70)
+                .padding(.vertical, 0)
+                VStack(alignment: .leading, spacing: 4) {
+                    // MARK: Total Amount Text View
+                    TotalAmountText(totalAmount: totalAmount)
+                }
+                .padding(.leading, 0)
+                .padding(.trailing, 70)
+                .padding(.vertical, 0)
             }
-            .padding(.horizontal, 15)
-            .padding(.bottom, 5)
+            .padding(.horizontal, 16)
+            .padding(.top, 24)
+            .padding(.bottom, 16)
         }
     }
 }

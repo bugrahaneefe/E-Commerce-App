@@ -6,42 +6,66 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct BasketItemView: View {
-    let furn: Furnitures
-    @Binding var quantity: Int // Binding to keep track of the quantity for each item
+    @ObservedRealmObject var furnitureGroup: FurnituresGroup
     var body: some View {
-        ZStack {
-            HStack(alignment: .top) {
-                Image(furn.imageName)
-                    .resizedImage
-                    .cornerRadiusRectangle(5)
-                    .frameCenter(width: 90, height: 120)
-                VStack(alignment: .leading) {
-                    HStack(alignment: .top) {
-                        Text(furn.name).poppinsMedium(size: 17)
-                        Spacer()
-                        ButtonSystemImage(sysname: "trash")
-                    }
-                    Text("\(furn.price)")
-                        .headlineBoldText
-                        .poppinsMedium(size: 14)
-                        .padding(.top, -5)
-                    Spacer()
-                    HStack(alignment: .top) {
-                        Spacer()
-                        Stepper(value: $quantity, in: 0...5) {
-                            Text("\(quantity)")
+        ForEach(furnitureGroup.furnitures, id: \.self) { (furn: Furnitures) in
+            if furn.isBuyed {
+                VStack(alignment: .leading, spacing: 24) {
+                    HStack(alignment: .top, spacing: 16) {
+                        // MARK: Furniture Image View
+                        FurnImage(imageName: furn.imageName)
+                        VStack(alignment: .leading, spacing: 19) {
+                            HStack(alignment: .top, spacing: 8) {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    // MARK: Furniture Price View
+                                    FurnPrice(priceQuantitiy: furn.price)
+                                    // MARK: Furniture Name View
+                                    FurnName(furnName: furn.name)
+                                }
+                                .padding(0)
+                                .frame(maxWidth: .infinity, alignment: .topLeading)
+                                // MARK: Furniture Delete From Basket Button View
+                                Button {
+                                    RealmManager.shared.deleteFromBasket(furn)
+                                } label: {
+                                    Image.trashImage
+                                }
+                            }
+                            .padding(0)
+                            // MARK: Stepper View
+                            HStack(alignment: .top, spacing: 10) {
+                                HStack(spacing: 16.5) {
+                                    Button {
+                                        RealmManager.shared.decrementBuyedQuantity(furn, lowerBound: 0)
+                                    } label: {
+                                        StepperButtonElements(imageName: "minus")
+                                    }
+                                    FurnBuyedQuantity(furnBuyedQuantity: furn.buyedQuantity)
+                                    Button {
+                                        RealmManager.shared.incrementBuyedQuantity(furn, upperBound: 5)
+                                    } label: {
+                                        StepperButtonElements(imageName: "plus")
+                                    }
+                                }
+                            }
+                            .padding(.horizontal, 8)
+                            .padding(.top, 8)
+                            .padding(.bottom, 7)
+                            .frame(width: UIScreen.main.bounds.width * 0.25,
+                                   height: UIScreen.main.bounds.height * 0.04,
+                                   alignment: .top)
+                            .background(Color.ECBackground)
+                            .cornerRadius(8)
                         }
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    .background(Color.yellow)
-                    .cornerRadius(5).frame(width: 120)
+                    .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .topLeading)
                 }
-                .padding(.init(top: 5, leading: 5, bottom: 5, trailing: 0))
-                Spacer()
+                .padding(16)
             }
-            .frame(height: 130)
-            .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
     }
 }

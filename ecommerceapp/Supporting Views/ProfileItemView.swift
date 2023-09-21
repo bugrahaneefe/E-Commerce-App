@@ -6,29 +6,18 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ProfileItemView: View {
-    let person = Person.all()
-    @State private var nameInput: String = ""
-    @State private var phoneInput: String = ""
-    @State private var emailInput: String = ""
-    @State private var birthInput: String = ""
+    @ObservedRealmObject var person: Person
     var body: some View {
         // Full Name Textfield
-        Text(Constants.profileRowInfo[0])
-            .headlineBoldText
-        TextField(person.name, text: $nameInput).profileTextfieldEdit
+        ProfileScreen.ProfileItemCell(rowIndex: 0, name: $person.name)
         // Phone Textfield
-        Text(Constants.profileRowInfo[1])
-            .headlineBoldText
-        TextField(person.phone, text: $phoneInput).profileTextfieldEdit
+        ProfileScreen.ProfileItemCell(rowIndex: 1, name: $person.phone)
         // Email Textfield
-        Text(Constants.profileRowInfo[2])
-            .headlineBoldText
-        TextField(person.email, text: $emailInput).profileTextfieldEdit
+        ProfileScreen.ProfileItemCell(rowIndex: 2, name: $person.email)
         // BirthDate Textfield
-        Text(Constants.profileRowInfo[3])
-            .headlineBoldText
-        TextField(person.birthDate, text: $birthInput).profileTextfieldEdit
+        ProfileScreen.ProfileItemCell(rowIndex: 3, name: $person.birthDate)
     }
 }
