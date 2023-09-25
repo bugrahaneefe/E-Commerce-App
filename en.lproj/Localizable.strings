@@ -5,11 +5,11 @@
   Created by Buğrahan Efe on 8.08.2023.
   
 */
-
 // MARK: - B
 "basket" = "Basket";
 "birth.date" = "  Date of Birth :";
 "broom" = "Bedroom";
+"buy.it" = "Buy";
 
 // MARK: - C
 "change.photo" = "Change Photo";
@@ -51,3 +51,10 @@
 
 // MARK: - T
 "total.amount" = "Total: ";
+
+// MARK: - Sorting Types
+"highest.price" = "Highest Price";
+"lowest.price" = "Lowest Price";
+"name" = "Name";
+"highest.rating" = "Highest Rating";
+"suggested" = "Suggested";

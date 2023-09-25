@@ -20,7 +20,7 @@ struct FavoriteScreen: View {
                     ScrollView {
                             VStack(alignment: .center, spacing: 16) {
                                 // MARK: Surprised Emoji View
-                                Image.surprisedEmoji
+                                SurprisedEmojiImage()
                                 VStack(alignment: .center, spacing: 4) {
                                     // MARK: Empty Favorite Text View
                                     EmptyViewText(emptyViewName: "empty.fav")

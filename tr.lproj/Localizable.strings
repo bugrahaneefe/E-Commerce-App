@@ -10,6 +10,7 @@
 "basket" = "Sepet";
 "birth.date" = "  Doğum Tarihi :";
 "broom" = "Yatak Odası";
+"buy.it" = "Satın Al";
 
 // MARK: - C
 "change.photo" = "Fotoğrafı Değiştir";
@@ -51,3 +52,10 @@
 
 // MARK: - T
 "total.amount" = "Toplam: ";
+
+// MARK: - Sorting Types
+"highest.price" = "En Yüksek Fiyat";
+"lowest.price" = "En Düşük Fiyat";
+"name" = "İsme Göre";
+"highest.rating" = "En Favoriler";
+"suggested" = "Önerilen";

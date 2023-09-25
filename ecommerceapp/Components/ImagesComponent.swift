@@ -41,3 +41,38 @@ struct FurnIsFavorite: View {
             .background(Color.white)
     }
 }
+struct TrashImage: View {
+    var body: some View {
+        Image(systemName: "trash")
+            .foregroundColor(Color.gray)
+            .frame(width: 24, height: 24)
+    }
+}
+struct DeleteIcon: View {
+    var body: some View {
+        Image(systemName: "xmark.circle.fill")
+            .foregroundColor(.gray)
+            .padding(.top, 5)
+    }
+}
+struct MainScreenImage: View {
+    var body: some View {
+        Image(Constants.CategoryImagesNames.mobomain.rawValue)
+            .fillImage
+    }
+}
+struct ProfilePhotoImage: View {
+    var body: some View {
+        Image(Constants.EmojiImagesNames.avatar.rawValue)
+            .resizedImage
+            .cornerRadiusRectangle(5)
+            .frameCenter(width: 100, height: 80)
+            .clipShape(Circle())
+    }
+}
+struct SurprisedEmojiImage: View {
+    var body: some View {
+        Image(Constants.EmojiImagesNames.surprised.rawValue)
+            .frame(width: 120, height: 120)
+    }
+}

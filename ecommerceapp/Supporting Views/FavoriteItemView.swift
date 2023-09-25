@@ -31,7 +31,7 @@ struct FavoriteItemView: View {
                                 Button {
                                     RealmManager.shared.deleteFromFavorite(furn)
                                 } label: {
-                                    Image.deleteIcon
+                                    DeleteIcon()
                                 }
                             }
                             .padding(0)
@@ -43,7 +43,10 @@ struct FavoriteItemView: View {
                                             showAlert = true
                                         }
                                     } label: {
-                                        Text.moveToBagText
+                                        Text(Constants.moveToBag)
+                                            .poppinsMedium(size: 14)
+                                            .multilineTextAlignment(.center)
+                                            .foregroundColor(Color.ECDarkGray)
                                     }
                                 }
                                 .padding(.horizontal, 16)

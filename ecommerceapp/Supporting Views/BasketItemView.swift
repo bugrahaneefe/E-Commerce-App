@@ -31,23 +31,19 @@ struct BasketItemView: View {
                                 Button {
                                     RealmManager.shared.deleteFromBasket(furn)
                                 } label: {
-                                    Image.trashImage
+                                    TrashImage()
                                 }
                             }
                             .padding(0)
                             // MARK: Stepper View
                             HStack(alignment: .top, spacing: 10) {
                                 HStack(spacing: 16.5) {
-                                    Button {
+                                    ButtonsComponent.stepperButtonElements(imageName: "minus") {
                                         RealmManager.shared.decrementBuyedQuantity(furn, lowerBound: 0)
-                                    } label: {
-                                        StepperButtonElements(imageName: "minus")
                                     }
                                     FurnBuyedQuantity(furnBuyedQuantity: furn.buyedQuantity)
-                                    Button {
+                                    ButtonsComponent.stepperButtonElements(imageName: "plus") {
                                         RealmManager.shared.incrementBuyedQuantity(furn, upperBound: 5)
-                                    } label: {
-                                        StepperButtonElements(imageName: "plus")
                                     }
                                 }
                             }

@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct BasketScreen: View {
+    @Binding var selectedTab: Int // This is used to go to categoryscreen tab.
     @ObservedResults(FurnituresGroup.self) var furnituresGroups
     var isBasketEmpty: Bool {
         return furnituresGroups.first?.furnitures.contains(where: { $0.isBuyed }) != true
@@ -20,7 +21,7 @@ struct BasketScreen: View {
                 ScrollView {
                         VStack(alignment: .center, spacing: 16) {
                             // MARK: Surprised Emoji View
-                            Image.surprisedEmoji
+                            SurprisedEmojiImage()
                             VStack(alignment: .center, spacing: 4) {
                                 // MARK: Empty Bag Text View
                                 EmptyViewText(emptyViewName: "empty.bag")
@@ -33,10 +34,12 @@ struct BasketScreen: View {
                         .cornerRadius(24)
                     }
                 HStack(alignment: .center, spacing: 8) {
-                    ButtonWText(text: "str.shop".locally(),
+                    ButtonsComponent.buttonWithText(text: "str.shop".locally(),
                                 backgroundColor: Color.ECYellow,
                                 cornerRadius: 10,
-                                fontSize: 20)
+                                                    fontSize: 20) {
+                        selectedTab = 0
+                    }
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 0)
@@ -47,11 +50,5 @@ struct BasketScreen: View {
         } else {
             CategoryItemViewInBasket()
         }
-    }
-}
-
-struct BasketScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        BasketScreen()
     }
 }

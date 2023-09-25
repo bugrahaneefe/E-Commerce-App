@@ -10,6 +10,12 @@ import RealmSwift
 
 struct CategoryItemViewInCategories: View {
     @ObservedResults(FurnituresGroup.self) var furnituresGroups
+    @Binding var sortingKeyPath: String
+    @Binding var isAscending: Bool
+    @Binding var maxRating: Int
+    @Binding var minRating: Int
+    @Binding var maxPrice: Int
+    @Binding var minPrice: Int
     let gridColumns = [
         GridItem(.flexible(), spacing: 15),
         GridItem(.flexible(), spacing: 15)
@@ -19,7 +25,14 @@ struct CategoryItemViewInCategories: View {
         ScrollView {
             LazyVGrid(columns: gridColumns, spacing: 150) {
                 if let furn = furnituresGroups.first {
-                    ItemCell(furnitureGroup: furn, categoryTitle: categoryTitle)
+                    ItemCell(furnitureGroup: furn,
+                             sortingKeyPath: $sortingKeyPath,
+                             isAscending: $isAscending,
+                             maxRating: $maxRating,
+                             minRating: $minRating,
+                             maxPrice: $maxPrice,
+                             minPrice: $minPrice,
+                             categoryTitle: categoryTitle)
                 }
             }
             .padding(.vertical, 68)
@@ -69,7 +82,7 @@ struct CategoryItemViewInBasket: View {
             HStack(alignment: .top, spacing: 63) {
                 VStack(alignment: .leading, spacing: 4) {
                     // MARK: Total Text View
-                    Text.totalText
+                    TotalText()
                 }
                 .padding(.leading, 0)
                 .padding(.trailing, 70)
