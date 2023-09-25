@@ -72,42 +72,42 @@ func getCategoryInScreen(categoryType: CategoryInScreen,
         }.navigationTitle("droom".locally())
     }
 }
-
-func getFurnitureDetailInScreen(furn: Furnitures) -> some View {
-    return
-        VStack {
+struct FurnitureDetailViewInScreen: View {
+    @State private var isAlertPresented = false
+    var furn: Furnitures
+    var body: some View {
+        VStack(spacing: 0) {
             Rectangle()
-              .foregroundColor(.clear)
-              .frame(width: 375, height: 458)
-              .background(
-                // MARK: Furniture Detail Image View
-                Image(furn.imageName)
-                  .resizable()
-                  .aspectRatio(contentMode: .fill)
-                  .frame(width: 375, height: 458)
-                  .clipped()
-              )
+                .foregroundColor(.clear)
+                .background(
+                    // MARK: Furniture Detail Image View
+                    Image(furn.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                )
+                .edgesIgnoringSafeArea(.all)
+
             VStack(alignment: .leading, spacing: 64) {
                 VStack(alignment: .leading, spacing: 4) {
                     // MARK: Furniture Detail Price View
                     Text("$\(furn.price)")
-                      .font(
-                        Font.custom("Poppins", size: 24)
-                          .weight(.semibold)
-                      )
-                      .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+                        .poppinsMedium(size: 24)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+
                     // MARK: Furniture Detail Name View
                     Text(furn.name)
-                      .poppinsMedium(size: 16)
-                      .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
-                      .frame(width: 343, alignment: .topLeading)
+                        .poppinsMedium(size: 16)
+                        .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
+                        .frame(width: 343, alignment: .topLeading)
                 }
                 .padding(0)
+
                 // MARK: Furniture Detail buyIt View
                 HStack(alignment: .center, spacing: 8) {
                     Button {
                         if RealmManager.shared.updateIsBuyedStatusWithAlert(furn) {
-//                            showAlert = true
+                            isAlertPresented = true
                         }
                     } label: {
                         HStack(spacing: 8) {
@@ -116,6 +116,7 @@ func getFurnitureDetailInScreen(furn: Furnitures) -> some View {
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(Color.ECDarkGray)
                             Image(systemName: "bag")
+                                .foregroundColor(Color.black)
                         }
                     }
                 }
@@ -129,4 +130,13 @@ func getFurnitureDetailInScreen(furn: Furnitures) -> some View {
             .padding(.vertical, 24)
             .background(Color(red: 0.96, green: 0.96, blue: 0.96))
         }
+        .navigationTitle(furn.name + " Detail")
+        .alert(isPresented: $isAlertPresented) {
+            Alert(
+                title: Text("is.already.in.basket".locally()),
+                message: Text(""),
+                dismissButton: .default(Text("ok".locally()))
+            )
+        }
+    }
 }

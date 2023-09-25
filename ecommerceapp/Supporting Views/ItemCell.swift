@@ -38,7 +38,7 @@ struct ItemCell: View {
                                     //                                    showAlert = true
                                     //                                }
                                 } label: {
-                                    NavigationLink(destination: getFurnitureDetailInScreen(furn: furn)) {
+                                    NavigationLink(destination: FurnitureDetailViewInScreen(furn: furn)) {
                                         FurnItemCellImage(imageName: furn.imageName)
                                     }
                                 }
