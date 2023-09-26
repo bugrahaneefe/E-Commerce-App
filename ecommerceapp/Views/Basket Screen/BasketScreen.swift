@@ -37,7 +37,7 @@ struct BasketScreen: View {
                     ButtonsComponent.buttonWithText(text: "str.shop".locally(),
                                 backgroundColor: Color.ECYellow,
                                 cornerRadius: 10,
-                                                    fontSize: 20) {
+                                fontSize: 20) {
                         selectedTab = 0
                     }
                 }

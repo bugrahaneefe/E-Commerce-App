@@ -33,7 +33,7 @@ struct ButtonsComponent {
                 .foregroundColor(.black)
                 .background(backgroundColor)
                 .cornerRadius(cornerRadius)
-                .font(.custom(Constants.FontNames.poppinsMed.rawValue, size: fontSize))
+                .poppinsMedium(size: fontSize)
         }
     }
     @ViewBuilder

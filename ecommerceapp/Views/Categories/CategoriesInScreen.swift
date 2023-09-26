@@ -73,6 +73,7 @@ func getCategoryInScreen(categoryType: CategoryInScreen,
     }
 }
 struct FurnitureDetailViewInScreen: View {
+    @Environment(\.screenFrame) var screenFrame
     @State private var isAlertPresented = false
     var furn: Furnitures
     var body: some View {
@@ -95,7 +96,7 @@ struct FurnitureDetailViewInScreen: View {
                     Text(furn.name)
                         .poppinsMedium(size: 16)
                         .foregroundColor(Color.ECLightGray)
-                        .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .topLeading)
+                        .frame(width: screenFrame.width * 0.9, alignment: .topLeading)
                 }
                 .padding(0)
                 // MARK: Furniture Detail buyIt View
@@ -118,8 +119,8 @@ struct FurnitureDetailViewInScreen: View {
                 .padding(.horizontal, 16)
                 .padding(.vertical, 0)
                 .frame(maxWidth: .infinity,
-                       minHeight: UIScreen.main.bounds.height * 0.1,
-                       maxHeight: UIScreen.main.bounds.height * 0.1,
+                       minHeight: screenFrame.height * 0.1,
+                       maxHeight: screenFrame.height * 0.1,
                        alignment: .center)
                 .background(Color.ECYellow)
                 .cornerRadius(8)
@@ -128,7 +129,7 @@ struct FurnitureDetailViewInScreen: View {
             .padding(.vertical, 24)
             .background(Color.ECBackground)
         }
-        .navigationTitle("\(furn.name) Detail")
+        .navigationTitle("\(furn.name)" + "title.detail".locally())
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {

@@ -10,6 +10,7 @@ import RealmSwift
 
 struct ItemCell: View {
     @ObservedRealmObject var furnitureGroup: FurnituresGroup
+    @Environment(\.screenFrame) var screenFrame
     @State private var showAlert = false
     @Binding var sortingKeyPath: String
     @Binding var isAscending: Bool
@@ -65,8 +66,8 @@ struct ItemCell: View {
                             .padding(.init(top: 15, leading: 3, bottom: 5, trailing: 3))
                             Spacer()
                         }
-                        .frame(height: UIScreen.main.bounds.height * 0.2)
-                        .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        .frame(height: screenFrame.height * 0.2)
+                        .padding(0)
                     }
                     .alert(isPresented: $showAlert) {
                         Alert(

@@ -17,6 +17,7 @@
 
 // MARK: - D
 "detail" = "Detaylı Görünüm";
+"title.detail" = " Detayı";
 "droom" = "Yemek Odası";
 
 // MARK: - E
@@ -29,16 +30,24 @@
 "fav" = "Favoriler";
 "full.name" = "  İsim Soyisim :";
 
+// MARK: - H
+"highest.price" = "En Yüksek Fiyat";
+"highest.rating" = "En Favoriler";
+
 // MARK: - I
 "is.already.in.basket" = "Ürün sepetinizde bulunuyor!";
 
 // MARK: - L
+"lowest.price" = "En Düşük Fiyat";
 "lroom" = "Oturma Odası";
 
 // MARK: - M
 "mail" = "  E-mail :";
 "main.title" = "MOBO";
 "move.to.bag" = "Sepete Taşı";
+
+// MARK: - N
+"name" = "İsme Göre";
 
 // MARK: - O
 "ok" = "Tamam";
@@ -47,15 +56,9 @@
 "phone" = "  Telefon :";
 
 // MARK: - S
-"str.shop" = "Alışverişe Başla!";
 "save" = "Kaydet";
+"str.shop" = "Alışverişe Başla!";
+"suggested" = "Önerilen";
 
 // MARK: - T
 "total.amount" = "Toplam: ";
-
-// MARK: - Sorting Types
-"highest.price" = "En Yüksek Fiyat";
-"lowest.price" = "En Düşük Fiyat";
-"name" = "İsme Göre";
-"highest.rating" = "En Favoriler";
-"suggested" = "Önerilen";

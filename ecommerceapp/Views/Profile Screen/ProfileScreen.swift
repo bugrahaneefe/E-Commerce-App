@@ -26,7 +26,7 @@ struct ProfileScreen: View {
                 ButtonsComponent.buttonWithText(text: "change.photo".locally(),
                             backgroundColor: .white,
                             cornerRadius: 0,
-                                                fontSize: 15) {
+                            fontSize: 15) {
                     print("Change Photo Button is pressed!")
                 }
             }

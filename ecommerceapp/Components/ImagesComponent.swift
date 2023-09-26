@@ -83,7 +83,6 @@ struct ProfilePhotoImage: View {
             .resizedImage
             .cornerRadiusRectangle(5)
             .frameCenter(width: 100, height: 80)
-            .clipShape(Circle())
     }
 }
 struct SurprisedEmojiImage: View {
