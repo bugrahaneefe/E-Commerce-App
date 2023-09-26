@@ -5,6 +5,9 @@
   Created by Buğrahan Efe on 8.08.2023.
   
 */
+// MARK: - A
+"apply.filter" = "Apply Filter";
+
 // MARK: - B
 "basket" = "Basket";
 "birth.date" = "  Date of Birth :";

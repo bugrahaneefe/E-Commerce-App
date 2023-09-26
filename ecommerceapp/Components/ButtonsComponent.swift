@@ -84,27 +84,28 @@ struct ButtonsComponent {
                     isFilteringOptionsPresented.toggle()
                 }.sheet(isPresented: $isFilteringOptionsPresented) {
                     VStack {
-                        Spacer()
-                        VStack(spacing: 15) {
+                        List {
                             FilterViewSheet(title: "Max Rating: ", bindingValue: $maxRating)
                             FilterViewSheet(title: "Min Rating: ", bindingValue: $minRating)
                             FilterViewSheet(title: "Max Price: ", bindingValue: $maxPrice)
                             FilterViewSheet(title: "Min Price: ", bindingValue: $minPrice)
+                            Spacer()
                         }
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 0)
                         .background(Color.ECBackground)
-                        .cornerRadius(8)
-                        Spacer()
-                        Button("Apply Filter") {
+                        Button("apply.filter".locally()) {
                             isFilteringOptionsPresented = false
                         }
                         .padding(.horizontal, 16)
                         .padding(.vertical, 0)
+                        .frame(width: UIScreen.main.bounds.width * 0.3,
+                               height: UIScreen.main.bounds.height * 0.04,
+                               alignment: .center)
                         .background(Color.ECYellow)
                         .foregroundColor(Color.black)
-                        .cornerRadiusRectangle(15)
+                        .cornerRadius(8)
                     }
+                    .background(Color.ECBackground)
+                    .presentationDetents([.medium, .large])
                 }
                 Spacer()
             }.padding()

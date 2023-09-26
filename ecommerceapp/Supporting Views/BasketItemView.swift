@@ -38,11 +38,11 @@ struct BasketItemView: View {
                             // MARK: Stepper View
                             HStack(alignment: .top, spacing: 10) {
                                 HStack(spacing: 16.5) {
-                                    ButtonsComponent.stepperButtonElements(imageName: "minus") {
+                                    ButtonsComponent.stepperButtonElements(imageName: Image.minus) {
                                         RealmManager.shared.decrementBuyedQuantity(furn, lowerBound: 0)
                                     }
                                     FurnBuyedQuantity(furnBuyedQuantity: furn.buyedQuantity)
-                                    ButtonsComponent.stepperButtonElements(imageName: "plus") {
+                                    ButtonsComponent.stepperButtonElements(imageName: Image.plus) {
                                         RealmManager.shared.incrementBuyedQuantity(furn, upperBound: 5)
                                     }
                                 }

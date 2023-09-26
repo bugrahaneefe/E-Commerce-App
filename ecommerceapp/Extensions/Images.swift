@@ -25,4 +25,6 @@ extension Image {
         self.resizable()
             .aspectRatio(contentMode: .fit)
     }
+    static let minus = "minus"
+    static let plus = "plus"
 }
