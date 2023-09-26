@@ -53,9 +53,10 @@ struct FurnRatingText: View {
 }
 struct FurnPrice: View {
     var priceQuantitiy: Int
+    var fontSize: Double
     var body: some View {
         Text("$\(priceQuantitiy)")
-            .poppinsMedium(size: 16)
+            .poppinsMedium(size: fontSize)
             .foregroundColor(Color.ECDarkGray)
             .frame(maxWidth: .infinity, alignment: .topLeading)
     }

@@ -32,13 +32,29 @@ struct FurnItemCellImage: View {
             .frame(width: 164, height: 200)
     }
 }
+struct FurnInDetailImage: View {
+    var imageName: String
+    var body: some View {
+        Rectangle()
+            .foregroundColor(.clear)
+            .background(
+                Image(imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea()
+            )
+    }
+}
 struct FurnIsFavorite: View {
+    var favColor: Color = .red
+    var notFavColor: Color = .gray
+    var backgroundColor: Color = .white
     var isFavorite: Bool
     var body: some View {
         Image(systemName: isFavorite ? "heart.fill" : "heart")
-            .foregroundColor(isFavorite ? .red : .gray)
+            .foregroundColor(isFavorite ? favColor : notFavColor)
             .frame(width: 40, height: 40)
-            .background(Color.white)
+            .background(backgroundColor)
     }
 }
 struct TrashImage: View {

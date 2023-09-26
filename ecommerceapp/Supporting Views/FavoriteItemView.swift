@@ -23,7 +23,7 @@ struct FavoriteItemView: View {
                             HStack(alignment: .top, spacing: 8) {
                                 VStack(spacing: 4) {
                                     // MARK: Price View
-                                    FurnPrice(priceQuantitiy: furn.price)
+                                    FurnPrice(priceQuantitiy: furn.price, fontSize: 16)
                                     // MARK: Furniture Name View
                                     FurnName(furnName: furn.name)
                                 }

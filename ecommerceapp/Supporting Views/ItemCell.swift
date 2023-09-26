@@ -34,9 +34,6 @@ struct ItemCell: View {
                             VStack(alignment: .leading) {
                                 // MARK: Furniture Image View
                                 Button {
-                                    //                                if RealmManager.shared.updateIsBuyedStatusWithAlert(furn) {
-                                    //                                    showAlert = true
-                                    //                                }
                                 } label: {
                                     NavigationLink(destination: FurnitureDetailViewInScreen(furn: furn)) {
                                         FurnItemCellImage(imageName: furn.imageName)
@@ -45,7 +42,7 @@ struct ItemCell: View {
                                 .cornerRadius(20)
                                 HStack {
                                     // MARK: Furniture Price View
-                                    FurnPrice(priceQuantitiy: furn.price)
+                                    FurnPrice(priceQuantitiy: furn.price, fontSize: 16)
                                     Spacer()
                                     // MARK: Furniture Favorite Button View
                                     Button {
