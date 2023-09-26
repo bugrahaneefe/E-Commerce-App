@@ -30,9 +30,9 @@ struct ItemCell: View {
                 furn.price >= minPrice
             }) { furn in
                 if furn.category == categoryTitle {
-                    VStack {
-                        HStack(alignment: .center, spacing: 10) {
-                            VStack(alignment: .leading) {
+                    VStack(alignment: .center) {
+                        HStack(spacing: 15) {
+                            VStack {
                                 // MARK: Furniture Image View
                                 Button {
                                 } label: {
@@ -44,7 +44,7 @@ struct ItemCell: View {
                                 HStack {
                                     // MARK: Furniture Price View
                                     FurnPrice(priceQuantitiy: furn.price, fontSize: 16)
-                                    Spacer()
+                                        .padding(.horizontal)
                                     // MARK: Furniture Favorite Button View
                                     Button {
                                         RealmManager.shared.toggleFavorite(furn)
@@ -58,16 +58,12 @@ struct ItemCell: View {
                                     RatingView(rating: .constant(furn.rating))
                                     FurnRatingText(rating: furn.rating)
                                 }
-                                Spacer()
                                 // MARK: Furniture Name Text
                                 FurnItemCellName(furnName: furn.name)
-                                Spacer()
+                                    .padding(.horizontal)
                             }
-                            .padding(.init(top: 15, leading: 3, bottom: 5, trailing: 3))
-                            Spacer()
-                        }
-                        .frame(height: screenFrame.height * 0.2)
-                        .padding(0)
+                            .frame(width: screenFrame.width * 0.45, height: screenFrame.height * 0.75)
+                        }.frame(height: screenFrame.height * 0.2)
                     }
                     .alert(isPresented: $showAlert) {
                         Alert(

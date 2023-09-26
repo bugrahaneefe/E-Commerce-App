@@ -17,8 +17,8 @@ struct CategoryItemViewInCategories: View {
     @Binding var maxPrice: Int
     @Binding var minPrice: Int
     let gridColumns = [
-        GridItem(.flexible(), spacing: 15),
-        GridItem(.flexible(), spacing: 15)
+        GridItem(alignment: .center),
+        GridItem(alignment: .center)
     ]
     var categoryTitle: String
     var body: some View {
@@ -36,7 +36,7 @@ struct CategoryItemViewInCategories: View {
                 }
             }
             .padding(.vertical, 68)
-        }
+        }.labelsHidden()
     }
 }
 
