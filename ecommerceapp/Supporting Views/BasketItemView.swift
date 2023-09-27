@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct BasketItemView: View {
+    @Environment(\.screenFrame) var screenFrame
     @ObservedRealmObject var furnitureGroup: FurnituresGroup
     var body: some View {
         ForEach(furnitureGroup.furnitures, id: \.self) { (furn: Furnitures) in
@@ -50,15 +51,15 @@ struct BasketItemView: View {
                             .padding(.horizontal, 8)
                             .padding(.top, 8)
                             .padding(.bottom, 7)
-                            .frame(width: UIScreen.main.bounds.width * 0.25,
-                                   height: UIScreen.main.bounds.height * 0.04,
+                            .frame(width: screenFrame.width * 0.25,
+                                   height: screenFrame.height * 0.04,
                                    alignment: .top)
                             .background(Color.ECBackground)
                             .cornerRadius(8)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .topLeading)
+                    .frame(width: screenFrame.width * 0.9, alignment: .topLeading)
                 }
                 .padding(16)
             }

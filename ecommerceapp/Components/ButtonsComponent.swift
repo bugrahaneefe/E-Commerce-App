@@ -44,6 +44,7 @@ struct ButtonsComponent {
         }
     }
     struct SortFilterView: View {
+        @Environment(\.screenFrame) var screenFrame
         @State private var isSortingOptionsPresented = false
         @State private var isFilteringOptionsPresented = false
         @Binding var sortingKeyPath: String
@@ -97,8 +98,8 @@ struct ButtonsComponent {
                         }
                         .padding(.horizontal, 16)
                         .padding(.vertical, 0)
-                        .frame(width: UIScreen.main.bounds.width * 0.3,
-                               height: UIScreen.main.bounds.height * 0.04,
+                        .frame(width: screenFrame.width * 0.3,
+                               height: screenFrame.height * 0.04,
                                alignment: .center)
                         .background(Color.ECYellow)
                         .foregroundColor(Color.black)
