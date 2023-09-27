@@ -10,6 +10,7 @@ import RealmSwift
 
 struct CategoryItemViewInCategories: View {
     @ObservedResults(FurnituresGroup.self) var furnituresGroups
+    @State private var query = ""
     @Binding var sortingKeyPath: String
     @Binding var isAscending: Bool
     @Binding var maxRating: Int
@@ -32,11 +33,12 @@ struct CategoryItemViewInCategories: View {
                              minRating: $minRating,
                              maxPrice: $maxPrice,
                              minPrice: $minPrice,
+                             query: $query,
                              categoryTitle: categoryTitle)
                 }
             }
             .padding(.vertical, 68)
-        }.labelsHidden()
+        }.searchable(text: $query)
     }
 }
 
