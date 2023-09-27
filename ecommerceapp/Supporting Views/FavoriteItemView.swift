@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct FavoriteItemView: View {
+    @Environment(\.screenFrame) var screenFrame
     @ObservedRealmObject var furnitureGroup: FurnituresGroup
     @State private var showAlert = false
     var body: some View {
@@ -51,19 +52,19 @@ struct FavoriteItemView: View {
                                 }
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 0)
-                                .frame(width: UIScreen.main.bounds.width * 0.3,
-                                       height: UIScreen.main.bounds.height * 0.04,
+                                .frame(width: screenFrame.width * 0.3,
+                                       height: screenFrame.height * 0.04,
                                        alignment: .center)
                                 .background(Color.ECYellow)
                                 .cornerRadius(8)
                             }
                             .padding(0)
-                            .frame(height: UIScreen.main.bounds.height * 0.04, alignment: .center)
+                            .frame(height: screenFrame.height * 0.04, alignment: .center)
                         }.padding(0)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     .padding(0)
-                    .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .topLeading)
+                    .frame(width: screenFrame.width * 0.9, alignment: .topLeading)
                 }
                 .padding(16)
                 .alert(isPresented: $showAlert) {

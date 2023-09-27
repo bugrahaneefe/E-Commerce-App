@@ -43,11 +43,12 @@ struct CategoryItemViewInCategories: View {
 }
 
 struct CategoryItemViewInFavorites: View {
+    @Environment(\.screenFrame) var screenFrame
     @ObservedResults(FurnituresGroup.self) var furnituresGroups
     var categoryTitle: String
     var body: some View {
         VStack {
-            NavigationBarEdit(title: categoryTitle, size: 32, height: UIScreen.main.bounds.height * 0.15)
+            NavigationBarEdit(title: categoryTitle, size: 32, height: screenFrame.height * 0.15)
             ScrollView {
                 VStack {
                     if let furn = furnituresGroups.first {
@@ -60,6 +61,7 @@ struct CategoryItemViewInFavorites: View {
 }
 
 struct CategoryItemViewInBasket: View {
+    @Environment(\.screenFrame) var screenFrame
     @ObservedResults(FurnituresGroup.self) var furnituresGroups
     // MARK: Total Amount Calculation
     var totalAmount: Int {
@@ -73,7 +75,7 @@ struct CategoryItemViewInBasket: View {
     }
     var body: some View {
         VStack {
-            NavigationBarEdit(title: Constants.basket, size: 32, height: UIScreen.main.bounds.height * 0.15)
+            NavigationBarEdit(title: Constants.basket, size: 32, height: screenFrame.height * 0.15)
             ScrollView {
                 VStack {
                     if let furn = furnituresGroups.first {

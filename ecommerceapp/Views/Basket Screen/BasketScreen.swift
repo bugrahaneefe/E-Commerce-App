@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct BasketScreen: View {
+    @Environment(\.screenFrame) var screenFrame
     @Binding var selectedTab: Int // This is used to go to categoryscreen tab.
     @ObservedResults(FurnituresGroup.self) var furnituresGroups
     var isBasketEmpty: Bool {
@@ -17,7 +18,7 @@ struct BasketScreen: View {
     var body: some View {
         if isBasketEmpty {
             VStack {
-                NavigationBarEdit(title: "basket".locally(), size: 32, height: UIScreen.main.bounds.height * 0.15)
+                NavigationBarEdit(title: "basket".locally(), size: 32, height: screenFrame.height * 0.15)
                 ScrollView {
                         VStack(alignment: .center, spacing: 16) {
                             // MARK: Surprised Emoji View
@@ -29,7 +30,7 @@ struct BasketScreen: View {
                                 EmptyDescriptionText(descName: "empty.bag.desc")
                             }
                         }
-                        .frameCenter(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.8)
+                        .frameCenter(width: screenFrame.width * 0.9, height: screenFrame.height * 0.8)
                         .background(.white)
                         .cornerRadius(24)
                     }
@@ -43,7 +44,7 @@ struct BasketScreen: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 0)
-                .frameCenter(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.05)
+                .frameCenter(width: screenFrame.width * 0.9, height: screenFrame.height * 0.05)
                 .background(Color.ECYellow)
                 .cornerRadius(8)
             }

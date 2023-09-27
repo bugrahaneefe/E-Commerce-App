@@ -9,13 +9,14 @@ import SwiftUI
 import RealmSwift
 
 struct ProfileScreen: View {
+    @Environment(\.screenFrame) var screenFrame
     @ObservedResults(Person.self) var person
     var body: some View {
         VStack {
             VStack {
                 NavigationBarEditWithoutBackground(title: "detail".locally(),
                                                    size: 16,
-                                                   height: UIScreen.main.bounds.height * 0.05)
+                                                   height: screenFrame.height * 0.05)
             }
             .frame(width: 375, height: 56)
             .background(.white.opacity(0.9))
@@ -31,7 +32,7 @@ struct ProfileScreen: View {
                 }
             }
             .padding(16)
-            .frame(width: UIScreen.main.bounds.width * 0.92, alignment: .center)
+            .frame(width: screenFrame.width * 0.92, alignment: .center)
             ScrollView(.vertical, showsIndicators: false, content: {
                 if let person = person.first {
                     ProfileItemView(person: person)
