@@ -1,9 +1,7 @@
 # E-Commerce Mobo App
 
 ![Xcode](https://img.shields.io/badge/Xcode-14.3-blue) ![Swift](https://img.shields.io/badge/Swift-5.2-blue) ![IOS](https://img.shields.io/badge/IOS-16.2-blue)
- ![Realm](https://img.shields.io/badge/realm-10.42.4-blue
-) ![MongoDB](https://img.shields.io/badge/MongoDB-7.0-blue
-)
+ ![Realm](https://img.shields.io/badge/realm-10.42.4-blue) ![MongoDB](https://img.shields.io/badge/MongoDB-7.0-blue)
 
 ## Installation of Realm Swift
 
@@ -38,13 +36,14 @@ https://www.mongodb.com/docs/realm/studio/
   </tr>
   <tr>
         <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/bd393390-391e-425f-a828-a8804f7c36ec"></td>
-            <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/fa1a0028-8e04-47c0-b7c2-e934949bdb65"></td>
-    <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/bde58303-c987-4e6f-82ad-80fd0290ae15"></td>
-    <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/3320117d-2f9a-482d-8e46-d565be17b59e"></td>
-                <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/3e376153-8d72-4fa1-af1b-ca53febebaa0"></td>
-        <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/bb032b1b-39d8-413d-9d73-c70be85cd4a4"></td>
-                <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/08c79178-340e-4185-a109-eadf73520f16"></td>
-                        <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/e4ad93f6-20e9-444d-b005-c42007a7b131"></td>
+        <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/9c7123fe-9134-4c4a-b694-8e34be1214c0"></td>
+        <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/660e7b2f-8d98-40ae-b2cf-d6642a389059"></td>
+       <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/c37bb253-c0be-4871-8d50-1f2971d8e737"></td>
+       <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/b9fb8e06-4985-48e4-b66c-4bcbd133cb2a"></td>
+       <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/07ed97d3-0833-4a19-a98f-1a866b664885"></td>
+       <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/d9573d75-0c9a-492a-8909-49cb4c636b17"></td>
+       <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/c4c63e64-0ebd-4581-8409-f3f941e2696c"></td>
+       <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/4b9b559d-9af0-4c33-9106-cf33284147f6"></td>
   </tr>
    </table>
  <table>
