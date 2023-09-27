@@ -44,5 +44,5 @@
   </tr>
    </table>
    
-[Realm Swift]: <http://angularjs.org](https://github.com/realm/realm-swift)https://github.com/realm/realm-swift>
-[Realm Studio]: <http://angularjs.org](https://www.mongodb.com/docs/realm/studio/)https://www.mongodb.com/docs/realm/studio/>
+[Realm Swift]: <https://github.com/realm/realm-swift>
+[Realm Studio]: <https://www.mongodb.com/docs/realm/studio/>
