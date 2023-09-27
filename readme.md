@@ -6,15 +6,11 @@
 ## Installation of Realm Swift
 
 - Database is implemented by using Swift Package Manager
-
-
-https://github.com/realm/realm-swift
-
-
+- [Realm Swift]
 - Database is managed by Realm-studio, all features are added manually from Realm Studio Manager
+- [Realm Studio]
 
 
-https://www.mongodb.com/docs/realm/studio/
 
 
 ## Description
@@ -47,3 +43,6 @@ https://www.mongodb.com/docs/realm/studio/
           <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/3c5f0d7b-9223-432d-8d63-d7ad9007a291"></td>
   </tr>
    </table>
+   
+[Realm Swift]: <http://angularjs.org](https://github.com/realm/realm-swift)https://github.com/realm/realm-swift>
+[Realm Studio]: <http://angularjs.org](https://www.mongodb.com/docs/realm/studio/)https://www.mongodb.com/docs/realm/studio/>
