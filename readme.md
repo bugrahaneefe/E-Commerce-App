@@ -1,7 +1,9 @@
 # E-Commerce Mobo App
 
 ![Xcode](https://img.shields.io/badge/Xcode-14.3-blue) ![Swift](https://img.shields.io/badge/Swift-5.2-blue) ![IOS](https://img.shields.io/badge/IOS-16.2-blue)
- ![Realm](https://img.shields.io/badge/Realm-39477F?style=for-the-badge&logo=realm&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+ ![Realm](https://img.shields.io/badge/realm-10.42.4-blue
+) ![MongoDB](https://img.shields.io/badge/MongoDB-7.0-blue
+)
 
 ## Installation of Realm Swift
 
