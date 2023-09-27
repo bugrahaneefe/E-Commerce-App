@@ -7,15 +7,15 @@
 
 - Database is implemented by using Swift Package Manager
 
-''
+
 https://github.com/realm/realm-swift
-''
+
 
 - Database is managed by Realm-studio, all features are added manually from Realm Studio Manager
 
-''
+
 https://www.mongodb.com/docs/realm/studio/
-''
+
 
 ## Description
 
@@ -31,9 +31,6 @@ https://www.mongodb.com/docs/realm/studio/
 
 ## Screenshots
  <table>
-  <tr>
-    <td>MoboMain</td>
-  </tr>
   <tr>
         <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/bd393390-391e-425f-a828-a8804f7c36ec"></td>
         <td><img width="1792" alt="Screenshot 2023-09-26 at 12 55 05" src="https://github.com/bugrahaneefe/E-Commerce-App/assets/114180327/9c7123fe-9134-4c4a-b694-8e34be1214c0"></td>
