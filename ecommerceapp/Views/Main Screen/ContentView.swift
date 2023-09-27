@@ -16,7 +16,7 @@ struct ContentView: View {
         NavigationView {
             VStack(spacing: 0) {
                 NavigationLink(destination: TabBar(), label: {
-                    Image.mainScreen
+                    MainScreenImage()
                 })
             }.padding()
         }

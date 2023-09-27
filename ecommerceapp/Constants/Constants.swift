@@ -38,6 +38,7 @@ struct Constants {
     static let sort = "sort"
     static let favorite = "fav".locally()
     static let moveToBag = "move.to.bag".locally()
+    static let buyIt = "buy.it".locally()
     static let basket = "basket".locally()
     static let totalAmount = "total.amount".locally()
     static let total = "total.dollar".locally()

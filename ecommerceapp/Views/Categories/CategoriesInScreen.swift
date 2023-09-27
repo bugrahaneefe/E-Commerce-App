@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 enum CategoryInScreen {
     case bedroom
@@ -13,40 +14,141 @@ enum CategoryInScreen {
     case dining
 }
 
-func getCategoryInScreen(categoryType: CategoryInScreen) -> some View {
+func getCategoryInScreen(categoryType: CategoryInScreen,
+                         sortingKeyPath: Binding<String>,
+                         isAscending: Binding<Bool>,
+                         maxRating: Binding<Int>,
+                         minRating: Binding<Int>,
+                         maxPrice: Binding<Int>,
+                         minPrice: Binding<Int>) -> some View {
     switch categoryType {
     case .bedroom:
         return VStack {
-            SortFilterView()
-            CategoryItemViewInCategories(categoryTitle: Constants.CategoryImagesNames.bedroom.rawValue)
+            ButtonsComponent.SortFilterView(sortingKeyPath: sortingKeyPath,
+                                            isAscending: isAscending,
+                                            maxRating: maxRating,
+                                            minRating: minRating,
+                                            maxPrice: maxPrice,
+                                            minPrice: minPrice)
+            CategoryItemViewInCategories(sortingKeyPath: sortingKeyPath,
+                                         isAscending: isAscending,
+                                         maxRating: maxRating,
+                                         minRating: minRating,
+                                         maxPrice: maxPrice,
+                                         minPrice: minPrice,
+                                         categoryTitle: Constants.CategoryImagesNames.bedroom.rawValue)
         }.navigationTitle("broom".locally())
-            .navigationBarBackButtonHidden(true)
-            .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                DismissButton()
-            }
-        }
     case .livingroom:
         return VStack {
-            SortFilterView()
-            CategoryItemViewInCategories(categoryTitle: Constants.CategoryImagesNames.livingroom.rawValue)
+            ButtonsComponent.SortFilterView(sortingKeyPath: sortingKeyPath,
+                                            isAscending: isAscending,
+                                            maxRating: maxRating,
+                                            minRating: minRating,
+                                            maxPrice: maxPrice,
+                                            minPrice: minPrice)
+            CategoryItemViewInCategories(sortingKeyPath: sortingKeyPath,
+                                         isAscending: isAscending,
+                                         maxRating: maxRating,
+                                         minRating: minRating,
+                                         maxPrice: maxPrice,
+                                         minPrice: minPrice,
+                                         categoryTitle: Constants.CategoryImagesNames.livingroom.rawValue)
         }.navigationTitle("lroom".locally())
-            .navigationBarBackButtonHidden(true)
-            .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                DismissButton()
-            }
-        }
     case .dining:
         return VStack {
-            SortFilterView()
-            CategoryItemViewInCategories(categoryTitle: Constants.CategoryImagesNames.dining.rawValue)
+            ButtonsComponent.SortFilterView(sortingKeyPath: sortingKeyPath,
+                                            isAscending: isAscending,
+                                            maxRating: maxRating,
+                                            minRating: minRating,
+                                            maxPrice: maxPrice,
+                                            minPrice: minPrice)
+            CategoryItemViewInCategories(sortingKeyPath: sortingKeyPath,
+                                         isAscending: isAscending,
+                                         maxRating: maxRating,
+                                         minRating: minRating,
+                                         maxPrice: maxPrice,
+                                         minPrice: minPrice,
+                                         categoryTitle: Constants.CategoryImagesNames.dining.rawValue)
         }.navigationTitle("droom".locally())
-            .navigationBarBackButtonHidden(true)
-            .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                DismissButton()
+    }
+}
+struct FurnitureDetailViewInScreen: View {
+    @Environment(\.screenFrame) var screenFrame
+    @State private var isAlertPresented = false
+    var furn: Furnitures
+    var body: some View {
+        VStack(spacing: 0) {
+            // MARK: Furniture Detail Image View
+            TabView {
+                FurnInDetailImage(imageName: furn.imageName)
+                FurnInDetailImage(imageName: Constants.CategoryImagesNames.mobomain.rawValue)
+            }.tabViewStyle(PageTabViewStyle())
+                .indexViewStyle(.page(backgroundDisplayMode: .always))
+                .edgesIgnoringSafeArea(.all)
+            VStack(alignment: .leading, spacing: 64) {
+                VStack(alignment: .leading, spacing: 4) {
+                    // MARK: Furniture Detail Price View
+                    Text("$\(furn.price)")
+                        .poppinsMedium(size: 24)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color.ECDarkGray)
+                    // MARK: Furniture Detail Name View
+                    Text(furn.name)
+                        .poppinsMedium(size: 16)
+                        .foregroundColor(Color.ECLightGray)
+                        .frame(width: screenFrame.width * 0.9, alignment: .topLeading)
+                }
+                .padding(0)
+                // MARK: Furniture Detail buyIt View
+                HStack(alignment: .center, spacing: 8) {
+                    Button {
+                        if RealmManager.shared.updateIsBuyedStatusWithAlert(furn) {
+                            isAlertPresented = true
+                        }
+                    } label: {
+                        HStack(spacing: 8) {
+                            Text(Constants.buyIt)
+                                .poppinsMedium(size: 14)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(Color.ECDarkGray)
+                            Image(systemName: "bag")
+                                .foregroundColor(Color.black)
+                        }
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 0)
+                .frame(maxWidth: .infinity,
+                       minHeight: screenFrame.height * 0.1,
+                       maxHeight: screenFrame.height * 0.1,
+                       alignment: .center)
+                .background(Color.ECYellow)
+                .cornerRadius(8)
             }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 24)
+            .background(Color.ECBackground)
+        }
+        .navigationTitle("\(furn.name)" + "title.detail".locally())
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    RealmManager.shared.toggleFavorite(furn)
+                } label: {
+                    FurnIsFavorite(favColor: .black,
+                                   notFavColor: .white,
+                                   backgroundColor: .clear,
+                                   isFavorite: furn.isFavorite)
+                }
+                .cornerRadius(20)
+            }
+        }
+        .alert(isPresented: $isAlertPresented) {
+            Alert(
+                title: Text("is.already.in.basket".locally()),
+                message: Text(""),
+                dismissButton: .default(Text("ok".locally()))
+            )
         }
     }
 }

@@ -13,18 +13,22 @@ struct ProfileScreen: View {
     var body: some View {
         VStack {
             VStack {
-                NavigationBarEditWithoutBackground(title: "detail".locally(), size: 16, height: UIScreen.main.bounds.height * 0.05)
+                NavigationBarEditWithoutBackground(title: "detail".locally(),
+                                                   size: 16,
+                                                   height: UIScreen.main.bounds.height * 0.05)
             }
             .frame(width: 375, height: 56)
             .background(.white.opacity(0.9))
             VStack(alignment: .center, spacing: 8) {
                 // MARK: Profile Photo Image View
-                Image.profilePhoto
+                ProfilePhotoImage()
                 // MARK: Change Photo Button
-                ButtonWText(text: "change.photo".locally(),
+                ButtonsComponent.buttonWithText(text: "change.photo".locally(),
                             backgroundColor: .white,
                             cornerRadius: 0,
-                            fontSize: 15)
+                            fontSize: 15) {
+                    print("Change Photo Button is pressed!")
+                }
             }
             .padding(16)
             .frame(width: UIScreen.main.bounds.width * 0.92, alignment: .center)

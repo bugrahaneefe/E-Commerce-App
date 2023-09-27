@@ -23,7 +23,7 @@ struct FavoriteItemView: View {
                             HStack(alignment: .top, spacing: 8) {
                                 VStack(spacing: 4) {
                                     // MARK: Price View
-                                    FurnPrice(priceQuantitiy: furn.price)
+                                    FurnPrice(priceQuantitiy: furn.price, fontSize: 16)
                                     // MARK: Furniture Name View
                                     FurnName(furnName: furn.name)
                                 }
@@ -31,7 +31,7 @@ struct FavoriteItemView: View {
                                 Button {
                                     RealmManager.shared.deleteFromFavorite(furn)
                                 } label: {
-                                    Image.deleteIcon
+                                    DeleteIcon()
                                 }
                             }
                             .padding(0)
@@ -43,7 +43,10 @@ struct FavoriteItemView: View {
                                             showAlert = true
                                         }
                                     } label: {
-                                        Text.moveToBagText
+                                        Text(Constants.moveToBag)
+                                            .poppinsMedium(size: 14)
+                                            .multilineTextAlignment(.center)
+                                            .foregroundColor(Color.ECDarkGray)
                                     }
                                 }
                                 .padding(.horizontal, 16)

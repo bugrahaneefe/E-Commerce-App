@@ -17,7 +17,7 @@ struct TabBar: View {
                     .tabItem {
                         Image(systemName: "house.fill")
                     }.tag(0)
-                BasketScreen()
+                BasketScreen(selectedTab: $selected)
                     .tabItem {
                         Image(systemName: "cart.fill")
                     }.tag(1)

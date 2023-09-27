@@ -7,74 +7,108 @@
 
 import SwiftUI
 
-struct ButtonSystemImage: View {
-    var sysname: String
-    var body: some View {
-        Button {
-        } label: {
-            Image(systemName: sysname)
+struct ButtonsComponent {
+    @ViewBuilder
+    static func buttonSystemImage(sysName: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: sysName)
                 .foregroundColor(.gray)
                 .padding(.top, 5)
         }
     }
-}
-
-struct ButtonAssetImage: View {
-    var imagename: String
-    var body: some View {
-        Button {
-        } label: {
-            Image(imagename)
+    @ViewBuilder
+    static func buttonAssetImage(imageName: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(imageName)
         }
     }
-}
-
-struct ButtonWText: View {
-    var text: String
-    var backgroundColor: Color
-    var cornerRadius: Double
-    var fontSize: Double
-    var body: some View {
-        Button {
-        } label: {
+    @ViewBuilder
+    static func buttonWithText(text: String,
+                               backgroundColor: Color,
+                               cornerRadius: Double,
+                               fontSize: Double,
+                               action: @escaping () -> Void) -> some View {
+        Button(action: action) {
             Text(text)
                 .foregroundColor(.black)
                 .background(backgroundColor)
                 .cornerRadius(cornerRadius)
-                .font(.custom(Constants.FontNames.poppinsMed.rawValue, size: fontSize))
+                .poppinsMedium(size: fontSize)
         }
     }
-}
-
-struct DismissButton: View {
-    @Environment(\.presentationMode) var presentationMode
-    var body: some View {
-        Button {
-            presentationMode.wrappedValue.dismiss()
-        } label: {
+    @ViewBuilder
+    static func stepperButtonElements(imageName: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: imageName)
+                .foregroundColor(.black)
+        }
+    }
+    struct SortFilterView: View {
+        @State private var isSortingOptionsPresented = false
+        @State private var isFilteringOptionsPresented = false
+        @Binding var sortingKeyPath: String
+        @Binding var isAscending: Bool
+        @Binding var maxRating: Int
+        @Binding var minRating: Int
+        @Binding var maxPrice: Int
+        @Binding var minPrice: Int
+        var body: some View {
             HStack {
-                Image(systemName: "arrow.left")
-            }
+                Spacer()
+                ButtonsComponent.buttonAssetImage(imageName: Constants.sort) {
+                    isSortingOptionsPresented.toggle()
+                }.confirmationDialog("Sorting", isPresented: $isSortingOptionsPresented) {
+                    Button("suggested".locally()) {
+                        sortingKeyPath = "id"
+                        isAscending = false
+                    }
+                    Button("name".locally()) {
+                        sortingKeyPath = "name"
+                        isAscending = true
+                    }
+                    Button("highest.price".locally()) {
+                        sortingKeyPath = "price"
+                        isAscending = false
+                    }
+                    Button("lowest.price".locally()) {
+                        sortingKeyPath = "price"
+                        isAscending = true
+                    }
+                    Button("highest.rating".locally()) {
+                        sortingKeyPath = "rating"
+                        isAscending = false
+                    }
+                }
+                Spacer()
+                ButtonsComponent.buttonAssetImage(imageName: Constants.filter) {
+                    isFilteringOptionsPresented.toggle()
+                }.sheet(isPresented: $isFilteringOptionsPresented) {
+                    VStack {
+                        List {
+                            FilterViewSheet(title: "Max Rating: ", bindingValue: $maxRating)
+                            FilterViewSheet(title: "Min Rating: ", bindingValue: $minRating)
+                            FilterViewSheet(title: "Max Price: ", bindingValue: $maxPrice)
+                            FilterViewSheet(title: "Min Price: ", bindingValue: $minPrice)
+                            Spacer()
+                        }
+                        .background(Color.ECBackground)
+                        Button("apply.filter".locally()) {
+                            isFilteringOptionsPresented = false
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 0)
+                        .frame(width: UIScreen.main.bounds.width * 0.3,
+                               height: UIScreen.main.bounds.height * 0.04,
+                               alignment: .center)
+                        .background(Color.ECYellow)
+                        .foregroundColor(Color.black)
+                        .cornerRadius(8)
+                    }
+                    .background(Color.ECBackground)
+                    .presentationDetents([.medium, .large])
+                }
+                Spacer()
+            }.padding()
         }
-    }
-}
-
-struct SortFilterView: View {
-    var body: some View {
-        HStack {
-            Spacer()
-            ButtonAssetImage(imagename: Constants.sort)
-            Spacer()
-            ButtonAssetImage(imagename: Constants.filter)
-            Spacer()
-        }.padding()
-    }
-}
-
-struct StepperButtonElements: View {
-    var imageName: String
-    var body: some View {
-        Image(systemName: imageName)
-            .foregroundColor(.black)
     }
 }

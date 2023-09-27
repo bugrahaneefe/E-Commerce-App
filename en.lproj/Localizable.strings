@@ -5,17 +5,21 @@
   Created by Buğrahan Efe on 8.08.2023.
   
 */
+// MARK: - A
+"apply.filter" = "Apply Filter";
 
 // MARK: - B
 "basket" = "Basket";
 "birth.date" = "  Date of Birth :";
 "broom" = "Bedroom";
+"buy.it" = "Buy";
 
 // MARK: - C
 "change.photo" = "Change Photo";
 
 // MARK: - D
 "detail" = "My Details";
+"title.detail" = " Detail";
 "droom" = "Dining Room";
 
 // MARK: - E
@@ -28,16 +32,24 @@
 "fav" = "Favorites";
 "full.name" = "  Full Name :";
 
+// MARK: - H
+"highest.price" = "Highest Price";
+"highest.rating" = "Highest Rating";
+
 // MARK: - I
 "is.already.in.basket" = "Item is already in your basket";
 
 // MARK: - L
+"lowest.price" = "Lowest Price";
 "lroom" = "Living Room";
 
 // MARK: - M
 "mail" = "  E-mail :";
 "main.title" = "MOBO";
-"move.to.bag" = "Move to Bag";
+"move.to.bag" = "Buy";
+
+// MARK: - N
+"name" = "Name";
 
 // MARK: - O
 "ok" = "Ok";
@@ -46,8 +58,9 @@
 "phone" = "  Phone :";
 
 // MARK: - S
-"str.shop" = "Start Shopping";
 "save" = "Save";
+"str.shop" = "Start Shopping";
+"suggested" = "Suggested";
 
 // MARK: - T
 "total.amount" = "Total: ";

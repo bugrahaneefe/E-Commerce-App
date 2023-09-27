@@ -36,6 +36,14 @@ struct TotalAmountText: View {
             .foregroundColor(Color.ECDarkGray)
     }
 }
+struct TotalText: View {
+    var body: some View {
+        Text("total.amount".locally())
+            .poppinsMedium(size: 18)
+            .bold()
+            .foregroundColor(Color.ECDarkGray)
+    }
+}
 struct FurnRatingText: View {
     var rating: Int
     var body: some View {
@@ -45,9 +53,10 @@ struct FurnRatingText: View {
 }
 struct FurnPrice: View {
     var priceQuantitiy: Int
+    var fontSize: Double
     var body: some View {
         Text("$\(priceQuantitiy)")
-            .poppinsMedium(size: 16)
+            .poppinsMedium(size: fontSize)
             .foregroundColor(Color.ECDarkGray)
             .frame(maxWidth: .infinity, alignment: .topLeading)
     }
@@ -77,5 +86,19 @@ struct FurnBuyedQuantity: View {
             .poppinsMedium(size: 14)
             .multilineTextAlignment(.center)
             .foregroundColor(Color.ECDarkGray)
+    }
+}
+
+struct FilterViewSheet: View {
+    var title: String
+    @Binding var bindingValue: Int
+    var body: some View {
+        HStack {
+            Spacer()
+            Text(title)
+            Spacer()
+            TextField(title, value: $bindingValue, formatter: NumberFormatter())
+            Spacer()
+        }
     }
 }
