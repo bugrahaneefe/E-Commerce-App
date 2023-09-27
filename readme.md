@@ -20,12 +20,12 @@ https://www.mongodb.com/docs/realm/studio/
 ## Description
 
 - This app is e-commerce platform app which is a marketplace for furnitures.
-- It has four furniture object in market as an example in screenshots however, database is edited manually by using Realm Studio.
+- It has four furniture objects in market as an example in screenshots however, database is edited manually by using Realm Studio.
 - Database need to consist of three tables:
-  - Furniture
+  - Furnitures
     - Consist of details of furnitures. 
   - FurnituresGroup
-    - Consist of every furniture included in database  .
+    - Consist of every furniture included in database.
   - Person
     - Information of person who uses the app. App requires only one person for usage. 
 
